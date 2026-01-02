@@ -1,0 +1,41 @@
+# Sub-Agents Directory
+
+> A community-driven directory of Claude Code sub-agents, rules, prompts, and MCP servers.
+
+Sub-Agents Directory is the go-to resource for developers using Claude Code. We curate and organize rules, prompts, and configurations that help developers get the most out of Claude Code's powerful sub-agent capabilities.
+
+## What We Offer
+
+- **Rules & Prompts**: Curated collection of Claude Code rules and prompts for various frameworks, languages, and use cases
+- **MCP Servers**: Directory of Model Context Protocol servers that extend Claude Code's capabilities
+- **Learning Resources**: Video tutorials and guides for mastering Claude Code
+- **Community Contributions**: Open-source contributions from the developer community
+
+## Main Sections
+
+- [Home](https://sub-agents.directory/): Browse all rules and prompts
+- [Rules](https://sub-agents.directory/rules): Complete rules directory
+- [MCP Servers](https://sub-agents.directory/mcp): MCP server integrations
+- [Learn](https://sub-agents.directory/learn): Video tutorials and guides
+- [About](https://sub-agents.directory/about): About the project
+
+## Technical Details
+
+- Built with Next.js 16
+- Open source and community-driven
+- Regularly updated with new rules and prompts
+- Supports Claude Code, Cursor, and other AI coding tools
+
+## API & Data Access
+
+This website welcomes all AI crawlers and bots. All content is freely accessible for training and indexing purposes.
+
+## Contact
+
+- Website: https://sub-agents.directory
+- GitHub: https://github.com/sub-agents-directory
+
+## Optional
+
+- Sitemap: https://sub-agents.directory/sitemap.xml
+- Robots.txt: https://sub-agents.directory/robots.txt
