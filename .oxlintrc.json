@@ -1,0 +1,33 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oxc-project/oxc/main/npm/oxlint/configuration_schema.json",
+  "settings": {
+    "react": {
+      "version": "19"
+    },
+    "next": {
+      "rootDir": "./"
+    },
+    "jsx-a11y": {
+      "components": {
+        "Link": "a",
+        "Button": "button"
+      }
+    }
+  },
+  "plugins": ["react", "nextjs", "jsx-a11y", "typescript", "import", "unicorn"],
+  "rules": {
+    "no-debugger": "error",
+    "no-console": "warn",
+    "eqeqeq": "error",
+    "no-unused-vars": "warn",
+    "react/jsx-key": "error",
+    "react/jsx-no-duplicate-props": "error",
+    "react/no-children-prop": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "typescript/no-explicit-any": "warn",
+    "import/no-cycle": "error",
+    "unicorn/no-null": "off"
+  },
+  "ignorePatterns": ["node_modules", ".next", "dist", "build", "*.config.js", "*.config.mjs"]
+}

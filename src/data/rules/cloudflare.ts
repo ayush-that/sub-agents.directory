@@ -1378,8 +1378,7 @@ async webSocketError(ws: WebSocket, error: unknown): void | Promise<void> {
     author: {
       name: "Sunil Pai",
       url: "https://x.com/threepointone",
-      avatar:
-        "https://pbs.twimg.com/profile_images/1700975744573378560/1RZqo5ju_400x400.jpg",
+      avatar: "https://pbs.twimg.com/profile_images/1700975744573378560/1RZqo5ju_400x400.jpg",
     },
   },
 ];

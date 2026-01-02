@@ -106,8 +106,7 @@ When providing solutions, always consider the specific context, target platforms
     author: {
       name: "Prithvi Bharadwaj",
       url: "https://twitter.com/maybeprithvi",
-      avatar:
-        "https://pbs.twimg.com/profile_images/1686087141665955840/oireEMYQ_400x400.jpg",
+      avatar: "https://pbs.twimg.com/profile_images/1686087141665955840/oireEMYQ_400x400.jpg",
     },
   },
 ];

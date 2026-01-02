@@ -2,15 +2,7 @@ export const nextjsRules = [
   {
     title: "Next.js React Redux TypeScript Cursor Rules",
     tags: ["Next.js", "React", "Redux", "TypeScript"],
-    libs: [
-      "shadcn",
-      "radix",
-      "tailwind",
-      "redux-toolkit",
-      "DOMPurify",
-      "next-i18next",
-      "zod",
-    ],
+    libs: ["shadcn", "radix", "tailwind", "redux-toolkit", "DOMPurify", "next-i18next", "zod"],
     slug: "nextjs-react-redux-typescript-cursor-rules",
     content: `This comprehensive guide outlines best practices, conventions, and standards for development with modern web technologies including ReactJS, NextJS, Redux, TypeScript, JavaScript, HTML, CSS, and UI frameworks.
 
@@ -273,8 +265,7 @@ export const nextjsRules = [
     author: {
       name: "Pontus Abrahamsson",
       url: "https://twitter.com/pontusab",
-      avatar:
-        "https://pbs.twimg.com/profile_images/1755611130368770048/JwLEqyeo_400x400.jpg",
+      avatar: "https://pbs.twimg.com/profile_images/1755611130368770048/JwLEqyeo_400x400.jpg",
     },
   },
   {
@@ -329,8 +320,7 @@ export const nextjsRules = [
     author: {
       name: "Pontus Abrahamsson",
       url: "https://twitter.com/pontusab",
-      avatar:
-        "https://pbs.twimg.com/profile_images/1755611130368770048/JwLEqyeo_400x400.jpg",
+      avatar: "https://pbs.twimg.com/profile_images/1755611130368770048/JwLEqyeo_400x400.jpg",
     },
   },
   {
@@ -408,8 +398,7 @@ export const nextjsRules = [
     author: {
       name: "gab-o 👨🏻‍💻",
       url: "https://x.com/gaboesquivel",
-      avatar:
-        "https://pbs.twimg.com/profile_images/1632750534099709953/AUJIoZ7w_400x400.jpg",
+      avatar: "https://pbs.twimg.com/profile_images/1632750534099709953/AUJIoZ7w_400x400.jpg",
     },
   },
 
@@ -417,15 +406,7 @@ export const nextjsRules = [
     title: "Next.js React Standard.js Cursor Rules",
     tags: ["React", "Vite", "Next.js", "Standard.js"],
     slug: "nextjs-react-vite-javascript-cursor-rules",
-    libs: [
-      "zustand",
-      "shadcn",
-      "tailwind",
-      "stylus",
-      "radix",
-      "react-hook-form",
-      "zod",
-    ],
+    libs: ["zustand", "shadcn", "tailwind", "stylus", "radix", "react-hook-form", "zod"],
     content: `
   You are an expert in JavaScript, React, Node.js, Next.js App Router, Zustand, Shadcn UI, Radix UI, Tailwind, and Stylus.
 
@@ -575,8 +556,7 @@ export const nextjsRules = [
     author: {
       name: "Mathieu de Gouville",
       url: "https://x.com/matdegouville",
-      avatar:
-        "https://pbs.twimg.com/profile_images/1812958242428866560/OohbxOG5_400x400.jpg",
+      avatar: "https://pbs.twimg.com/profile_images/1812958242428866560/OohbxOG5_400x400.jpg",
     },
   },
   {
@@ -647,8 +627,7 @@ export const nextjsRules = [
     author: {
       name: "Constantout",
       url: "https://refined.so",
-      avatar:
-        "https://pbs.twimg.com/profile_images/1700127843462565888/SbPAubiY_400x400.jpg",
+      avatar: "https://pbs.twimg.com/profile_images/1700127843462565888/SbPAubiY_400x400.jpg",
     },
   },
   {
@@ -737,11 +716,11 @@ export const nextjsRules = [
     },
   },
   {
-    "title": "Payload CMS Next.js TypeScript Best Practices",
-    "tags": ["Payload CMS", "MongoDB", "Node.js", "Next.js", "TypeScript"],
-    "slug": "payload-cms-nextjs-typescript-best-practices",
-    "libs": ["Payload CMS", "MongoDB", "Node.js", "Next.js", "TypeScript"],
-    "content": `
+    title: "Payload CMS Next.js TypeScript Best Practices",
+    tags: ["Payload CMS", "MongoDB", "Node.js", "Next.js", "TypeScript"],
+    slug: "payload-cms-nextjs-typescript-best-practices",
+    libs: ["Payload CMS", "MongoDB", "Node.js", "Next.js", "TypeScript"],
+    content: `
     You are an expert in Fullstack TypeScript development with deep knowledge of Payload CMS, MongoDB, and Node.js.
     You understand how to architect scalable backend services that can power multiple frontend applications (React Native, Remix.js, Next.js).
     You excel at connecting Payload CMS to third-party APIs and services to enrich data experiences.

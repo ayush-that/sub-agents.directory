@@ -3,16 +3,14 @@ import React from "react";
 export const HowTo = () => {
   return (
     <div className="p-6 border-2 border-dashed border-border container px-4 py-8 max-w-2xl mx-auto my-8">
-      <h1 className="text-2xl mb-6">
-        How to Use Model Context Protocol (MCP) in Claude Code
-      </h1>
+      <h1 className="text-2xl mb-6">How to Use Model Context Protocol (MCP) in Claude Code</h1>
 
       <section className="mb-6">
         <h2 className="text-xl mb-3">What is MCP?</h2>
         <p className="text-[#878787]">
-          Model Context Protocol (MCP) is a protocol that enables LLMs to access
-          custom tools and services. Claude Code can connect to MCP servers to
-          access additional tools and capabilities.
+          Model Context Protocol (MCP) is a protocol that enables LLMs to access custom tools and
+          services. Claude Code can connect to MCP servers to access additional tools and
+          capabilities.
         </p>
       </section>
 

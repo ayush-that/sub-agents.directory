@@ -33,8 +33,7 @@ The following hotkeys should be added after the AutoExecute section of the scrip
     author: {
       name: "the-Automator",
       url: "https://the-Automator.com",
-      avatar:
-        "https://www.the-automator.com/download/img/logo/the-Automator_100.png",
+      avatar: "https://www.the-automator.com/download/img/logo/the-Automator_100.png",
     },
   },
 ];

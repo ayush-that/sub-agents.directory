@@ -6,10 +6,7 @@ import Image from "next/image";
 export function AdCardSmall({ ad, small }: { ad: Ad; small?: boolean }) {
   return (
     <Card
-      className={cn(
-        "bg-background max-h-[calc(100vh-8rem)] flex flex-col",
-        small ? "p-2" : "p-4",
-      )}
+      className={cn("bg-background max-h-[calc(100vh-8rem)] flex flex-col", small ? "p-2" : "p-4")}
     >
       <CardContent
         className={cn(
@@ -17,12 +14,7 @@ export function AdCardSmall({ ad, small }: { ad: Ad; small?: boolean }) {
           small ? "p-2 pt-4" : "p-4",
         )}
       >
-        <a
-          href={ad.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="h-full"
-        >
+        <a href={ad.link} target="_blank" rel="noopener noreferrer" className="h-full">
           <div className="h-full overflow-y-auto">
             <code className={cn("block pr-3", small ? "text-xs" : "text-sm")}>
               {ad.description}

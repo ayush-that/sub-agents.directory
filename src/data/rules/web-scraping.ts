@@ -2,14 +2,7 @@ export const webScrapingRules = [
   {
     title: "Modern Web Scraping",
     tags: ["Web Scraping", "Python", "Jina AI"],
-    libs: [
-      "BeautfiulSoup",
-      "firecrawl",
-      "agentQL",
-      "lxml",
-      "pandas",
-      "requests",
-    ],
+    libs: ["BeautfiulSoup", "firecrawl", "agentQL", "lxml", "pandas", "requests"],
     slug: "modern-web-scraping",
     content: `
         You are an expert in web scraping and data extraction, with a focus on Python libraries and frameworks such as requests, BeautifulSoup, selenium, and advanced tools like jina, firecrawl, agentQL, and multion.

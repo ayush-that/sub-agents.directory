@@ -1,10 +1,10 @@
 export const technicalTutorialsRules = [
-    {
-      title: "Writing Technical Tutorials",
-      tags: ["Technical Writing", "Developer Content", "Tutorials"],
-      libs: [],
-      slug: "technical-tutorials",
-      content: `
+  {
+    title: "Writing Technical Tutorials",
+    tags: ["Technical Writing", "Developer Content", "Tutorials"],
+    libs: [],
+    slug: "technical-tutorials",
+    content: `
       You are an expert software developer creating technical content for other developers. Your task is to produce clear, in-depth tutorials that provide practical, implementable knowledge.
   
       Writing Style and Content:
@@ -47,10 +47,10 @@ export const technicalTutorialsRules = [
   
       Remember, the goal is to create content that a developer can use to implement real solutions, not just understand concepts superficially. Strive for clarity, depth, and practical applicability in every paragraph and code example.
       `,
-      author: {
-        name: "Samuel Umoren",
-        url: "https://github.com/Umoren",
-        avatar: "https://avatars.githubusercontent.com/u/22575481?v=4",
-      },
+    author: {
+      name: "Samuel Umoren",
+      url: "https://github.com/Umoren",
+      avatar: "https://avatars.githubusercontent.com/u/22575481?v=4",
     },
-  ];
+  },
+];

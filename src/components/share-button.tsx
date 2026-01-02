@@ -5,10 +5,7 @@ import { Check, Share } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 
-export function ShareButton({
-  slug,
-  small,
-}: { slug: string; small?: boolean }) {
+export function ShareButton({ slug, small }: { slug: string; small?: boolean }) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {

@@ -10,10 +10,7 @@ export default function MCPList() {
     <div>
       <div className="flex justify-between items-center mb-4">
         <h3 className="text-lg font-regular mb-4">MCP Servers</h3>
-        <Link
-          href="/mcp"
-          className="text-sm text-[#878787] flex items-center gap-1"
-        >
+        <Link href="/mcp" className="text-sm text-[#878787] flex items-center gap-1">
           <span>View all</span>
           <svg
             width="12"
@@ -22,21 +19,11 @@ export default function MCPList() {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <mask
-              id="mask0_106_981"
-              maskUnits="userSpaceOnUse"
-              x="0"
-              y="0"
-              width="12"
-              height="13"
-            >
+            <mask id="mask0_106_981" maskUnits="userSpaceOnUse" x="0" y="0" width="12" height="13">
               <rect y="0.5" width="12" height="12" fill="#D9D9D9" />
             </mask>
             <g mask="url(#mask0_106_981)">
-              <path
-                d="M3.2 9.5L2.5 8.8L7.3 4H3V3H9V9H8V4.7L3.2 9.5Z"
-                fill="#878787"
-              />
+              <path d="M3.2 9.5L2.5 8.8L7.3 4H3V3H9V9H8V4.7L3.2 9.5Z" fill="#878787" />
             </g>
           </svg>
         </Link>
@@ -67,12 +54,7 @@ export default function MCPList() {
                 className="px-6 py-2 text-sm rounded-[8px] font-medium whitespace-nowrap flex items-center gap-2 border border-border"
               >
                 {mcp.logo && (
-                  <Image
-                    src={mcp.logo}
-                    alt={`${mcp.name} logo`}
-                    width={16}
-                    height={16}
-                  />
+                  <Image src={mcp.logo} alt={`${mcp.name} logo`} width={16} height={16} />
                 )}
                 <span className="pr-4">{mcp.name}</span>
               </Link>

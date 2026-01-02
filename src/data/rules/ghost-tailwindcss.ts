@@ -1,10 +1,10 @@
 export const ghostTailwindcssRules = [
-    {
-      tags: ["Ghost", "Alpine.js", "TailwindCSS"],
-      title: "ghost CMS with Tailwind CSS Cursor Rules",
-      slug: "ghost-tailwindcss-cursor-rules",
-      libs: ["tailwindcss","alpinejs"],
-      content: `
+  {
+    tags: ["Ghost", "Alpine.js", "TailwindCSS"],
+    title: "ghost CMS with Tailwind CSS Cursor Rules",
+    slug: "ghost-tailwindcss-cursor-rules",
+    libs: ["tailwindcss", "alpinejs"],
+    content: `
     You are an expert in Ghost CMS, Handlebars templating, Alpine.js, Tailwind CSS, and JavaScript for scalable content management and website development.
 
 Key Principles
@@ -129,12 +129,11 @@ Documentation
 
 Refer to Ghost's official documentation, forum, and GitHub for detailed information on theming, routing, and integrations for best practices.
       `,
-      author: {
-        name: "ghostFam",
-        url: "https://ghostfam.com/en/",
-        avatar:
-          "https://ghostfam.com/en/content/images/size/w300/format/webp/2023/08/ghostfam-1.webp",
-      },
+    author: {
+      name: "ghostFam",
+      url: "https://ghostfam.com/en/",
+      avatar:
+        "https://ghostfam.com/en/content/images/size/w300/format/webp/2023/08/ghostfam-1.webp",
     },
-  ];
-  
+  },
+];

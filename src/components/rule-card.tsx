@@ -1,9 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
 import type { Rule } from "@/data/rules";
 import { ChevronDown } from "lucide-react";
@@ -38,10 +34,7 @@ export function RuleCard({ rule, isPage }: { rule: Rule; isPage?: boolean }) {
           <Popover>
             <PopoverTrigger className="flex gap-2 items-center overflow-x-auto whitespace-nowrap h-5 cursor-pointer hover:bg-accent">
               {rule.libs.slice(0, 2).map((lib) => (
-                <span
-                  key={lib}
-                  className="text-xs text-[#878787] font-mono flex-shrink-0"
-                >
+                <span key={lib} className="text-xs text-[#878787] font-mono flex-shrink-0">
                   {lib}
                 </span>
               ))}
@@ -55,9 +48,7 @@ export function RuleCard({ rule, isPage }: { rule: Rule; isPage?: boolean }) {
             <PopoverContent>
               {rule.libs.map((lib) => (
                 <div key={lib} className="flex flex-col justify-center gap-2">
-                  <span className="text-xs text-[#878787] font-mono flex-shrink-0">
-                    {lib}
-                  </span>
+                  <span className="text-xs text-[#878787] font-mono flex-shrink-0">{lib}</span>
                 </div>
               ))}
             </PopoverContent>

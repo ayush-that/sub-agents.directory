@@ -195,8 +195,7 @@ Follow TanStack Docs for routing.
     author: {
       name: "Tom Redman",
       url: "https://x.com/redman",
-      avatar:
-        "https://pbs.twimg.com/profile_images/1649434574777098240/IXf5GxXD_400x400.jpg",
+      avatar: "https://pbs.twimg.com/profile_images/1649434574777098240/IXf5GxXD_400x400.jpg",
     },
   },
 ];

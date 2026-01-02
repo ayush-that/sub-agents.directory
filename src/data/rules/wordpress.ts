@@ -65,8 +65,7 @@ export const wordpressRules = [
     author: {
       name: "Swapnil V. Patil",
       url: "https://swapnilpatil.in",
-      avatar:
-        "https://secure.gravatar.com/avatar/fab7fc88fe69b860382dbb5813661555?s=200&d=mm&r=g",
+      avatar: "https://secure.gravatar.com/avatar/fab7fc88fe69b860382dbb5813661555?s=200&d=mm&r=g",
     },
   },
   {
@@ -137,8 +136,7 @@ export const wordpressRules = [
     author: {
       name: "Ruchit Patel",
       url: "https://twitter.com/ruchit288",
-      avatar:
-        "https://avatars.githubusercontent.com/u/28095255?v=4",
+      avatar: "https://avatars.githubusercontent.com/u/28095255?v=4",
     },
   },
 ];

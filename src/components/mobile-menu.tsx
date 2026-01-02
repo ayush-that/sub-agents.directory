@@ -34,11 +34,7 @@ export function MobileMenu() {
   return (
     <>
       <div className="md:hidden mr-4">
-        <Button
-          variant="ghost"
-          className="p-0 w-8 h-8"
-          onClick={() => setIsOpen(!isOpen)}
-        >
+        <Button variant="ghost" className="p-0 w-8 h-8" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </Button>
       </div>
@@ -68,9 +64,7 @@ export function MobileMenu() {
                     onClick={() => setIsOpen(false)}
                     className={cn(
                       "block py-5 text-sm font-medium",
-                      pathname === link.href
-                        ? "text-primary"
-                        : "text-[#878787]",
+                      pathname === link.href ? "text-primary" : "text-[#878787]",
                     )}
                   >
                     {link.label}
@@ -88,10 +82,7 @@ export function MobileMenu() {
                 }}
               >
                 <Link href="/login" onClick={() => setIsOpen(false)}>
-                  <Button
-                    variant="outline"
-                    className="bg-white text-black h-8 rounded-full w-full"
-                  >
+                  <Button variant="outline" className="bg-white text-black h-8 rounded-full w-full">
                     Sign In
                   </Button>
                 </Link>

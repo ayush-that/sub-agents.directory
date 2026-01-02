@@ -68,8 +68,7 @@ export const railsRules = [
     author: {
       name: "Theo Vararu",
       url: "https://x.com/tvararu",
-      avatar:
-        "https://pbs.twimg.com/profile_images/1769339141337255936/5tsbZuUr_400x400.jpg",
+      avatar: "https://pbs.twimg.com/profile_images/1769339141337255936/5tsbZuUr_400x400.jpg",
     },
   },
 ];

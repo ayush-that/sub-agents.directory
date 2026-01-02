@@ -1,9 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
 import type { Rule } from "@/data/rules";
 import { ChevronDown } from "lucide-react";
@@ -52,9 +48,7 @@ export function RuleCardSmall({
         <Link href={`/${rule.slug}`}>
           <div className="h-full overflow-y-auto">
             <code className={cn("block pr-3", small ? "text-xs" : "text-sm")}>
-              {small
-                ? truncateContent(rule.content, small ? 70 : 200)
-                : rule.content}
+              {small ? truncateContent(rule.content, small ? 70 : 200) : rule.content}
             </code>
           </div>
         </Link>
@@ -98,9 +92,7 @@ export function RuleCardSmall({
             <PopoverContent>
               {rule.libs.map((lib) => (
                 <div key={lib} className="flex flex-col justify-center gap-2">
-                  <span className="text-xs text-[#878787] font-mono flex-shrink-0">
-                    {lib}
-                  </span>
+                  <span className="text-xs text-[#878787] font-mono flex-shrink-0">{lib}</span>
                 </div>
               ))}
             </PopoverContent>

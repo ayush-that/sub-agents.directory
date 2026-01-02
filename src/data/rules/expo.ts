@@ -118,8 +118,7 @@ export const expoReactNativeRules = [
     author: {
       name: "Krish Kalaria 👨🏻‍💻",
       url: "https://x.com/KrishKalaria",
-      avatar:
-        "https://utfs.io/f/5e1c9c74-da28-41ae-9dc3-21ee04299810-5482fr.jpeg",
+      avatar: "https://utfs.io/f/5e1c9c74-da28-41ae-9dc3-21ee04299810-5482fr.jpeg",
     },
   },
   {
@@ -173,8 +172,7 @@ export const expoReactNativeRules = [
     author: {
       name: "Munyaradzi Makosa",
       url: "https://x.com/makosamunyaa",
-      avatar:
-        "https://utfs.io/f/eccdfbe4-6bc5-4e10-ba7e-aefdb7898584-9ux2y8.jpg",
+      avatar: "https://utfs.io/f/eccdfbe4-6bc5-4e10-ba7e-aefdb7898584-9ux2y8.jpg",
     },
   },
 ];

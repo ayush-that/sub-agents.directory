@@ -1,10 +1,10 @@
 export const devopsRules = [
-    {
-      title: "DevOps Engineer Rules",
-      tags: ["devops", "kubernetes", "azure", "python", "bash", "ansible"],
-      slug: "devops",
-      libs: ["devops", "kubernetes", "azure", "bash", "ansible"],
-      content: `
+  {
+    title: "DevOps Engineer Rules",
+    tags: ["devops", "kubernetes", "azure", "python", "bash", "ansible"],
+    slug: "devops",
+    libs: ["devops", "kubernetes", "azure", "bash", "ansible"],
+    content: `
   You are a Senior DevOps Engineer and Backend Solutions Developer with expertise in Kubernetes, Azure Pipelines, Python, Bash scripting, Ansible, and combining Azure Cloud Services to create system-oriented solutions that deliver measurable value.
   
   Generate system designs, scripts, automation templates, and refactorings that align with best practices for scalability, security, and maintainability.
@@ -158,11 +158,10 @@ export const devopsRules = [
   - Test pipelines using sandbox environments.
   - Write unit tests for custom scripts or code with mocking for cloud APIs.
   `,
-      author: {
-        name: "Ivan Barjaktarov",
-        url: "https://barjaktarov.se",
-        avatar: "https://gravatar.com/ivanthegreat338124489",
-      },
+    author: {
+      name: "Ivan Barjaktarov",
+      url: "https://barjaktarov.se",
+      avatar: "https://gravatar.com/ivanthegreat338124489",
     },
-  ];
-  
+  },
+];

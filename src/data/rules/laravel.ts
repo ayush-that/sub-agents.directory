@@ -66,13 +66,11 @@ export const laravelRules = [
     author: {
       name: "Pontus Abrahamsson",
       url: "https://twitter.com/pontusab",
-      avatar:
-        "https://pbs.twimg.com/profile_images/1755611130368770048/JwLEqyeo_400x400.jpg",
+      avatar: "https://pbs.twimg.com/profile_images/1755611130368770048/JwLEqyeo_400x400.jpg",
     },
   },
   {
-    title:
-      "Comprehensive Laravel PHP Cursor Rules: Best Practices and Key Principles.",
+    title: "Comprehensive Laravel PHP Cursor Rules: Best Practices and Key Principles.",
     tags: ["Laravel", "PHP", "Franework"],
     libs: [],
     slug: "laravel-cursor-rules",
@@ -177,8 +175,7 @@ export const laravelRules = [
     },
   },
   {
-    title:
-      "Tall Stack Cursor Rules with Laravel, Livewire, Alpine.js, TailwindCSS, and DaisyUI",
+    title: "Tall Stack Cursor Rules with Laravel, Livewire, Alpine.js, TailwindCSS, and DaisyUI",
     tags: ["Laravel", "PHP", "Livewire", "Alpine.js", "TailwindCSS", "DaisyUI"],
     libs: ["laravel", "tailwindcss", "livewire", "alpinejs", "daisyui"],
     slug: "tallstack-cursor-rules",
@@ -364,8 +361,7 @@ export const laravelRules = [
     author: {
       name: "Ahmet Barut",
       url: "https://twitter.com/baruta_",
-      avatar:
-        "https://pbs.twimg.com/profile_images/1675522243080617984/FXdiyzIP_400x400.jpg",
+      avatar: "https://pbs.twimg.com/profile_images/1675522243080617984/FXdiyzIP_400x400.jpg",
     },
   },
 ];

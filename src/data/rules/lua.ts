@@ -129,9 +129,10 @@ Code Review Guidelines
 Remember to always refer to the official Lua documentation and relevant framework documentation for specific implementation details and best practices.
     `,
     author: {
-        name: "Bleed Kagax",
-        url: "https://github.com/bleedkagax",
-        avatar: "https://avatars.githubusercontent.com/u/176584706?s=400&u=04613bc73cdba13d9ff9babcaa009e6a12ec5254&v=4",
+      name: "Bleed Kagax",
+      url: "https://github.com/bleedkagax",
+      avatar:
+        "https://avatars.githubusercontent.com/u/176584706?s=400&u=04613bc73cdba13d9ff9babcaa009e6a12ec5254&v=4",
     },
   },
 ];

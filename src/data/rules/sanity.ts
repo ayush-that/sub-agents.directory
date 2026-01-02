@@ -1,10 +1,10 @@
 export const sanityRules = [
-    {
-      tags: ["sanity", "cms", "headless"],
-      title: "Roboto Studio Sanity Best Practices",
-      slug: "sanity-best-practices",
-      libs: [],
-      content: `
+  {
+    tags: ["sanity", "cms", "headless"],
+    title: "Roboto Studio Sanity Best Practices",
+    slug: "sanity-best-practices",
+    libs: [],
+    content: `
 # Sanity Development Guidelines
 
 ## Sanity Schema Rules
@@ -317,11 +317,10 @@ When asked to produce schema from screenshots, follow these guidelines:
 - Use reusable button arrays for button patterns
 - If \`richTextField\` or \`buttonsField\` exists in the project, use them
     `,
-      author: {
-        name: "Roboto Studio",
-        url: "https://robotostudio.com",
-        avatar: "https://avatars.githubusercontent.com/u/60408063",
-      },
+    author: {
+      name: "Roboto Studio",
+      url: "https://robotostudio.com",
+      avatar: "https://avatars.githubusercontent.com/u/60408063",
     },
-  ];
-  
+  },
+];

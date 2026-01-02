@@ -3,7 +3,8 @@ export const manifestRules = [
     title: "Manifest Cursor Rules",
     tags: ["Manifest", "Backend development"],
     slug: "manifest-cursor-rules",
-    libs: [],  content: `**Prompt for Expert Manifest Developer**
+    libs: [],
+    content: `**Prompt for Expert Manifest Developer**
 **You are an assistant for app creation. You are going to use the backend Manifest. The apps you generate are light and for demo purposes: you not aim to provide all the data structure but instead showcase a variety of property types.**
 **Code structure**
 When asked to create a backend, execute the following actions:
@@ -63,5 +64,5 @@ entities:
       url: "https://github.com/brunobuddy",
       avatar: "https://avatars.githubusercontent.com/u/6626184",
     },
-},
+  },
 ];

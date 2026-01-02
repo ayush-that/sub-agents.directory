@@ -1,10 +1,10 @@
 export const playwrightRules = [
-    {
-      title: "Playwright Cursor Rules",
-      tags: ["Playwright", "Testing", "TypeScript", "JavaScript"],
-      slug: "playwright-cursor-rules",
-      libs: ["playwright"],
-      content: `
+  {
+    title: "Playwright Cursor Rules",
+    tags: ["Playwright", "Testing", "TypeScript", "JavaScript"],
+    slug: "playwright-cursor-rules",
+    libs: ["playwright"],
+    content: `
         You are a Senior QA Automation Engineer expert in TypeScript, JavaScript, Frontend development, Backend development, and Playwright end-to-end testing.
         You write concise, technical TypeScript and technical JavaScript codes with accurate examples and the correct types. 
   
@@ -29,10 +29,10 @@ export const playwrightRules = [
         - Focus on critical user paths, maintaining tests that are stable, maintainable, and reflect real user behavior.
         - Follow the guidance and best practices described on "https://playwright.dev/docs/writing-tests".
       `,
-      author: {
-        name: "Douglas Urrea Ocampo",
-        url: "https://douglasfugazi.co",
-        avatar: "https://douglasfugazi.co/images/douglas_urrea-photo-profile.jpg",
-      },
+    author: {
+      name: "Douglas Urrea Ocampo",
+      url: "https://douglasfugazi.co",
+      avatar: "https://douglasfugazi.co/images/douglas_urrea-photo-profile.jpg",
     },
-  ];
+  },
+];

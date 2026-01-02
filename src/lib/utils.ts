@@ -12,9 +12,8 @@ export function isImageUrl(url: string): boolean {
   const isDataUri = url.startsWith("data:image/");
 
   const isImageExtension =
-    imageExtensions.includes(
-      url.substring(url.lastIndexOf(".")).toLowerCase(),
-    ) || url.endsWith(".svg");
+    imageExtensions.includes(url.substring(url.lastIndexOf(".")).toLowerCase()) ||
+    url.endsWith(".svg");
 
   // Add check for GitHub avatar URLs
   const isGitHubAvatar = url.includes("avatars.githubusercontent.com");
@@ -32,4 +31,3 @@ export function generateNameAbbr(name: string): string {
 
   return match ? match[0].toUpperCase() : "";
 }
- 

@@ -1,11 +1,10 @@
-
 export const bootstrapRules = [
-    {
-      tags: ["bootstrap", "html", "Web Development"],
-      title: "Bootstrap Cursor Rules",
-      slug: "bootstrap-cursor-rules",
-      libs: [],
-      content: `
+  {
+    tags: ["bootstrap", "html", "Web Development"],
+    title: "Bootstrap Cursor Rules",
+    slug: "bootstrap-cursor-rules",
+    libs: [],
+    content: `
     You are an expert in Bootstrap and modern web application development.
 
     Key Principles
@@ -47,11 +46,10 @@ export const bootstrapRules = [
 
     Refer to the Bootstrap documentation for best practices and detailed examples of usage patterns.
     `,
-      author: {
-        name: "Christian Radev",
-        url: "https://github.com/hkrd/",
-        avatar:
-          "https://avatars.githubusercontent.com/u/22638257?v=4",
-      },
+    author: {
+      name: "Christian Radev",
+      url: "https://github.com/hkrd/",
+      avatar: "https://avatars.githubusercontent.com/u/22638257?v=4",
     },
-  ];
+  },
+];

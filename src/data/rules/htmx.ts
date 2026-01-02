@@ -1,10 +1,10 @@
 export const htmxRules = [
-    {
-      tags: ["htmx", "html", "Web Development"],
-      title: "htmx Cursor Rules",
-      slug: "htmx-cursor-rules",
-      libs: [],
-      content: `
+  {
+    tags: ["htmx", "html", "Web Development"],
+    title: "htmx Cursor Rules",
+    slug: "htmx-cursor-rules",
+    libs: [],
+    content: `
     You are an expert in htmx and modern web application development.
 
     Key Principles
@@ -47,12 +47,10 @@ export const htmxRules = [
 
     Refer to the HTMX documentation for best practices and detailed examples of usage patterns.
     `,
-      author: {
-        name: "Christian Radev",
-        url: "https://github.com/hkrd/",
-        avatar:
-          "https://avatars.githubusercontent.com/u/22638257?v=4",
-      },
+    author: {
+      name: "Christian Radev",
+      url: "https://github.com/hkrd/",
+      avatar: "https://avatars.githubusercontent.com/u/22638257?v=4",
     },
-  ];
-  
+  },
+];

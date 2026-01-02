@@ -27,8 +27,7 @@ export const swiftuiRules = [
     author: {
       name: "Josh Pigford",
       url: "https://x.com/Shpigford",
-      avatar:
-        "https://pbs.twimg.com/profile_images/1826598708525387776/y8dXyJg2_400x400.jpg",
+      avatar: "https://pbs.twimg.com/profile_images/1826598708525387776/y8dXyJg2_400x400.jpg",
     },
   },
   {
@@ -103,8 +102,7 @@ export const swiftuiRules = [
     author: {
       name: "Samzong Lu",
       url: "https://x.com/samzong_",
-      avatar:
-        "https://avatars.githubusercontent.com/u/13782141?v=4",
+      avatar: "https://avatars.githubusercontent.com/u/13782141?v=4",
     },
   },
   {
@@ -227,9 +225,7 @@ export const swiftuiRules = [
     author: {
       name: "Ralph Krysler",
       url: "https://x.com/RalphEcom",
-      avatar:
-        "https://pbs.twimg.com/profile_images/1481699924362334211/gHkE3xC1_400x400.jpg",
+      avatar: "https://pbs.twimg.com/profile_images/1481699924362334211/gHkE3xC1_400x400.jpg",
     },
   },
-
 ];

@@ -72,8 +72,7 @@ export const railsRules = [
     author: {
       name: "Ikenna Okpala",
       url: "https://x.com/ikenna_okpala",
-      avatar:
-        "https://pbs.twimg.com/profile_images/1822510619578273792/y7KjC4Yl_400x400.jpg",
+      avatar: "https://pbs.twimg.com/profile_images/1822510619578273792/y7KjC4Yl_400x400.jpg",
     },
   },
 ];

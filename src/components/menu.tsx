@@ -58,19 +58,13 @@ export function Menu() {
               className="w-full justify-start"
             >
               {section.tag}
-              <span className="ml-auto text-[#878787]">
-                {section.rules.length}
-              </span>
+              <span className="ml-auto text-[#878787]">{section.rules.length}</span>
             </Button>
           ))}
         </div>
       </ScrollArea>
       <Separator className="my-4" />
-      <a
-        href="https://github.com/pontusab/cursor.directory"
-        target="_blank"
-        rel="noreferrer"
-      >
+      <a href="https://github.com/pontusab/cursor.directory" target="_blank" rel="noreferrer">
         <Button
           className="w-full bg-[#F5F5F3]/30 text-black border border-black rounded-full items-center justify-center gap-2 font-medium hidden md:flex dark:text-white dark:border-white"
           variant="outline"

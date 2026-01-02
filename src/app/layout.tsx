@@ -76,11 +76,7 @@ export default function RootLayout({
 
           <NuqsAdapter>{children}</NuqsAdapter>
 
-          <a
-            href="https://github.com/anthropics/claude-code"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href="https://github.com/anthropics/claude-code" target="_blank" rel="noreferrer">
             <Button
               className="hidden size-[48px] bg-[#F5F5F3]/30 text-black border border-black rounded-full font-medium fixed bottom-4 left-6 z-10 backdrop-blur-lg dark:bg-[#F5F5F3]/30 dark:text-white dark:border-white"
               variant="outline"

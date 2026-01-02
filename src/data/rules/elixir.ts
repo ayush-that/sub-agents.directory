@@ -68,8 +68,7 @@ export const elixirRules = [
     author: {
       name: "Ilyich Vismara",
       url: "https://x.com/ilyichv_",
-      avatar:
-        "https://pbs.twimg.com/profile_images/1678750477750620160/Ssn1jz6h_400x400.jpg",
+      avatar: "https://pbs.twimg.com/profile_images/1678750477750620160/Ssn1jz6h_400x400.jpg",
     },
   },
   {
@@ -201,5 +200,4 @@ Important: always use lates versions of packages and libraries, including Phoeni
       avatar: "https://avatars.githubusercontent.com/u/1720867",
     },
   },
-
 ];

@@ -72,7 +72,7 @@ Follow official documentation for each technology for up-to-date best practices 
     author: {
       name: "Tech Stack Expert",
       url: "https://github.com/techstack",
-      avatar: null
+      avatar: null,
     },
   },
-]; 
+];

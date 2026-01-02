@@ -44,18 +44,11 @@ export const reactNativeRules = [
     author: {
       name: "Will Sims",
       url: "x.com/willsims",
-      avatar:
-        "https://pbs.twimg.com/profile_images/1693182564658237440/CYiqYn8s_400x400.jpg",
+      avatar: "https://pbs.twimg.com/profile_images/1693182564658237440/CYiqYn8s_400x400.jpg",
     },
   },
   {
-    tags: [
-      "React Native",
-      "React",
-      "Tailwind CSS",
-      "three.js",
-      "React three fiber",
-    ],
+    tags: ["React Native", "React", "Tailwind CSS", "three.js", "React three fiber"],
     title: "React Three Fiber Rules",
     libs: [],
     slug: "react-native-r3f",

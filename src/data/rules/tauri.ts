@@ -33,8 +33,7 @@ export const tauriRules = [
     author: {
       name: "Hiep Nguyen Phi",
       url: "https://x.com/hiepnp1990",
-      avatar:
-        "https://pbs.twimg.com/profile_images/1615224444007616512/uYve4dcG_400x400.jpg",
+      avatar: "https://pbs.twimg.com/profile_images/1615224444007616512/uYve4dcG_400x400.jpg",
     },
   },
 ];

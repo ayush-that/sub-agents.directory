@@ -203,8 +203,7 @@ Refer to Angular's official documentation for best practices in Components, Serv
     author: {
       name: "Mariano Alvarez",
       url: "https",
-      avatar:
-        "https://pbs.twimg.com/profile_images/1437586322248671234/PGmgV7z5_400x400.jpg",
+      avatar: "https://pbs.twimg.com/profile_images/1437586322248671234/PGmgV7z5_400x400.jpg",
     },
   },
 ];

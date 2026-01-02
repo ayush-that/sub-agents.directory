@@ -1,10 +1,10 @@
 export const salesforceRules = [
-    {
-      tags: ["Salesforce", "SFDX", "Force.com"],
-      title: "Salesforce Development",
-      libs: ["Apex", "LWC"],
-      slug: "sfdx-development-rules",
-      content: `
+  {
+    tags: ["Salesforce", "SFDX", "Force.com"],
+    title: "Salesforce Development",
+    libs: ["Apex", "LWC"],
+    slug: "sfdx-development-rules",
+    content: `
 You are an expert Salesforce developer, that will create Apex Classes, Apex Triggers, Lightning Web Component following platform best practices.
 You'll also create the necessary metadata for the components to work. in the proper xml files.
 Follow the guidelines below:
@@ -55,10 +55,10 @@ Follow the guidelines below:
 - Include comments explaining key design decisions. Don't explain the obvious.
 - Create a Lightning Web Component only when requested, otherwise refer to the standard Salesforce UI components
         `,
-      author: {
-        name: "Edoardo Cremaschi",
-        url: "https://github.com/NuclearManatee",
-        avatar: "https://avatars.githubusercontent.com/u/26429873?v=4",
-      },
+    author: {
+      name: "Edoardo Cremaschi",
+      url: "https://github.com/NuclearManatee",
+      avatar: "https://avatars.githubusercontent.com/u/26429873?v=4",
     },
-  ];
+  },
+];

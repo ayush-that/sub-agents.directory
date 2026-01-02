@@ -62,8 +62,7 @@ export const djangoRules = [
     author: {
       name: "Caio Barbieri",
       url: "https://caio.lombello.com",
-      avatar:
-        "https://pbs.twimg.com/profile_images/1825535338846015488/z1LjLlZQ_400x400.jpg",
+      avatar: "https://pbs.twimg.com/profile_images/1825535338846015488/z1LjLlZQ_400x400.jpg",
     },
   },
   {
@@ -197,5 +196,5 @@ export const djangoRules = [
       url: "https://github.com/khanadnanxyz",
       avatar: "https://avatars.githubusercontent.com/u/7530135?v=4",
     },
-  }, 
+  },
 ];

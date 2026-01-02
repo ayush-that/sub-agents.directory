@@ -1,7 +1,7 @@
 export const androidRules = [
   {
     title: "Android Cursor Rules",
-    tags: ["android","kotlin"],
+    tags: ["android", "kotlin"],
     slug: "android",
     libs: ["android"],
     content: `
@@ -128,10 +128,10 @@ Generate code, corrections, and refactorings that comply with the basic principl
 - Use the standard widget testing for flutter
 - Use integration tests for each api module.   
 `,
-    author:{
-      name:"aman satija",
-      url:"http://amansatija.com",
-      avatar:null
+    author: {
+      name: "aman satija",
+      url: "http://amansatija.com",
+      avatar: null,
     },
   },
-]
+];

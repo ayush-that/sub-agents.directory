@@ -81,18 +81,18 @@ Follow best practices for:
 
 Adhere to SOLID principles and maintain high cohesion and low coupling in your Spring Boot application design.
     `,
-     author: {
-       name: "Wesley Archbell",
-       url: "https://github.com/wesleyarchbell",
-       avatar: "https://avatars.githubusercontent.com/u/3747704",
-     },
+    author: {
+      name: "Wesley Archbell",
+      url: "https://github.com/wesleyarchbell",
+      avatar: "https://avatars.githubusercontent.com/u/3747704",
+    },
   },
   {
-  tags: ["Java", "Quarkus", "Jakarta EE", "MicroProfile", "GraalVM", "Vert.x"],
-  title: "Java Quarkus Cursor Rules",
-  slug: "java-quarkus-cursor-rules",
-  libs: [],
-  "content": ` 
+    tags: ["Java", "Quarkus", "Jakarta EE", "MicroProfile", "GraalVM", "Vert.x"],
+    title: "Java Quarkus Cursor Rules",
+    slug: "java-quarkus-cursor-rules",
+    libs: [],
+    content: ` 
   You are an expert in Java programming, Quarkus framework, Jakarta EE, MicroProfile, GraalVM native builds, Vert.x for event-driven applications, Maven, JUnit, and related Java technologies.
 
   Code Style and Structure
@@ -170,11 +170,10 @@ Adhere to SOLID principles and maintain high cohesion and low coupling in your S
 
   Adhere to SOLID principles to ensure high cohesion and low coupling in your Quarkus applications.
  `,
-  author: {
-    name: "Xinhua Gu",
-    url: "https://github.com/xinhuagu",
-    avatar: "https://avatars.githubusercontent.com/u/562450"
-  }
-},
-
- ];
+    author: {
+      name: "Xinhua Gu",
+      url: "https://github.com/xinhuagu",
+      avatar: "https://avatars.githubusercontent.com/u/562450",
+    },
+  },
+];

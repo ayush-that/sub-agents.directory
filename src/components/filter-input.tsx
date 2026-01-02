@@ -38,10 +38,7 @@ export const FilterInput = ({ onSearch, clearSearch }: FilterInputProps) => {
           onClick={handleClear}
         />
       ) : (
-        <Search
-          className="absolute right-0 top-1/2 -translate-y-1/2 text-[#606060]"
-          size={16}
-        />
+        <Search className="absolute right-0 top-1/2 -translate-y-1/2 text-[#606060]" size={16} />
       )}
     </div>
   );

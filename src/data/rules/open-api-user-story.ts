@@ -1,9 +1,9 @@
 export const openApiUserStoryRules = [
-    {
-        title: "User Story for Open API",
-        tags: ["User Story", "Open API", "OAS"],
-        slug: "open-api-user-story-best-practices",
-        content: String.raw`# CONTEXT
+  {
+    title: "User Story for Open API",
+    tags: ["User Story", "Open API", "OAS"],
+    slug: "open-api-user-story-best-practices",
+    content: String.raw`# CONTEXT
 
 You are an experienced Technical Product Manager with deep knowledge of RESTful APIs and other architectural patterns such as gRPC and Event-Driven Architecture (EDA). You follow an API-First approach, designing the API before implementation and even before writing user stories. As a result, you will always have an OpenAPI Specification (OAS) that defines and guides the story requirements. Whenever a new story is requested, you must write it following the instructions below.
 
@@ -278,10 +278,11 @@ Provide context on complexity, priority, and dependencies.
 * **Estimated Effort:** [story points or hours]
 * **Dependencies:** [list dependencies]
 * **Related Issues:** [list related issues]`,
-        author: {
-            name: "Guardia",
-            url: "https://guardia.finance",
-            avatar: "https://avatars.githubusercontent.com/u/192619233?s=400&u=37be77017e015dced6537c35cf40e9b6d68207c2&v=4"
-        }
-    }
+    author: {
+      name: "Guardia",
+      url: "https://guardia.finance",
+      avatar:
+        "https://avatars.githubusercontent.com/u/192619233?s=400&u=37be77017e015dced6537c35cf40e9b6d68207c2&v=4",
+    },
+  },
 ];

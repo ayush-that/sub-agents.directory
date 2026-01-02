@@ -78,8 +78,7 @@ export const dotnetRules = [
     author: {
       name: "Taylor Beck",
       url: "https://github.com/TaylorBeck",
-      avatar:
-        "https://pbs.twimg.com/profile_images/1601309070203363328/bxphVPdY_400x400.jpg",
+      avatar: "https://pbs.twimg.com/profile_images/1601309070203363328/bxphVPdY_400x400.jpg",
     },
   },
 ];

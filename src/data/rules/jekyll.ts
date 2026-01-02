@@ -52,8 +52,7 @@ Code Style and Structure
     author: {
       name: "Alberto Gallego",
       url: "https://albertogalca.com/",
-      avatar:
-        "https://albertogalca.com/assets/images/me.jpg",
+      avatar: "https://albertogalca.com/assets/images/me.jpg",
     },
   },
 ];

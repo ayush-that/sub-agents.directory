@@ -1,10 +1,5 @@
 import { Menu } from "@/components/menu";
-import {
-  Card,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { videos } from "@/data/videos";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 
@@ -36,18 +31,13 @@ export default function Page() {
                 />
                 <div className="flex items-center gap-2">
                   <Avatar>
-                    <AvatarImage
-                      src={video.author.image}
-                      className="size-6 rounded-full"
-                    />
+                    <AvatarImage src={video.author.image} className="size-6 rounded-full" />
                     <AvatarFallback className="size-6 rounded-full bg-accent flex items-center justify-center text-xs font-medium uppercase">
                       {video.author.name.charAt(0)}
                       {video.author.name.charAt(1)}
                     </AvatarFallback>
                   </Avatar>
-                  <span className="text-sm text-[#878787]">
-                    {video.author.name}
-                  </span>
+                  <span className="text-sm text-[#878787]">{video.author.name}</span>
                 </div>
                 <CardTitle className="text-md font-semibold font-mono pt-2">
                   {video.title}

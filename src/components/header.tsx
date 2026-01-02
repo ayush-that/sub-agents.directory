@@ -36,7 +36,7 @@ export function Header() {
               href={link.href}
               className={cn(
                 "flex items-center gap-2 text-sm font-medium",
-                pathname.includes(link.href) ? "text-primary" : "text-[#878787]"
+                pathname.includes(link.href) ? "text-primary" : "text-[#878787]",
               )}
             >
               {link.label}

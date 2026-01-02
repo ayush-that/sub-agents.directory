@@ -1,5 +1,5 @@
 export const viewComfyRules = [
-{
+  {
     title: "ViewComfy API Rules",
     tags: ["Python"],
     slug: "viewcomfy-API-rules",
@@ -576,8 +576,7 @@ with open('workflow_api_parameters.json', 'w') as f: json.dump(parameters, f, in
     author: {
       name: "Guillaume Bieler",
       url: "https://x.com/GuillaumeBiele",
-      avatar:
-        "https://avatars.githubusercontent.com/u/176300844?v=4",
+      avatar: "https://avatars.githubusercontent.com/u/176300844?v=4",
     },
   },
 ];

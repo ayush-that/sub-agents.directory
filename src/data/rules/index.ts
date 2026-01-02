@@ -183,9 +183,7 @@ export function getSectionBySlug(slug: string) {
 }
 
 export function getRuleBySlug(slug: string) {
-  return rules.find(
-    (rule) => rule.slug === slug || rule.slug === `official/${slug}`,
-  );
+  return rules.find((rule) => rule.slug === slug || rule.slug === `official/${slug}`);
 }
 
 export interface Rule {

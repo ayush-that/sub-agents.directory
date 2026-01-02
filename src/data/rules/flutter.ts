@@ -7,8 +7,7 @@ export const flutterRules = [
     author: {
       name: "Adam Smaka",
       url: "https://www.kursfluttera.pl",
-      avatar:
-        "https://pbs.twimg.com/profile_images/1825796286450221056/_YDuu9MX_400x400.jpg",
+      avatar: "https://pbs.twimg.com/profile_images/1825796286450221056/_YDuu9MX_400x400.jpg",
     },
     content: `
 You are an expert in Flutter, Dart, Riverpod, Freezed, Flutter Hooks, and Supabase.
@@ -224,8 +223,7 @@ Generate code, corrections, and refactorings that comply with the basic principl
     author: {
       name: "Sercan Yusuf",
       url: "https://x.com/sercanyus_",
-      avatar:
-        "https://pbs.twimg.com/profile_images/1822082969709821952/Wy5_U4gK_400x400.jpg",
+      avatar: "https://pbs.twimg.com/profile_images/1822082969709821952/Wy5_U4gK_400x400.jpg",
     },
   },
   {
@@ -236,8 +234,7 @@ Generate code, corrections, and refactorings that comply with the basic principl
     author: {
       name: "Adeilson Silva",
       url: "https://www.adeilson.com.br",
-      avatar:
-        "https://github.com/adeilsonesilva.png",
+      avatar: "https://github.com/adeilsonesilva.png",
     },
     content: `
     You are an expert in Flutter, Dart, Bloc, Freezed, Flutter Hooks, and Firebase.

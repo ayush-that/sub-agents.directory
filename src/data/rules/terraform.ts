@@ -1,15 +1,15 @@
 export const terraformRules = [
-    {
-      tags: ["Terraform", "Cloud", "Infrastructure as Code"],
-      title: "Terraform + Cloud Infrastructure as Code Best Practices",
-      libs: ["AWS", "Azure", "GCP", "Vault"],
-      slug: "terraform-cloud-infrastructure-as-code-best-practices",
-      author: {
-        name: "Abdeldjalil Sichaib",
-        url: "https://x.com/veroom16",
-        avatar: "https://x.com/veroom16/photo",
-      },
-      content: `
+  {
+    tags: ["Terraform", "Cloud", "Infrastructure as Code"],
+    title: "Terraform + Cloud Infrastructure as Code Best Practices",
+    libs: ["AWS", "Azure", "GCP", "Vault"],
+    slug: "terraform-cloud-infrastructure-as-code-best-practices",
+    author: {
+      name: "Abdeldjalil Sichaib",
+      url: "https://x.com/veroom16",
+      avatar: "https://x.com/veroom16/photo",
+    },
+    content: `
   You are an expert in Terraform and Infrastructure as Code (IaC) for cloud platforms such as AWS, Azure, and GCP.
   
   Key Principles
@@ -66,13 +66,13 @@ export const terraformRules = [
   - Refer to official Terraform documentation for best practices and guidelines: https://registry.terraform.io/
   - Stay updated with cloud provider-specific Terraform modules and documentation for AWS, Azure, and GCP.
       `,
-    },
-    {
-      tags: ["Terraform"],
-      title: "Terraform Advanced State Management",
-      libs: ["AWS", "Azure", "GCP", "Terraform Cloud"],
-      slug: "terraform-advanced-state-management",
-      content: `
+  },
+  {
+    tags: ["Terraform"],
+    title: "Terraform Advanced State Management",
+    libs: ["AWS", "Azure", "GCP", "Terraform Cloud"],
+    slug: "terraform-advanced-state-management",
+    content: `
   You are an expert in Terraform state management and handling advanced workflows with Terraform Cloud.
   
   Key Principles
@@ -99,11 +99,10 @@ export const terraformRules = [
   - Follow official Terraform guidelines on state management: https://www.terraform.io/docs/state/index.html
   - Use Terraform Cloud or Terraform Enterprise for collaboration, remote execution, and version-controlled state.
       `,
-      author: {
-        name: "Abdeldjalil Sichaib",
-        url: "https://x.com/veroom16",
-        avatar: "https://x.com/veroom16/photo",
-      },
+    author: {
+      name: "Abdeldjalil Sichaib",
+      url: "https://x.com/veroom16",
+      avatar: "https://x.com/veroom16/photo",
     },
-  ];
-  
+  },
+];

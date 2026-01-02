@@ -38,10 +38,9 @@ Follow these rules when you write code:
 - Implement accessibility features on elements. For example, a tag should have a tabindex=“0”, aria-label, on:click, and on:keydown, and similar attributes.
 - Use consts instead of functions, for example, “const toggle = () =>”. Also, define a type if possible.`,
     author: {
-        name: "Mohammadali Karimi",
-        url: "https://github.com/devbymak",
-        avatar: "https://avatars.githubusercontent.com/u/65307721?v=4",
-      },
+      name: "Mohammadali Karimi",
+      url: "https://github.com/devbymak",
+      avatar: "https://avatars.githubusercontent.com/u/65307721?v=4",
     },
-  ];
-  
+  },
+];

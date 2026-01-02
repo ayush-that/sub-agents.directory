@@ -73,8 +73,7 @@ Refer to OnchainKit documentation for detailed implementation guides and API ref
     author: {
       name: "Tina He",
       url: "https://twitter.com/fkpxls",
-      avatar:
-        "https://pbs.twimg.com/profile_images/1850873298931834880/qxmCviaE_400x400.jpg",
+      avatar: "https://pbs.twimg.com/profile_images/1850873298931834880/qxmCviaE_400x400.jpg",
     },
   },
 ];

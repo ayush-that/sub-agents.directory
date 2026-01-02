@@ -61,8 +61,7 @@ export const cRules = [
     author: {
       name: "Pontus Abrahamsson",
       url: "https://twitter.com/pontusab",
-      avatar:
-        "https://pbs.twimg.com/profile_images/1755611130368770048/JwLEqyeo_400x400.jpg",
+      avatar: "https://pbs.twimg.com/profile_images/1755611130368770048/JwLEqyeo_400x400.jpg",
     },
   },
 ];

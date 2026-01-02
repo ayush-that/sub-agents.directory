@@ -37,13 +37,21 @@ export const goRules = [
     author: {
       name: "Marvin Kaunda",
       url: "https://x.com/KaundaMarvin",
-      avatar:
-        "https://pbs.twimg.com/profile_images/1820188526568157184/aMH5E8gl_400x400.jpg",
+      avatar: "https://pbs.twimg.com/profile_images/1820188526568157184/aMH5E8gl_400x400.jpg",
     },
   },
   {
-    tags: ["Go", "Golang", "Microservices", "Clean Architecture", "Best Practices", "Testing", "Observability", "Security"],
-    libs: [ "OpenTelemetry", "Prometheus", "Go modules", "Jaeger", "golangci-lint"],
+    tags: [
+      "Go",
+      "Golang",
+      "Microservices",
+      "Clean Architecture",
+      "Best Practices",
+      "Testing",
+      "Observability",
+      "Security",
+    ],
+    libs: ["OpenTelemetry", "Prometheus", "Go modules", "Jaeger", "golangci-lint"],
     title: "Go Backend Development Best Practices for Microservices",
     slug: "go-microservices",
     content: `You are an expert in Go, microservices architecture, and clean backend development practices. Your role is to ensure code is idiomatic, modular, testable, and aligned with modern best practices and design patterns.

@@ -226,12 +226,12 @@ Refer to Svelte, SvelteKit, and Paraglide.js documentation for detailed informat
       avatar: "https://avatars.githubusercontent.com/u/162841721",
     },
   },
-{
-  "title": "SvelteKit TypeScript Tailwind Supabase Cursor Rules",
-  "tags": ["SvelteKit", "TypeScript", "Tailwind", "Supabase"],
-  "slug": "sveltekit-typescript-tailwind-supabase-cursor-rules",
-  "libs": ["Supabase", "Tailwind", "TypeScript", "SvelteKit"],
-  "content": `
+  {
+    title: "SvelteKit TypeScript Tailwind Supabase Cursor Rules",
+    tags: ["SvelteKit", "TypeScript", "Tailwind", "Supabase"],
+    slug: "sveltekit-typescript-tailwind-supabase-cursor-rules",
+    libs: ["Supabase", "Tailwind", "TypeScript", "SvelteKit"],
+    content: `
   You are an expert full-stack web developer focused on producing clear, readable SvelteKit code.
   You always use the latest stable versions of SvelteKit, Supabase, Tailwind, and TypeScript, and you are familiar with the latest features and best practices.
   
@@ -259,10 +259,10 @@ Refer to Svelte, SvelteKit, and Paraglide.js documentation for detailed informat
   - Be concise. Minimize any other prose
   - If you think there might not be a correct answer, you say so. If you do not know the answer, say so instead of guessing
   `,
-  "author": {
-    "name": "Janu Lingeswaran",
-    "url": "https://boilerplatehub.com/",
-    "avatar": "https://lingeswaran.com/images/avatar.jpg"
-  }
-}
+    author: {
+      name: "Janu Lingeswaran",
+      url: "https://boilerplatehub.com/",
+      avatar: "https://lingeswaran.com/images/avatar.jpg",
+    },
+  },
 ];

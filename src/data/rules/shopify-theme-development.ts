@@ -1,7 +1,16 @@
 export const shopifyThemeRules = [
   {
     title: "Shopify Theme Development Guidelines",
-    tags: ["Shopify", "Theme Development", "Best Practices", "Liquid", "CSS", "JavaScript", "UX", "Performance"],
+    tags: [
+      "Shopify",
+      "Theme Development",
+      "Best Practices",
+      "Liquid",
+      "CSS",
+      "JavaScript",
+      "UX",
+      "Performance",
+    ],
     slug: "shopify-theme-development-guidelines",
     libs: ["Liquid", "Javascript", "HTML", "CSS", "Shopify Theme"],
     content: `
@@ -454,6 +463,6 @@ const someUtilityFunction = (num1, num2) => num1 + num2;
       name: "Md Morshadun Nur", // Optional
       url: "https://morshadunnur.me", // Optional
       avatar: "https://avatars.githubusercontent.com/u/11367467?v=4", // Optional
-    }
-  }
+    },
+  },
 ];

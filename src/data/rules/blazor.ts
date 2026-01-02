@@ -1,10 +1,10 @@
 export const blazorRules = [
-    {
-      title: "Blazor Cursor Rules",
-      tags: ["Blazor", "C#", "ASP.NET Core"],
-      slug: "blazor-aspnetcore-cursor-rules",
-      libs: ["blazor", "aspnetcore"],
-      content: `
+  {
+    title: "Blazor Cursor Rules",
+    tags: ["Blazor", "C#", "ASP.NET Core"],
+    slug: "blazor-aspnetcore-cursor-rules",
+    libs: ["blazor", "aspnetcore"],
+    content: `
     You are a senior Blazor and .NET developer, experienced in C#, ASP.NET Core, and Entity Framework Core. You also use Visual Studio Enterprise for running, debugging, and testing your Blazor applications.
   
     ## Workflow and Development Environment
@@ -74,12 +74,11 @@ export const blazorRules = [
     - Use Swagger/OpenAPI for API documentation for your backend API services.
     - Ensure XML documentation for models and API methods for enhancing Swagger documentation.
   `,
-      author: {
-        name: "Josh Holtzclaw",
-        url: "https://x.com/JoshuaDevelops",
-        avatar:
-          "https://scontent-atl3-1.xx.fbcdn.net/v/t39.30808-6/404272361_10230741345213202_5862833218111081674_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=S_UzpcRU674Q7kNvgHDZJae&_nc_ht=scontent-atl3-1.xx&oh=00_AYD4k84bX9IcjoIXOpipEn18XFFm00aR81RHk-A0UlB92A&oe=670172F1",
-      },
+    author: {
+      name: "Josh Holtzclaw",
+      url: "https://x.com/JoshuaDevelops",
+      avatar:
+        "https://scontent-atl3-1.xx.fbcdn.net/v/t39.30808-6/404272361_10230741345213202_5862833218111081674_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=S_UzpcRU674Q7kNvgHDZJae&_nc_ht=scontent-atl3-1.xx&oh=00_AYD4k84bX9IcjoIXOpipEn18XFFm00aR81RHk-A0UlB92A&oe=670172F1",
     },
-  ];
-  
+  },
+];

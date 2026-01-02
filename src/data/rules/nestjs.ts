@@ -276,5 +276,5 @@ Generate code, corrections, and refactorings that comply with the basic principl
       url: "https://github.com/lbmadesia",
       avatar: "https://avatars.githubusercontent.com/u/77066858?v=4",
     },
-  }
+  },
 ];

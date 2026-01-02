@@ -1,6 +1,6 @@
 export const rustRules = [
   {
-    tags: ["Rust", "async", "channel","mpsc"],
+    tags: ["Rust", "async", "channel", "mpsc"],
     title: "Rust Async Programming Development Rules",
     libs: ["Rust", "tokio", "anyhow", "serde"],
     slug: "rust-async-development-rules",

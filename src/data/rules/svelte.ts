@@ -121,8 +121,7 @@ Refer to SvelteKit's official documentation for detailed information on componen
     author: {
       name: "Ethan Fox",
       url: "https://ethanjamesfox.com",
-      avatar:
-        "https://pbs.twimg.com/profile_images/1812246318946922496/EJYtXehK_400x400.jpg",
+      avatar: "https://pbs.twimg.com/profile_images/1812246318946922496/EJYtXehK_400x400.jpg",
     },
   },
 ];

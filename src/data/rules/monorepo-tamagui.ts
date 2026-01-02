@@ -1,10 +1,32 @@
 export const monorepoTamagui = [
-    {
-      title: "Monorepo using Tamagui",
-      tags: ["Tamagui", "Next.js", "Expo", "Supabase", "Monorepo", "Solito", "Zod", "Zustand", "i18n", "Stripe"],
-      slug: "monorepo-tamagui",
-      libs: ["Tamagui", "Next.js", "Expo", "Supabase", "Turbo", "Solito", "Zod", "Zustand", "Stripe", "i18next"],
-      content: `
+  {
+    title: "Monorepo using Tamagui",
+    tags: [
+      "Tamagui",
+      "Next.js",
+      "Expo",
+      "Supabase",
+      "Monorepo",
+      "Solito",
+      "Zod",
+      "Zustand",
+      "i18n",
+      "Stripe",
+    ],
+    slug: "monorepo-tamagui",
+    libs: [
+      "Tamagui",
+      "Next.js",
+      "Expo",
+      "Supabase",
+      "Turbo",
+      "Solito",
+      "Zod",
+      "Zustand",
+      "Stripe",
+      "i18next",
+    ],
+    content: `
  You are an expert developer proficient in TypeScript, React and Next.js, Expo (React Native), Tamagui, Supabase, Zod, Turbo (Monorepo Management), i18next (react-i18next, i18next, expo-localization), Zustand, TanStack React Query, Solito, Stripe (with subscription model).
 
 Code Style and Structure
@@ -127,11 +149,10 @@ Output Expectations
 - Best Practices Demonstrate adherence to best practices in performance, security, and maintainability.
 
   `,
-      author: {
-        name: "Davide Del Gatto",
-        url: "https://x.com/davidedelgatto",
-        avatar:
-          "https://pbs.twimg.com/profile_images/1468184465495179274/qXV-w7Dj_400x400.jpg",
-      },
+    author: {
+      name: "Davide Del Gatto",
+      url: "https://x.com/davidedelgatto",
+      avatar: "https://pbs.twimg.com/profile_images/1468184465495179274/qXV-w7Dj_400x400.jpg",
     },
-  ];
+  },
+];

@@ -5,13 +5,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import slugify from "slugify";
 
-export async function generateMetadata({
-  params,
-}: { params: Promise<{ slug: string }> }) {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const mcp = mcpData.find(
-    (item) => slugify(item.name, { lower: true }) === slug,
-  );
+  const mcp = mcpData.find((item) => slugify(item.name, { lower: true }) === slug);
 
   if (!mcp) {
     return {
@@ -31,15 +27,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function Page({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const mcp = mcpData.find(
-    (item) => slugify(item.name, { lower: true }) === slug,
-  );
+  const mcp = mcpData.find((item) => slugify(item.name, { lower: true }) === slug);
 
   if (!mcp) {
     notFound();
@@ -49,14 +39,7 @@ export default async function Page({
     <div className="min-h-screen mt-24 px-4">
       <div className="container px-4 py-8 max-w-2xl">
         <div className="flex items-center gap-4 mb-6">
-          {mcp.logo && (
-            <Image
-              src={mcp.logo}
-              alt={`${mcp.name} logo`}
-              width={48}
-              height={48}
-            />
-          )}
+          {mcp.logo && <Image src={mcp.logo} alt={`${mcp.name} logo`} width={48} height={48} />}
           <h1 className="text-2xl">{mcp.name}</h1>
         </div>
         <p className="text-[#878787] mb-4">{mcp.description}</p>
@@ -74,21 +57,11 @@ export default async function Page({
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <mask
-              id="mask0_106_981"
-              maskUnits="userSpaceOnUse"
-              x="0"
-              y="0"
-              width="12"
-              height="13"
-            >
+            <mask id="mask0_106_981" maskUnits="userSpaceOnUse" x="0" y="0" width="12" height="13">
               <rect y="0.5" width="12" height="12" fill="#D9D9D9" />
             </mask>
             <g mask="url(#mask0_106_981)">
-              <path
-                d="M3.2 9.5L2.5 8.8L7.3 4H3V3H9V9H8V4.7L3.2 9.5Z"
-                fill="#878787"
-              />
+              <path d="M3.2 9.5L2.5 8.8L7.3 4H3V3H9V9H8V4.7L3.2 9.5Z" fill="#878787" />
             </g>
           </svg>
         </Link>

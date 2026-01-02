@@ -25,21 +25,19 @@ export default function Advertise() {
             >
               120,000 unique visitors monthly
             </a>{" "}
-            - and we're growing steadily. Our audience consists of developers,
-            engineering leaders, and technical decision-makers who are actively
-            seeking ways to improve their development workflow and productivity.
+            - and we're growing steadily. Our audience consists of developers, engineering leaders,
+            and technical decision-makers who are actively seeking ways to improve their development
+            workflow and productivity.
           </p>
         </section>
 
         <section>
           <h2 className="text-xl mb-2">Why Advertise With Us</h2>
           <p className="text-[#878787] leading-relaxed text-sm">
-            Our community is highly engaged with developer tools, AI solutions,
-            and productivity enhancers. If you're offering developer tools,
-            APIs, cloud services, or any tech product, our platform provides
-            direct access to your ideal audience. Our users are early adopters
-            who actively influence technology choices within their
-            organizations.
+            Our community is highly engaged with developer tools, AI solutions, and productivity
+            enhancers. If you're offering developer tools, APIs, cloud services, or any tech
+            product, our platform provides direct access to your ideal audience. Our users are early
+            adopters who actively influence technology choices within their organizations.
           </p>
         </section>
 
@@ -52,9 +50,9 @@ export default function Advertise() {
             <br />• Other Technical Professionals (5%)
             <br />
             <br />
-            Our visitors come from leading tech companies, innovative startups,
-            and development agencies worldwide, all united by their interest in
-            AI-enhanced development tools and workflow optimization.
+            Our visitors come from leading tech companies, innovative startups, and development
+            agencies worldwide, all united by their interest in AI-enhanced development tools and
+            workflow optimization.
             <br />
             <br />
             View our{" "}
@@ -87,8 +85,7 @@ export default function Advertise() {
             >
               @pontusab
             </a>{" "}
-            to discuss how we can help you reach our engaged developer
-            community.
+            to discuss how we can help you reach our engaged developer community.
           </p>
         </section>
       </div>

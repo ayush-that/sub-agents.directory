@@ -4,8 +4,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Sub-Agents Directory - Claude Code Sub-Agents & MCP Servers",
-  description:
-    "Discover Claude Code sub-agent prompts, find MCP servers, and join the community.",
+  description: "Discover Claude Code sub-agent prompts, find MCP servers, and join the community.",
 };
 
 export default function Page() {

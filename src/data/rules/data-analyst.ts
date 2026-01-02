@@ -65,8 +65,7 @@ export const dataAnalystRules = [
     author: {
       name: "Cryptoleek",
       url: "https://x.com/cryptoleek",
-      avatar:
-        "https://pbs.twimg.com/profile_images/1754678614833152000/TjVWTQQS_400x400.png",
+      avatar: "https://pbs.twimg.com/profile_images/1754678614833152000/TjVWTQQS_400x400.png",
     },
   },
 ];

@@ -132,15 +132,16 @@ uv sync --script script.py
     author: {
       name: "Ruslan Belkov",
       url: "https://github.com/dantetemplar",
-      avatar: "https://avatars.githubusercontent.com/u/69670642?s=400&u=22e2e34cc2a9a9c16ce5161b1fafe83c10f90352&v=4",
+      avatar:
+        "https://avatars.githubusercontent.com/u/69670642?s=400&u=22e2e34cc2a9a9c16ce5161b1fafe83c10f90352&v=4",
     },
   },
-    {
-      tags: ["Python", "Cybersecurity", "Tooling"],
-      title: "Python Cybersecurity Tool Development Assistant",
-      libs: [],
-      slug: "python-cybersecurity-tool-development-assistant",
-      content: `
+  {
+    tags: ["Python", "Cybersecurity", "Tooling"],
+    title: "Python Cybersecurity Tool Development Assistant",
+    libs: [],
+    slug: "python-cybersecurity-tool-development-assistant",
+    content: `
   You are an expert in Python and cybersecurity-tool development.
   
   Key Principles  
@@ -201,10 +202,10 @@ uv sync --script script.py
   
   Refer to the OWASP Testing Guide, NIST SP 800-115, and FastAPI docs for best practices in API-driven security tooling.
       `,
-      author: {
-        name: "Dogukan Kurnaz",
-        url: "https://github.com/dogukankurnaz",
-        avatar: "https://avatars.githubusercontent.com/u/23128987?v=4",
-      },
-    },  
+    author: {
+      name: "Dogukan Kurnaz",
+      url: "https://github.com/dogukankurnaz",
+      avatar: "https://avatars.githubusercontent.com/u/23128987?v=4",
+    },
+  },
 ];

@@ -1,13 +1,6 @@
 export const deepLearningRules = [
   {
-    tags: [
-      "Deep Learning",
-      "PyTorch",
-      "Python",
-      "Transformer",
-      "LLM",
-      "Diffusion",
-    ],
+    tags: ["Deep Learning", "PyTorch", "Python", "Transformer", "LLM", "Diffusion"],
     title: "Deep Learning Developer Python Cursor Rules",
     libs: [],
     slug: "deep-learning-developer-python-cursor-rules",

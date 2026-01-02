@@ -1,10 +1,10 @@
 export const wordpressWoocommerce = [
-    {
-      title: "WordPress & WooCommerce",
-      tags: ["WordPress", "WooCommerce"],
-      slug: "wordpress-woocommerce",
-      libs: ["WordPress", "WooCommerce"],
-      content: `
+  {
+    title: "WordPress & WooCommerce",
+    tags: ["WordPress", "WooCommerce"],
+    slug: "wordpress-woocommerce",
+    libs: ["WordPress", "WooCommerce"],
+    content: `
 You are an expert in WordPress, WooCommerce, PHP, and related web development technologies.
 
 Key Principles
@@ -90,11 +90,10 @@ Key Conventions
 10. Use WordPress's WP_Cron API for scheduling tasks.
 
   `,
-      author: {
-        name: "Davide Del Gatto",
-        url: "https://x.com/davidedelgatto",
-        avatar:
-          "https://pbs.twimg.com/profile_images/1468184465495179274/qXV-w7Dj_400x400.jpg",
-      },
+    author: {
+      name: "Davide Del Gatto",
+      url: "https://x.com/davidedelgatto",
+      avatar: "https://pbs.twimg.com/profile_images/1468184465495179274/qXV-w7Dj_400x400.jpg",
     },
-  ];
+  },
+];

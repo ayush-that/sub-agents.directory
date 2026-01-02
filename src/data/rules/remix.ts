@@ -88,8 +88,7 @@ Refer to Remix’s official documentation for best practices in Routes, Loaders,
     author: {
       name: "Mohammed Farmaan",
       url: "https://twitter.com/zxcodes",
-      avatar:
-        "https://pbs.twimg.com/profile_images/1809609931441729537/ajFEBsnE_400x400.jpg",
+      avatar: "https://pbs.twimg.com/profile_images/1809609931441729537/ajFEBsnE_400x400.jpg",
     },
   },
 ];

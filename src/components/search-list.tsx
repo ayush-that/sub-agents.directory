@@ -38,9 +38,7 @@ export function SearchList({ data }: { data: MCP[] }) {
               )}
               <div className="flex flex-col flex-1">
                 <h3 className="font-medium text-primary">{item.name}</h3>
-                {item.description && (
-                  <p className="text-sm text-[#878787]">{item.description}</p>
-                )}
+                {item.description && <p className="text-sm text-[#878787]">{item.description}</p>}
               </div>
             </div>
           </Link>

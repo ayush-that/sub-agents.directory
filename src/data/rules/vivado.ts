@@ -2,13 +2,7 @@ export const vivadoRules = [
   {
     title: "Vivado SystemVerilog Best Practices",
     slug: "vivado-systemverilog-best-practices",
-    tags: [
-      "SystemVerilog",
-      "Vivado",
-      "FPGA",
-      "Timing Optimization",
-      "Synthesis",
-    ],
+    tags: ["SystemVerilog", "Vivado", "FPGA", "Timing Optimization", "Synthesis"],
     libs: [],
     content: `
       ### Modular Design & Code Organization

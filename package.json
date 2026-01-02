@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "format": "oxfmt --write",
+    "format:check": "oxfmt --check"
   },
   "dependencies": {
     "@ai-sdk/xai": "^1.1.9",
@@ -42,9 +46,16 @@
     "zod": "^3.24.2"
   },
   "devDependencies": {
+    "@oxc-project/types": "^0.106.0",
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "eslint-plugin-oxlint": "^1.36.0",
+    "oxc-parser": "^0.106.0",
+    "oxc-resolver": "^11.16.2",
+    "oxc-transform": "^0.106.0",
+    "oxfmt": "^0.21.0",
+    "oxlint": "^1.36.0",
     "postcss": "^8",
     "tailwindcss": "^3.4.17",
     "typescript": "^5"
