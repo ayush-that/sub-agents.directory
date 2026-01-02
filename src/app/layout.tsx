@@ -1,4 +1,3 @@
-import { Banner } from "@/components/banner";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Button } from "@/components/ui/button";
@@ -86,7 +85,6 @@ export default function RootLayout({
             </Button>
           </a>
 
-          <Banner />
           <Toaster />
 
           <OpenPanelComponent
