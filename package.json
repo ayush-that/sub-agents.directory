@@ -1,0 +1,8 @@
+{
+  "name": "directories",
+  "private": true,
+  "workspaces": ["packages/*", "apps/*"],
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4"
+  }
+}
