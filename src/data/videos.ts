@@ -1,90 +1,90 @@
 export const videos = [
   {
-    title: "WTF is MCP? Build an MCP server with Windsurf and Mintlify in 30 seconds",
+    title: "Introducing Claude Code",
     description:
-      "Learn what MCP is and how to create your own one quickly using Windsurf and Mintlify MCP CLI",
-    url: "https://www.youtube.com/embed/H-zXNNpchlg",
+      "Official introduction from Anthropic. Claude Code lets developers delegate substantial engineering tasks to Claude directly from their terminal. Watch Claude explain projects, add features, create tests, and fix errors.",
+    url: "https://www.youtube.com/embed/AJpK3YTTKZ4",
     author: {
-      name: "Elie Steinbock",
+      name: "Anthropic",
       image:
-        "https://yt3.googleusercontent.com/bErjBPyFJCBYxgfuG4qi_I_0TKWmmw50A2NoMyhxaLch-lzMQlpfSLRpsGg9xhnj5B2xp471=s160-c-k-c0x00ffffff-no-rj",
+        "https://yt3.googleusercontent.com/ux-GXUpB4PkI-qXVOpj9gGEiCkytT0Q78ka4srlxOm_Y3m1gEh5qy8Vu6vTjGSDztMT0NybtC7I=s160-c-k-c0x00ffffff-no-rj",
     },
   },
   {
-    title: "Is Windsurf Editor Better Than Cursor AI?",
+    title: "Claude Code Tutorial for Beginners",
     description:
-      "The Windsurf Editor combines agent and copilot functionalities for collaborative coding. It offers deep contextual awareness, multi-file editing, and utilizes Cascade for real-time codebase understanding and command execution.",
-    url: "https://www.youtube.com/embed/ENKR0_dE7Wc",
+      "Learn how to install Claude Code on Mac or Windows, connect it to VS Code, build your first app, structure prompts effectively, and use Plan mode like a senior engineer.",
+    url: "https://www.youtube.com/embed/eMZmDH3T2bY",
     author: {
-      name: "Corbin Brown",
+      name: "Kevin Stratvert",
       image:
-        "https://yt3.ggpht.com/D-8FuN67wE8kacdi47DXPVEXytyKGO014dYwUaYV6Mho3MZMyUf47n19Jtv_U96COsBE-3cBgXM=s88-c-k-c0x00ffffff-no-rj",
+        "https://yt3.googleusercontent.com/ytc/AIdro_lr4ES_dIDpNgSSrKh-AibkIGYafS2IaX2D1aA_8j_-QeIG=s160-c-k-c0x00ffffff-no-rj",
     },
   },
   {
-    title: "AI Agent Tools for Beginners – A Complete MCP Guide",
-    description: "What MCP is, how it works and how to setup MCP servers with Windsurf.",
-    url: "https://www.youtube.com/embed/7NqQylSBIIo",
+    title: "Claude Code Tutorial #1 - Introduction & Setup",
+    description:
+      "Learn how to harness Claude Code within your development workflow, including how to install, setup a new project, add context, use MCP servers, and create subagents.",
+    url: "https://www.youtube.com/embed/SUysp3sJHbA",
     author: {
-      name: "Richardson Dackam",
+      name: "Net Ninja",
       image:
-        "https://yt3.ggpht.com/t0k-MTFK3RinQ8TUo2uRKtkiDIk0z5EXIUP03kREVx6Fod0tJPjfXpSiPFSMkLjVjliDOlHa=s88-c-k-c0x00ffffff-no-rj",
+        "https://yt3.googleusercontent.com/ytc/AIdro_mk2Ex-8sW03SBlBX7D1EC5skH0kv9rS3rU9IXq2I-q2Zg=s160-c-k-c0x00ffffff-no-rj",
     },
   },
   {
-    title: "Windsurf Tutorial for Beginners (AI Code Editor) - Better than Cursor??",
+    title: "Claude Code for Absolute Beginners: Step-by-Step Tutorial",
     description:
-      "The Windsurf Editor combines agent and copilot functionalities for collaborative coding. It offers deep contextual awareness, multi-file editing, and utilizes Cascade for real-time codebase understanding and command execution.",
-    url: "https://www.youtube.com/embed/8TcWGk1DJVs",
+      "Bring Claude Code directly to your computer—no engineering degree required. Learn to automate tasks, organize files, create custom AI agents, and boost productivity.",
+    url: "https://www.youtube.com/embed/v1ynWeHhzXs",
     author: {
-      name: "Tech With Tim",
+      name: "Allie K Miller",
       image:
-        "https://yt3.ggpht.com/ytc/AIdro_k15oXl74WcnpdL-uVBv6IHBgAfXEEnpUiS-IoEyV1auyY=s88-c-k-c0x00ffffff-no-rj",
+        "https://yt3.googleusercontent.com/ytc/AIdro_n0zGbBf_0Edix4Mf35YPQ-7fK5gXSzdGDR5loPNB_lqw=s160-c-k-c0x00ffffff-no-rj",
     },
   },
   {
-    title: "How To Use Windsurf Editor For Beginners",
+    title: "The Only Claude Code Guide You'll Ever Need (Opus 4.5)",
     description:
-      "Flows: Integrated AI Collaboration Flows combine Copilots and Agents to work synchronously with the developer. This ensures that both the developer and AI operate on the same state for a cohesive coding experience.",
-    url: "https://www.youtube.com/embed/ZEqSuggBKo8",
+      "Complete beginner's guide to Claude Code with full end-to-end workflow. Master Claude Code from setup to building complex applications.",
+    url: "https://www.youtube.com/embed/UVJXh57MgI0",
     author: {
-      name: "Corbin Brown",
+      name: "Alex Finn",
       image:
-        "https://yt3.ggpht.com/D-8FuN67wE8kacdi47DXPVEXytyKGO014dYwUaYV6Mho3MZMyUf47n19Jtv_U96COsBE-3cBgXM=s88-c-k-c0x00ffffff-no-rj",
+        "https://yt3.googleusercontent.com/-f755CqfJVpDAZZCQU5b_-9OVVDsqFoW8aSV9sOgGp4VfBx-AJR62Q4j-OmoO-muAw1LqE-vEA=s160-c-k-c0x00ffffff-no-rj",
     },
   },
   {
-    title: "Windsurf IDE: NEW AI Editor - Cursor Alternative That's FREE & LOCAL!",
+    title: "Claude Code Skills: Building AI Agent Teams",
     description:
-      "In this video, we're diving into Windsurf IDE, a powerful, AI-driven editor designed as a free and local alternative to Cursor! 🌊 Windsurf takes AI-assisted coding to the next level with its proprietary context engine—no embeddings here! This makes it incredibly effective for complex, multi-file projects by providing deep code understanding and context-aware edits across entire codebases. Let's explore Windsurf's unique features, including multi-file editing, natural language commands with Control-I, and the Super Complete feature for intelligent, cursor-free suggestions.",
-    url: "https://www.youtube.com/embed/C_D8V9odBQ8",
+      "Learn how to use Claude Code Skills, a special type of markdown file, to enhance Claude Code's abilities and build general agents tailored to various business needs.",
+    url: "https://www.youtube.com/embed/OdtGN27LchE",
     author: {
-      name: "WorldofAI",
+      name: "Riley Brown",
       image:
-        "https://yt3.ggpht.com/D-8FuN67wE8kacdi47DXPVEXytyKGO014dYwUaYV6Mho3MZMyUf47n19Jtv_U96COsBE-3cBgXM=s88-c-k-c0x00ffffff-no-rj",
+        "https://yt3.googleusercontent.com/Cm_AOGXEC3TYdp2iOXTUj07zgqBkCMJjh4C-0iD0DJOALbMb-D2tz9fJ2e-EDE5DJnJCnd3PaA=s160-c-k-c0x00ffffff-no-rj",
     },
   },
   {
-    title:
-      "Save Time and Flow Action Credits with Cascade Autogenerated Memories - Windsurf Editor",
+    title: "5 Simple Claude Code Workflows You Must Have",
     description:
-      "Learn how Cascade’s Autogenerated Memories helps you pick up right where you left off—without needing extra prompts or spending additional flow action credits on repeated tasks.",
-    url: "https://www.youtube.com/embed/DKUe0ST_qi4",
+      "Essential Claude Code workflows for beginners. Learn the key patterns and techniques to work 30% faster with AI-assisted development.",
+    url: "https://www.youtube.com/embed/yAslhELtKEg",
     author: {
-      name: "Codeium - Windsurf",
+      name: "David Ondrej",
       image:
-        "https://yt3.ggpht.com/VH_za2DotkucDgWAuOJnD0TWwyUagpa7yOoT32XXJuu-mVBHSldfldLfmSfWoDDwnuTpuZmMxw=s88-c-k-c0x00ffffff-no-rj",
+        "https://yt3.googleusercontent.com/Ksq0cOgKhbOuQMtIAjJlmrHSIDNbqmLtwosJNUZUuEZwNR3bc_W8l8Ve_xulQNidyb7dxqffyYI=s160-c-k-c0x00ffffff-no-rj",
     },
   },
   {
-    title: "Spend Less Time Approving with Automated Command - Windsurf Editor",
+    title: "Claude Code Setup That Actually Works | Full Tutorial 2025",
     description:
-      "Tired of manually approving every command? Cascade’s Automated Command lets you save time by running safe commands automatically while still asking for approval for higher-risk tasks.",
-    url: "https://www.youtube.com/embed/bdKZ_vGHh1o",
+      "Master Claude Code with a complete, professional guide covering full setup, install, workflow, and how to build custom AI agents with multi-agent capabilities.",
+    url: "https://www.youtube.com/embed/P-5bWpUbO60",
     author: {
-      name: "Codeium - Windsurf",
+      name: "Eric Tech",
       image:
-        "https://yt3.ggpht.com/VH_za2DotkucDgWAuOJnD0TWwyUagpa7yOoT32XXJuu-mVBHSldfldLfmSfWoDDwnuTpuZmMxw=s88-c-k-c0x00ffffff-no-rj",
+        "https://yt3.googleusercontent.com/-fAZCNoiUQ0xrOaqyCUPXW4MRRTNbJyWSN-KFzFSJlWNrl36J0h5EwfMKJi3GaNY0A5Ml1mLbS0=s160-c-k-c0x00ffffff-no-rj",
     },
   },
 ];

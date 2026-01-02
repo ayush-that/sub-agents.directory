@@ -9,7 +9,7 @@ export async function generateMetadata({ params }: { params: Params }) {
   const rule = getRuleBySlug(slug);
 
   return {
-    title: `${rule?.title} - Windsurf Rules`,
+    title: `${rule?.title} - Claude Code Rules`,
     description: rule?.content,
   };
 }

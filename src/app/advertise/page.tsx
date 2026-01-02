@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "Advertise on Windsurf Directory",
+  title: "Advertise on Sub-Agents Directory",
   description:
-    "Reach over 120,000 developers monthly and showcase your product or service on Windsurf Directory, the community-driven platform for Windsurf AI rules and prompts.",
+    "Reach over 120,000 developers monthly and showcase your product or service on Sub-Agents Directory, the community-driven platform for Claude Code sub-agents and rules.",
 };
 
 export default function Advertise() {
@@ -9,14 +9,14 @@ export default function Advertise() {
     <div className="flex flex-col items-center justify-center max-w-screen-md mx-auto px-6 py-12">
       <h1 className="text-4xl mb-12 mt-20 text-center">
         Advertise on <br />
-        Windsurf Directory
+        Sub-Agents Directory
       </h1>
 
       <div className="space-y-12 mt-10">
         <section>
           <h2 className="text-xl mb-2">Reach an Engaged Developer Audience</h2>
           <p className="text-[#878787] leading-relaxed text-sm">
-            Windsurf Directory attracts over{" "}
+            Sub-Agents Directory attracts over{" "}
             <a
               href="https://dashboard.openpanel.dev/share/overview/a5hhbY?range=30d"
               className="text-primary border-border border-dashed border-b-[1px]"

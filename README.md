@@ -1,18 +1,18 @@
 ![hero](image.png)
 
-# How to Contribute to Directories
+# How to Contribute to Sub-Agents Directory
 
-### This guide will help you understand how to add new rules or prompts to the both Cursor and Windsurf Directories.
+### This guide will help you understand how to add new rules or prompts to the Sub-Agents Directory for Claude Code.
 
 #### 1. Fork the Repo
 
 #### 2. Adding a New Rule
 
-If you want to submit a **new rule** that does not already exist in the Directories, follow these steps:
+If you want to submit a **new rule** that does not already exist in the Directory, follow these steps:
 
 1. **Locate the Rule Index**:
 
-   Add your new rule in the `packages/data/rules/index.ts` file. For example:
+   Add your new rule in the `src/data/rules/index.ts` file. For example:
 
    ```typescript
    import { cRules } from "./rules/c";
@@ -20,7 +20,7 @@ If you want to submit a **new rule** that does not already exist in the Director
 
 2. **Create a Rule File**:
 
-   Create a new file in the `packages/data/rules/` directory with the appropriate name. For example, if you're adding a rule for Next.js, name the file `nextjs.ts`.
+   Create a new file in the `src/data/rules/` directory with the appropriate name. For example, if you're adding a rule for Next.js, name the file `nextjs.ts`.
 
 3. **Define the Rule**:
 
@@ -38,7 +38,7 @@ If you want to add new prompts to an existing rule, follow these steps:
 
 1. **Find the Existing Rule**:
 
-   Navigate to the `packages/data/rules/` directory and open the relevant file for the rule you want to update. For example, if you're adding prompts for **Next.js**, open `nextjs.ts`.
+   Navigate to the `src/data/rules/` directory and open the relevant file for the rule you want to update. For example, if you're adding prompts for **Next.js**, open `nextjs.ts`.
 
 2. **Add Your New Prompts**:
 
@@ -69,7 +69,7 @@ When creating or updating rules, be sure to include the following parameters for
 
    ```
 
-4. **content**: Write the content of your prompt here. Make sure it is clear, actionable, and helpful to developers. Be concise, but provide enough detail to assist cursor ai in completing tasks effectively...
+4. **content**: Write the content of your prompt here. Make sure it is clear, actionable, and helpful to developers. Be concise, but provide enough detail to assist Claude Code in completing tasks effectively...
 
    ```
      content: `your amazing prompt`
@@ -88,14 +88,8 @@ When creating or updating rules, be sure to include the following parameters for
 First, run the development server:
 
 ```bash
-npm install
+bun install
 
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
 bun dev
 ```
 

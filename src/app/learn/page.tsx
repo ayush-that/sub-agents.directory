@@ -4,8 +4,8 @@ import { videos } from "@/data/videos";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 
 export const metadata = {
-  title: "Learn Windsurf",
-  description: "Learn how to use Windsurf from videos and tutorials",
+  title: "Learn Claude Code",
+  description: "Learn how to use Claude Code from videos and tutorials",
 };
 
 export default function Page() {

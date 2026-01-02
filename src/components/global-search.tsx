@@ -7,7 +7,7 @@ import { GlobalSearchInput } from "./global-search-input";
 import { HeroTitle } from "./hero-title";
 import MCPList from "./mcp-list";
 import { RuleList } from "./rule-list";
-import { Windsurf } from "./ui/windsurf";
+import { ClaudeLogo } from "./ui/claude-logo";
 
 export function GlobalSearch({ sections }: { sections: Section[] }) {
   return (
@@ -21,7 +21,7 @@ export function GlobalSearch({ sections }: { sections: Section[] }) {
               animation: "fadeIn 0.05s ease forwards",
             }}
           >
-            <Windsurf />
+            <ClaudeLogo />
           </div>
 
           <HeroTitle />

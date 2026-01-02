@@ -4,8 +4,8 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 
 export const metadata: Metadata = {
-  title: "MCP Servers for Windsurf",
-  description: "MCP Servers",
+  title: "MCP Servers for Claude Code",
+  description: "MCP Servers for Claude Code Sub-Agents",
 };
 
 export default function Page() {

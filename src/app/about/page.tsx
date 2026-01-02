@@ -1,8 +1,6 @@
-import Image from "next/image";
-
 export const metadata = {
-  title: "About Windsurf Directory",
-  description: "Why we built Windsurf Directory",
+  title: "About Sub-Agents Directory",
+  description: "Why we built Sub-Agents Directory",
 };
 
 export default function About() {
@@ -10,16 +8,16 @@ export default function About() {
     <div className="flex flex-col items-center justify-center max-w-screen-md mx-auto px-6 py-12">
       <h1 className="text-4xl mb-12 mt-20 text-center">
         Why We Built <br />
-        Windsurf Directory
+        Sub-Agents Directory
       </h1>
 
       <div className="space-y-12 mt-10">
         <section>
           <p className="text-[#878787] leading-relaxed text-sm">
-            Our journey with Windsurf has been transformative. As team of one developer and a
-            designer, we've experienced firsthand how Windsurf significantly accelerated our
-            development process. This efficiency boost gave us the bandwidth to build our two
-            startups,{" "}
+            Our journey with Claude Code has been transformative. As team of one developer and a
+            designer, we've experienced firsthand how Claude Code's sub-agents significantly
+            accelerated our development process. This efficiency boost gave us the bandwidth to
+            build our two startups,{" "}
             <a
               href="https://go.midday.ai/8cX3F4o"
               className="text-primary border-border border-dashed border-b-[1px]"
@@ -74,14 +72,6 @@ export default function About() {
           </p>
         </section>
       </div>
-
-      <Image
-        src="https://midday.ai/cdn-cgi/image/width=1920,quality=80//_next/static/media/founders.c6158766.png"
-        alt="Midday founders"
-        width={1920}
-        height={1080}
-        className="rounded-lg mb-12 mt-12"
-      />
     </div>
   );
 }

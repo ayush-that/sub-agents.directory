@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 
   return {
-    title: `${mcp.name} - MCP Server | Windsurf Directory`,
+    title: `${mcp.name} - MCP Server | Sub-Agents Directory`,
     description: mcp.description,
   };
 }

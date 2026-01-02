@@ -25,7 +25,7 @@ export function Header() {
   return (
     <div className="flex justify-between items-center">
       <div className="md:fixed z-50 flex justify-between items-center top-0 px-6 py-2 w-full bg-background backdrop-filter backdrop-blur-sm bg-opacity-30">
-        <Link href="/" className="font-medium font-fraunces text-sm">
+        <Link href="/" className="font-medium font-fraunces text-base">
           sub-agents.directory
         </Link>
 

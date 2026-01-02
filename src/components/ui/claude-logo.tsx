@@ -1,5 +1,4 @@
-export function Windsurf() {
-  // Placeholder - will be replaced with proper Claude Code logo
+export function ClaudeLogo() {
   return (
     <div className="w-[60px] h-[60px] flex items-center justify-center opacity-10">
       <svg
