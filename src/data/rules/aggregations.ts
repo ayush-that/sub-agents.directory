@@ -195,9 +195,7 @@ export function generateComparisons(rules: Rule[]): ComparisonPair[] {
         if (!areSimilarRules(rule1, rule2)) continue;
 
         // Ensure consistent ordering (alphabetical by slug)
-        const [first, second] = [rule1, rule2].sort((a, b) =>
-          a.slug.localeCompare(b.slug)
-        );
+        const [first, second] = [rule1, rule2].sort((a, b) => a.slug.localeCompare(b.slug));
 
         // Skip if already seen
         const pairKey = `${first.slug}-vs-${second.slug}`;
@@ -260,9 +258,15 @@ function areSimilarRules(rule1: Rule, rule2: Rule): boolean {
 
   // Check for shared significant words in title
   const words1 = new Set(
-    rule1.title.toLowerCase().split(/\s+/).filter((w) => w.length > 3)
+    rule1.title
+      .toLowerCase()
+      .split(/\s+/)
+      .filter((w) => w.length > 3),
   );
-  const words2 = rule2.title.toLowerCase().split(/\s+/).filter((w) => w.length > 3);
+  const words2 = rule2.title
+    .toLowerCase()
+    .split(/\s+/)
+    .filter((w) => w.length > 3);
 
   let sharedWords = 0;
   for (const word of words2) {
@@ -312,7 +316,7 @@ export function getToolBySlug(tools: Tool[], slug: string): Tool | undefined {
  */
 export function getComparisonBySlug(
   comparisons: ComparisonPair[],
-  slug: string
+  slug: string,
 ): ComparisonPair | undefined {
   return comparisons.find((c) => c.slug === slug);
 }

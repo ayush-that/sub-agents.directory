@@ -116,9 +116,7 @@ export function createOrganizationSchema(config?: {
     description: config?.description || SEO_CONFIG.defaultDescription,
     url: BASE_URL,
     logo: config?.logo || `${BASE_URL}/claude-logo.png`,
-    sameAs: config?.sameAs || [
-      "https://github.com/VoltAgent/awesome-claude-code-subagents",
-    ],
+    sameAs: config?.sameAs || ["https://github.com/VoltAgent/awesome-claude-code-subagents"],
   };
 }
 
@@ -126,7 +124,7 @@ export function createOrganizationSchema(config?: {
  * Generate BreadcrumbList schema
  */
 export function createBreadcrumbSchema(
-  items: BreadcrumbItem[]
+  items: BreadcrumbItem[],
 ): BaseSchema & Record<string, unknown> {
   return {
     "@context": "https://schema.org",
@@ -157,9 +155,7 @@ export function createArticleSchema(config: {
     url?: string;
   };
 }): BaseSchema & Record<string, unknown> {
-  const fullUrl = config.url.startsWith("http")
-    ? config.url
-    : `${BASE_URL}${config.url}`;
+  const fullUrl = config.url.startsWith("http") ? config.url : `${BASE_URL}${config.url}`;
 
   return {
     "@context": "https://schema.org",
@@ -196,9 +192,7 @@ export function createArticleSchema(config: {
 /**
  * Generate FAQPage schema for FAQ sections
  */
-export function createFAQSchema(
-  faqs: FAQItem[]
-): BaseSchema & Record<string, unknown> {
+export function createFAQSchema(faqs: FAQItem[]): BaseSchema & Record<string, unknown> {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -255,9 +249,7 @@ export function createCollectionPageSchema(config: {
     description?: string;
   }>;
 }): BaseSchema & Record<string, unknown> {
-  const fullUrl = config.url.startsWith("http")
-    ? config.url
-    : `${BASE_URL}${config.url}`;
+  const fullUrl = config.url.startsWith("http") ? config.url : `${BASE_URL}${config.url}`;
 
   return {
     "@context": "https://schema.org",
@@ -323,9 +315,7 @@ export function createSoftwareAppSchema(config: {
   applicationCategory?: string;
   operatingSystem?: string;
 }): BaseSchema & Record<string, unknown> {
-  const fullUrl = config.url.startsWith("http")
-    ? config.url
-    : `${BASE_URL}${config.url}`;
+  const fullUrl = config.url.startsWith("http") ? config.url : `${BASE_URL}${config.url}`;
 
   return {
     "@context": "https://schema.org",
@@ -352,9 +342,7 @@ export function createSoftwareAppSchema(config: {
 /**
  * Generate VideoObject schema
  */
-export function createVideoSchema(
-  video: VideoData
-): BaseSchema & Record<string, unknown> {
+export function createVideoSchema(video: VideoData): BaseSchema & Record<string, unknown> {
   const videoId = extractYouTubeId(video.embedUrl);
 
   return {
@@ -364,9 +352,7 @@ export function createVideoSchema(
     description: video.description,
     thumbnailUrl:
       video.thumbnailUrl ||
-      (videoId
-        ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
-        : undefined),
+      (videoId ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg` : undefined),
     contentUrl: video.url,
     embedUrl: video.embedUrl,
     uploadDate: video.uploadDate || "2024-01-01T00:00:00Z",
@@ -403,9 +389,7 @@ export function createVideoListSchema(config: {
         description: video.description,
         thumbnailUrl:
           video.thumbnailUrl ||
-          (videoId
-            ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
-            : undefined),
+          (videoId ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg` : undefined),
         contentUrl: video.url.replace("/embed/", "/watch?v="),
         embedUrl: video.embedUrl,
         uploadDate: video.uploadDate || "2024-01-01T00:00:00Z",
@@ -430,9 +414,7 @@ export function createProfilePageSchema(config: {
   description?: string;
   image?: string;
 }): BaseSchema & Record<string, unknown> {
-  const fullUrl = config.url.startsWith("http")
-    ? config.url
-    : `${BASE_URL}${config.url}`;
+  const fullUrl = config.url.startsWith("http") ? config.url : `${BASE_URL}${config.url}`;
 
   return {
     "@context": "https://schema.org",
@@ -461,9 +443,7 @@ export function createCreativeWorkSchema(config: {
   dateCreated?: string;
   dateModified?: string;
 }): BaseSchema & Record<string, unknown> {
-  const fullUrl = config.url.startsWith("http")
-    ? config.url
-    : `${BASE_URL}${config.url}`;
+  const fullUrl = config.url.startsWith("http") ? config.url : `${BASE_URL}${config.url}`;
 
   return {
     "@context": "https://schema.org",
@@ -493,9 +473,7 @@ export function createComparisonSchema(config: {
   item1: { name: string; url: string };
   item2: { name: string; url: string };
 }): BaseSchema & Record<string, unknown> {
-  const fullUrl = config.url.startsWith("http")
-    ? config.url
-    : `${BASE_URL}${config.url}`;
+  const fullUrl = config.url.startsWith("http") ? config.url : `${BASE_URL}${config.url}`;
 
   return {
     "@context": "https://schema.org",

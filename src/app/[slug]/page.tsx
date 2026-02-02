@@ -10,12 +10,7 @@ import type { Metadata } from "next";
 import { Menu } from "@/components/menu";
 import { RelatedRules } from "@/components/related-rules";
 import { RuleCard } from "@/components/rule-card";
-import {
-  getRelatedRules,
-  getRuleBySlug,
-  getSections,
-  rules,
-} from "@/data/rules";
+import { getRelatedRules, getRuleBySlug, getSections, rules } from "@/data/rules";
 
 import { createRuleMetadata } from "@/lib/seo/metadata-factory";
 import { createArticleSchema } from "@/lib/seo/schema-factory";
@@ -30,11 +25,7 @@ import {
 
 type Params = Promise<{ slug: string }>;
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Params;
-}): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { slug } = await params;
   const rule = getRuleBySlug(slug);
 
@@ -78,9 +69,7 @@ export default async function RulePage({ params }: { params: Params }) {
   const linkEngine = createLinkEngine(rules);
   const contextualLinks = linkEngine.getContextualLinks({
     slug: rule.slug,
-    category: rule.tags[0]
-      ?.toLowerCase()
-      .replace(/[^a-z0-9]+/g, "-"),
+    category: rule.tags[0]?.toLowerCase().replace(/[^a-z0-9]+/g, "-"),
     tools: rule.libs,
     pageType: "rule",
   });

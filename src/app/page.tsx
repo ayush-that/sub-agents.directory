@@ -41,7 +41,7 @@ export default function HomePage() {
     createWebSiteSchema({
       description: `Browse ${counts.rules}+ Claude Code sub-agent prompts and MCP servers. Copy-paste ready prompts for React, Python, TypeScript, and more.`,
     }),
-    createOrganizationSchema()
+    createOrganizationSchema(),
   );
 
   return (
@@ -50,9 +50,7 @@ export default function HomePage() {
 
       <div className="min-h-screen w-full px-4 pt-[10%]">
         <div className="w-full max-w-6xl mx-auto">
-          <h1 className="sr-only">
-            Sub-Agents Directory - Find Claude Code Sub-Agent Prompts
-          </h1>
+          <h1 className="sr-only">Sub-Agents Directory - Find Claude Code Sub-Agent Prompts</h1>
           <div className="flex justify-center mb-6">
             <a
               href="https://peerlist.io/shydev69/project/subagentsdirectory"

@@ -60,13 +60,11 @@ export default function UseCasesIndexPage() {
               <div className="p-2 bg-accent rounded-lg">
                 <Target className="h-6 w-6" />
               </div>
-              <h1 className="text-3xl md:text-4xl font-bold">
-                Find Agents by Use Case
-              </h1>
+              <h1 className="text-3xl md:text-4xl font-bold">Find Agents by Use Case</h1>
             </div>
             <p className="text-lg text-muted-foreground max-w-3xl">
-              Not sure which sub-agent to use? Browse by use case to find the
-              perfect Claude Code prompt for your specific development needs.
+              Not sure which sub-agent to use? Browse by use case to find the perfect Claude Code
+              prompt for your specific development needs.
             </p>
           </header>
 
@@ -85,15 +83,10 @@ export default function UseCasesIndexPage() {
                     </h2>
                     <ArrowRight className="h-5 w-5 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity mt-1" />
                   </div>
-                  <p className="text-muted-foreground mb-4 line-clamp-2">
-                    {useCase.description}
-                  </p>
+                  <p className="text-muted-foreground mb-4 line-clamp-2">{useCase.description}</p>
                   <div className="flex flex-wrap gap-1.5">
                     {useCase.keywords.slice(0, 4).map((keyword) => (
-                      <span
-                        key={keyword}
-                        className="px-2 py-0.5 text-xs bg-accent/50 rounded-full"
-                      >
+                      <span key={keyword} className="px-2 py-0.5 text-xs bg-accent/50 rounded-full">
                         {keyword}
                       </span>
                     ))}

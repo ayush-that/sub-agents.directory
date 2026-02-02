@@ -78,9 +78,7 @@ export default async function McpPage({ params }: { params: Promise<{ slug: stri
   });
 
   // Other MCP servers
-  const otherMcps = mcpData
-    .filter((m) => slugify(m.name, { lower: true }) !== slug)
-    .slice(0, 4);
+  const otherMcps = mcpData.filter((m) => slugify(m.name, { lower: true }) !== slug).slice(0, 4);
 
   return (
     <>
@@ -131,13 +129,7 @@ export default async function McpPage({ params }: { params: Promise<{ slug: stri
                   className="flex items-center gap-3 p-3 rounded-lg border border-border/40 hover:border-border hover:bg-accent/30 transition-all"
                 >
                   {m.logo && (
-                    <Image
-                      src={m.logo}
-                      alt={m.name}
-                      width={24}
-                      height={24}
-                      className="rounded"
-                    />
+                    <Image src={m.logo} alt={m.name} width={24} height={24} className="rounded" />
                   )}
                   <span className="text-sm">{m.name}</span>
                 </Link>

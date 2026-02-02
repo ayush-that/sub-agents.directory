@@ -13,11 +13,7 @@ import { createCategoryMetadata } from "@/lib/seo/metadata-factory";
 import { createCollectionPageSchema } from "@/lib/seo/schema-factory";
 import { REVALIDATION_TIMES } from "@/lib/seo/constants";
 
-import {
-  getCategories,
-  getCategory,
-  getRulesForCategory,
-} from "@/data/rules";
+import { getCategories, getCategory, getRulesForCategory } from "@/data/rules";
 
 import {
   JsonLdScript,
@@ -32,11 +28,7 @@ import { RuleCard } from "@/components/rule-card";
 
 type Params = Promise<{ category: string }>;
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Params;
-}): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { category: categorySlug } = await params;
   const category = getCategory(categorySlug);
 
@@ -123,18 +115,13 @@ export default async function CategoryPage({ params }: { params: Params }) {
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
               {category.count} {category.name} Claude Code Sub-Agents
             </h1>
-            <p className="text-lg text-muted-foreground max-w-3xl">
-              {category.seoDescription}
-            </p>
+            <p className="text-lg text-muted-foreground max-w-3xl">{category.seoDescription}</p>
           </header>
 
           {/* Category Quick Links */}
           <nav className="mb-8">
             <h2 className="sr-only">Browse Categories</h2>
-            <CategoryQuickLinks
-              categories={allCategories}
-              currentSlug={categorySlug}
-            />
+            <CategoryQuickLinks categories={allCategories} currentSlug={categorySlug} />
           </nav>
 
           {/* Top Tools */}
@@ -171,10 +158,7 @@ export default async function CategoryPage({ params }: { params: Params }) {
           <FAQSection faqs={faqs} className="mb-12 max-w-3xl" />
 
           {/* Related Categories */}
-          <ContextualLinks
-            categories={relatedCategories}
-            className="border-t pt-8"
-          />
+          <ContextualLinks categories={relatedCategories} className="border-t pt-8" />
 
           {/* Back to All Agents */}
           <div className="mt-8 pt-8 border-t">

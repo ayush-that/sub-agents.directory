@@ -13,12 +13,7 @@ import { createToolMetadata } from "@/lib/seo/metadata-factory";
 import { createCollectionPageSchema } from "@/lib/seo/schema-factory";
 import { REVALIDATION_TIMES } from "@/lib/seo/constants";
 
-import {
-  getTools,
-  getTool,
-  getRulesForTool,
-  getCategories,
-} from "@/data/rules";
+import { getTools, getTool, getRulesForTool, getCategories } from "@/data/rules";
 
 import {
   JsonLdScript,
@@ -32,11 +27,7 @@ import { RuleCard } from "@/components/rule-card";
 
 type Params = Promise<{ tool: string }>;
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Params;
-}): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { tool: toolSlug } = await params;
   const tool = getTool(toolSlug);
 
@@ -107,9 +98,7 @@ export default async function ToolPage({ params }: { params: Params }) {
     .sort((a, b) => b[1] - a[1])
     .slice(0, 6)
     .map(([name, count]) => {
-      const toolData = allTools.find(
-        (t) => t.normalizedName === name.toLowerCase()
-      );
+      const toolData = allTools.find((t) => t.normalizedName === name.toLowerCase());
       return toolData
         ? {
             url: `/agents/tools/${toolData.slug}`,
@@ -161,8 +150,8 @@ export default async function ToolPage({ params }: { params: Params }) {
               </h1>
             </div>
             <p className="text-lg text-muted-foreground max-w-3xl">
-              Discover {tool.count} Claude Code sub-agents that use {tool.name}.
-              Find the perfect prompt for your {tool.name} project.
+              Discover {tool.count} Claude Code sub-agents that use {tool.name}. Find the perfect
+              prompt for your {tool.name} project.
             </p>
           </header>
 

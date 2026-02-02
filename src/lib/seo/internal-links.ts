@@ -147,9 +147,7 @@ export class InternalLinkEngine {
         }
 
         // Shared tools: +3 points per tool
-        const sharedLibs = rule.libs.filter((lib) =>
-          currentLibs.has(lib.toLowerCase())
-        ).length;
+        const sharedLibs = rule.libs.filter((lib) => currentLibs.has(lib.toLowerCase())).length;
         score += sharedLibs * 3;
 
         // Title similarity bonus
@@ -216,9 +214,7 @@ export class InternalLinkEngine {
       }
     }
 
-    return links
-      .sort((a, b) => b.relevanceScore - a.relevanceScore)
-      .slice(0, limit);
+    return links.sort((a, b) => b.relevanceScore - a.relevanceScore).slice(0, limit);
   }
 
   /**
@@ -229,17 +225,13 @@ export class InternalLinkEngine {
     if (currentRules.length === 0) return [];
 
     // Find categories with overlapping tools
-    const currentTools = new Set(
-      currentRules.flatMap((r) => r.libs.map((l) => l.toLowerCase()))
-    );
+    const currentTools = new Set(currentRules.flatMap((r) => r.libs.map((l) => l.toLowerCase())));
 
     const crossCategories = this.categories
       .filter((cat) => cat.slug !== currentCategory)
       .map((cat) => {
         const catRules = this.categoryIndex.get(cat.slug) || [];
-        const catTools = new Set(
-          catRules.flatMap((r) => r.libs.map((l) => l.toLowerCase()))
-        );
+        const catTools = new Set(catRules.flatMap((r) => r.libs.map((l) => l.toLowerCase())));
 
         // Count overlapping tools
         let overlap = 0;
@@ -266,10 +258,13 @@ export class InternalLinkEngine {
   /**
    * Get use case links relevant to a rule or category
    */
-  getUseCaseLinks(context: {
-    category?: string;
-    tools?: string[];
-  }, limit = 3): LinkSuggestion[] {
+  getUseCaseLinks(
+    context: {
+      category?: string;
+      tools?: string[];
+    },
+    limit = 3,
+  ): LinkSuggestion[] {
     const links: LinkSuggestion[] = [];
 
     for (const [slug, useCase] of Object.entries(USE_CASES)) {
@@ -279,7 +274,7 @@ export class InternalLinkEngine {
       if (
         context.category &&
         useCase.relatedCategories.some(
-          (rc) => rc === context.category || this.slugify(rc) === context.category
+          (rc) => rc === context.category || this.slugify(rc) === context.category,
         )
       ) {
         relevance += 5;
@@ -288,11 +283,7 @@ export class InternalLinkEngine {
       // Check tool/keyword match
       if (context.tools) {
         for (const tool of context.tools) {
-          if (
-            useCase.keywords.some((kw) =>
-              kw.toLowerCase().includes(tool.toLowerCase())
-            )
-          ) {
+          if (useCase.keywords.some((kw) => kw.toLowerCase().includes(tool.toLowerCase()))) {
             relevance += 2;
           }
         }
@@ -310,9 +301,7 @@ export class InternalLinkEngine {
       }
     }
 
-    return links
-      .sort((a, b) => b.relevanceScore - a.relevanceScore)
-      .slice(0, limit);
+    return links.sort((a, b) => b.relevanceScore - a.relevanceScore).slice(0, limit);
   }
 
   /**
@@ -405,11 +394,7 @@ export class InternalLinkEngine {
   /**
    * Get human-readable name for breadcrumb segment
    */
-  private getBreadcrumbName(
-    segment: string,
-    _allSegments: string[],
-    _index: number
-  ): string {
+  private getBreadcrumbName(segment: string, _allSegments: string[], _index: number): string {
     // Hub pages
     if (segment === "agents") return "Sub-Agents";
     if (segment === "mcp") return "MCP Servers";
@@ -422,9 +407,7 @@ export class InternalLinkEngine {
     if (segment === "for") return "Use Cases";
 
     // Look up from categories
-    const categoryMeta = Object.values(CATEGORY_META).find(
-      (c) => c.slug === segment
-    );
+    const categoryMeta = Object.values(CATEGORY_META).find((c) => c.slug === segment);
     if (categoryMeta) return categoryMeta.name;
 
     // Look up from use cases
@@ -478,9 +461,7 @@ export class InternalLinkEngine {
       if (rules.length < 2) continue;
 
       // Get the original casing from the first rule
-      const originalName = rules[0].libs.find(
-        (l) => l.toLowerCase() === normalizedName
-      );
+      const originalName = rules[0].libs.find((l) => l.toLowerCase() === normalizedName);
 
       tools.push({
         name: originalName || normalizedName,
@@ -533,9 +514,15 @@ export class InternalLinkEngine {
 
     // Check for shared significant words
     const words1 = new Set(
-      title1.toLowerCase().split(/\s+/).filter((w) => w.length > 3)
+      title1
+        .toLowerCase()
+        .split(/\s+/)
+        .filter((w) => w.length > 3),
     );
-    const words2 = title2.toLowerCase().split(/\s+/).filter((w) => w.length > 3);
+    const words2 = title2
+      .toLowerCase()
+      .split(/\s+/)
+      .filter((w) => w.length > 3);
 
     let shared = 0;
     for (const word of words2) {

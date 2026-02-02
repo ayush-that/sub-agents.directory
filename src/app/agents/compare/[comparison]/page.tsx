@@ -13,12 +13,7 @@ import { createComparisonMetadata } from "@/lib/seo/metadata-factory";
 import { createComparisonSchema } from "@/lib/seo/schema-factory";
 import { REVALIDATION_TIMES } from "@/lib/seo/constants";
 
-import {
-  getComparisons,
-  getComparison,
-  getRuleBySlug,
-  getCategories,
-} from "@/data/rules";
+import { getComparisons, getComparison, getRuleBySlug, getCategories } from "@/data/rules";
 
 import {
   JsonLdScript,
@@ -32,11 +27,7 @@ import { Badge } from "@/components/ui/badge";
 
 type Params = Promise<{ comparison: string }>;
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Params;
-}): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { comparison: comparisonSlug } = await params;
   const comparison = getComparison(comparisonSlug);
 
@@ -127,8 +118,8 @@ export default async function ComparisonPage({ params }: { params: Params }) {
               {rule1.title} vs {rule2.title}
             </h1>
             <p className="text-lg text-muted-foreground">
-              Compare these two Claude Code sub-agents to find the best fit for
-              your project. Both are in the {comparison.category} category.
+              Compare these two Claude Code sub-agents to find the best fit for your project. Both
+              are in the {comparison.category} category.
             </p>
           </header>
 
@@ -205,9 +196,7 @@ export default async function ComparisonPage({ params }: { params: Params }) {
                       ))}
                     </div>
                   ) : (
-                    <p className="text-sm text-muted-foreground">
-                      No unique tools
-                    </p>
+                    <p className="text-sm text-muted-foreground">No unique tools</p>
                   )}
                 </div>
 
@@ -225,9 +214,7 @@ export default async function ComparisonPage({ params }: { params: Params }) {
                       ))}
                     </div>
                   ) : (
-                    <p className="text-sm text-muted-foreground">
-                      No unique tools
-                    </p>
+                    <p className="text-sm text-muted-foreground">No unique tools</p>
                   )}
                 </div>
               </div>
@@ -249,10 +236,8 @@ export default async function ComparisonPage({ params }: { params: Params }) {
                   <li>• Your project aligns with {comparison.category}</li>
                   <li>
                     • You prefer{" "}
-                    {rule1.libs.length > rule2.libs.length
-                      ? "more comprehensive"
-                      : "focused"}{" "}
-                    tool coverage
+                    {rule1.libs.length > rule2.libs.length ? "more comprehensive" : "focused"} tool
+                    coverage
                   </li>
                 </ul>
               </div>
@@ -267,10 +252,8 @@ export default async function ComparisonPage({ params }: { params: Params }) {
                   <li>• Your project aligns with {comparison.category}</li>
                   <li>
                     • You prefer{" "}
-                    {rule2.libs.length > rule1.libs.length
-                      ? "more comprehensive"
-                      : "focused"}{" "}
-                    tool coverage
+                    {rule2.libs.length > rule1.libs.length ? "more comprehensive" : "focused"} tool
+                    coverage
                   </li>
                 </ul>
               </div>

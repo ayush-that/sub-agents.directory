@@ -5,7 +5,15 @@ import matter from "gray-matter";
 import slugify from "slugify";
 
 // Re-export types
-export type { Rule, Section, RuleIndex, Category, Tool, ComparisonPair, AggregatedData } from "./types";
+export type {
+  Rule,
+  Section,
+  RuleIndex,
+  Category,
+  Tool,
+  ComparisonPair,
+  AggregatedData,
+} from "./types";
 export { CATEGORY_FOLDER_MAPPINGS, CATEGORY_NAME_TO_FOLDER } from "./types";
 
 // Re-export aggregation functions
@@ -22,11 +30,7 @@ export {
 
 import type { Rule, Section, Category, Tool, ComparisonPair } from "./types";
 import { CATEGORY_FOLDER_MAPPINGS } from "./types";
-import {
-  generateCategories,
-  generateTools,
-  generateComparisons,
-} from "./aggregations";
+import { generateCategories, generateTools, generateComparisons } from "./aggregations";
 
 // Use the types from types.ts
 const categoryMappings = CATEGORY_FOLDER_MAPPINGS;
@@ -210,9 +214,7 @@ export function getRulesForTool(toolSlug: string): Rule[] {
   const tool = getTool(toolSlug);
   if (!tool) return [];
 
-  return rules.filter((rule) =>
-    rule.libs.some((lib) => lib.toLowerCase() === tool.normalizedName)
-  );
+  return rules.filter((rule) => rule.libs.some((lib) => lib.toLowerCase() === tool.normalizedName));
 }
 
 /**

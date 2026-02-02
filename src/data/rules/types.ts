@@ -105,5 +105,5 @@ export const CATEGORY_FOLDER_MAPPINGS: Record<string, string> = {
  * Reverse mapping: category name to folder
  */
 export const CATEGORY_NAME_TO_FOLDER: Record<string, string> = Object.fromEntries(
-  Object.entries(CATEGORY_FOLDER_MAPPINGS).map(([folder, name]) => [name, folder])
+  Object.entries(CATEGORY_FOLDER_MAPPINGS).map(([folder, name]) => [name, folder]),
 );

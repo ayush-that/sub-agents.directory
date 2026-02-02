@@ -53,19 +53,11 @@ export function ContextualLinks({
       )}
 
       {tools.length > 0 && (
-        <LinkSection
-          title="Browse by Tool"
-          icon={<Wrench className="h-4 w-4" />}
-          links={tools}
-        />
+        <LinkSection title="Browse by Tool" icon={<Wrench className="h-4 w-4" />} links={tools} />
       )}
 
       {useCases.length > 0 && (
-        <LinkSection
-          title="Use Cases"
-          icon={<Target className="h-4 w-4" />}
-          links={useCases}
-        />
+        <LinkSection title="Use Cases" icon={<Target className="h-4 w-4" />} links={useCases} />
       )}
 
       {comparisons.length > 0 && (
@@ -168,7 +160,7 @@ export function HubNavigation({ currentPath, className }: HubNavigationProps) {
             "px-3 py-1.5 text-sm rounded-full border transition-colors",
             currentPath === hub.url
               ? "bg-primary text-primary-foreground border-primary"
-              : "border-border hover:bg-accent"
+              : "border-border hover:bg-accent",
           )}
         >
           {hub.name}
@@ -202,7 +194,7 @@ export function CategoryQuickLinks({
             "px-3 py-1.5 text-sm rounded-full border transition-colors",
             currentSlug === cat.slug
               ? "bg-primary text-primary-foreground border-primary"
-              : "border-border hover:bg-accent"
+              : "border-border hover:bg-accent",
           )}
         >
           {cat.name}

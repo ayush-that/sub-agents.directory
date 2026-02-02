@@ -22,10 +22,7 @@ export function DynamicBreadcrumbs({ items, className }: DynamicBreadcrumbsProps
       <JsonLdScript data={schema} />
       <nav
         aria-label="Breadcrumb"
-        className={cn(
-          "flex items-center text-sm text-muted-foreground mb-4",
-          className
-        )}
+        className={cn("flex items-center text-sm text-muted-foreground mb-4", className)}
       >
         <ol className="flex items-center gap-1 flex-wrap">
           {items.map((item, index) => {
@@ -34,9 +31,7 @@ export function DynamicBreadcrumbs({ items, className }: DynamicBreadcrumbsProps
 
             return (
               <li key={item.url} className="flex items-center gap-1">
-                {index > 0 && (
-                  <ChevronRight className="h-3.5 w-3.5 text-muted-foreground/50" />
-                )}
+                {index > 0 && <ChevronRight className="h-3.5 w-3.5 text-muted-foreground/50" />}
                 {isLast ? (
                   <span
                     aria-current="page"
@@ -49,11 +44,7 @@ export function DynamicBreadcrumbs({ items, className }: DynamicBreadcrumbsProps
                     href={item.url}
                     className="hover:text-foreground transition-colors truncate max-w-[150px]"
                   >
-                    {isFirst ? (
-                      <Home className="h-3.5 w-3.5" />
-                    ) : (
-                      item.name
-                    )}
+                    {isFirst ? <Home className="h-3.5 w-3.5" /> : item.name}
                   </Link>
                 )}
               </li>
@@ -90,10 +81,7 @@ export function getRuleBreadcrumbs(rule: {
 /**
  * Generate breadcrumbs for category pages
  */
-export function getCategoryBreadcrumbs(category: {
-  name: string;
-  slug: string;
-}): BreadcrumbItem[] {
+export function getCategoryBreadcrumbs(category: { name: string; slug: string }): BreadcrumbItem[] {
   return [
     { name: "Home", url: "https://sub-agents.directory" },
     { name: "Agents", url: "https://sub-agents.directory/agents" },
@@ -104,10 +92,7 @@ export function getCategoryBreadcrumbs(category: {
 /**
  * Generate breadcrumbs for tool pages
  */
-export function getToolBreadcrumbs(tool: {
-  name: string;
-  slug: string;
-}): BreadcrumbItem[] {
+export function getToolBreadcrumbs(tool: { name: string; slug: string }): BreadcrumbItem[] {
   return [
     { name: "Home", url: "https://sub-agents.directory" },
     { name: "Agents", url: "https://sub-agents.directory/agents" },
@@ -134,10 +119,7 @@ export function getComparisonBreadcrumbs(rule1: string, rule2: string): Breadcru
 /**
  * Generate breadcrumbs for use case pages
  */
-export function getUseCaseBreadcrumbs(useCase: {
-  name: string;
-  slug: string;
-}): BreadcrumbItem[] {
+export function getUseCaseBreadcrumbs(useCase: { name: string; slug: string }): BreadcrumbItem[] {
   return [
     { name: "Home", url: "https://sub-agents.directory" },
     { name: "Agents", url: "https://sub-agents.directory/agents" },
@@ -149,10 +131,7 @@ export function getUseCaseBreadcrumbs(useCase: {
 /**
  * Generate breadcrumbs for MCP pages
  */
-export function getMcpBreadcrumbs(mcp: {
-  name: string;
-  slug: string;
-}): BreadcrumbItem[] {
+export function getMcpBreadcrumbs(mcp: { name: string; slug: string }): BreadcrumbItem[] {
   return [
     { name: "Home", url: "https://sub-agents.directory" },
     { name: "MCP Servers", url: "https://sub-agents.directory/mcp" },

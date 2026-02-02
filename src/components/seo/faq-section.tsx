@@ -13,7 +13,11 @@ interface FAQSectionProps {
   className?: string;
 }
 
-export function FAQSection({ faqs, title = "Frequently Asked Questions", className }: FAQSectionProps) {
+export function FAQSection({
+  faqs,
+  title = "Frequently Asked Questions",
+  className,
+}: FAQSectionProps) {
   if (faqs.length === 0) return null;
 
   const schema = createFAQSchema(faqs);
@@ -25,19 +29,11 @@ export function FAQSection({ faqs, title = "Frequently Asked Questions", classNa
         <h2 className="text-2xl font-semibold">{title}</h2>
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <details
-              key={index}
-              className="group border border-border/40 rounded-lg"
-            >
+            <details key={index} className="group border border-border/40 rounded-lg">
               <summary className="flex items-center justify-between p-4 cursor-pointer list-none hover:bg-accent/30 transition-colors rounded-lg">
                 <h3 className="font-medium text-left pr-4">{faq.question}</h3>
                 <span className="text-muted-foreground group-open:rotate-180 transition-transform">
-                  <svg
-                    className="h-5 w-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
+                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -94,10 +90,7 @@ export function generateCategoryFAQs(category: {
 /**
  * Generate FAQs for tool pages
  */
-export function generateToolFAQs(tool: {
-  name: string;
-  count: number;
-}): FAQItem[] {
+export function generateToolFAQs(tool: { name: string; count: number }): FAQItem[] {
   return [
     {
       question: `What are ${tool.name} Claude Code sub-agents?`,
@@ -117,13 +110,16 @@ export function generateToolFAQs(tool: {
 /**
  * Generate FAQs for comparison pages
  */
-export function generateComparisonFAQs(rule1: {
-  title: string;
-  description?: string;
-}, rule2: {
-  title: string;
-  description?: string;
-}): FAQItem[] {
+export function generateComparisonFAQs(
+  rule1: {
+    title: string;
+    description?: string;
+  },
+  rule2: {
+    title: string;
+    description?: string;
+  },
+): FAQItem[] {
   return [
     {
       question: `What's the difference between ${rule1.title} and ${rule2.title}?`,
@@ -167,10 +163,7 @@ export function generateUseCaseFAQs(useCase: {
 /**
  * Generate FAQs for MCP server pages
  */
-export function generateMcpFAQs(mcp: {
-  name: string;
-  description: string;
-}): FAQItem[] {
+export function generateMcpFAQs(mcp: { name: string; description: string }): FAQItem[] {
   return [
     {
       question: `What is the ${mcp.name} MCP server?`,

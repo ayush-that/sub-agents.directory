@@ -62,13 +62,11 @@ export default function ToolsIndexPage() {
               <div className="p-2 bg-accent rounded-lg">
                 <Wrench className="h-6 w-6" />
               </div>
-              <h1 className="text-3xl md:text-4xl font-bold">
-                Browse Agents by Tool
-              </h1>
+              <h1 className="text-3xl md:text-4xl font-bold">Browse Agents by Tool</h1>
             </div>
             <p className="text-lg text-muted-foreground max-w-3xl">
-              Explore {tools.length} tools used across {counts.rules} Claude
-              Code sub-agents. Find agents that use your preferred tools.
+              Explore {tools.length} tools used across {counts.rules} Claude Code sub-agents. Find
+              agents that use your preferred tools.
             </p>
           </header>
 

@@ -13,10 +13,7 @@ import { createUseCaseMetadata } from "@/lib/seo/metadata-factory";
 import { createCollectionPageSchema } from "@/lib/seo/schema-factory";
 import { REVALIDATION_TIMES, USE_CASES } from "@/lib/seo/constants";
 
-import {
-  rules,
-  getCategories,
-} from "@/data/rules";
+import { rules, getCategories } from "@/data/rules";
 
 import {
   JsonLdScript,
@@ -30,11 +27,7 @@ import { RuleCard } from "@/components/rule-card";
 
 type Params = Promise<{ usecase: string }>;
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Params;
-}): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { usecase: usecaseSlug } = await params;
   const useCase = USE_CASES[usecaseSlug];
 
@@ -63,9 +56,7 @@ export default async function UseCasePage({ params }: { params: Params }) {
   // Find relevant rules based on use case keywords and related categories
   const keywordSet = new Set(useCase.keywords.map((k) => k.toLowerCase()));
   const relatedCategorySlugs = new Set(
-    useCase.relatedCategories.map((c) =>
-      c.toLowerCase().replace(/[^a-z0-9]+/g, "-")
-    )
+    useCase.relatedCategories.map((c) => c.toLowerCase().replace(/[^a-z0-9]+/g, "-")),
   );
 
   // Score rules by relevance to this use case
@@ -74,9 +65,7 @@ export default async function UseCasePage({ params }: { params: Params }) {
       let score = 0;
 
       // Category match
-      const ruleCategorySlug = rule.tags[0]
-        ?.toLowerCase()
-        .replace(/[^a-z0-9]+/g, "-");
+      const ruleCategorySlug = rule.tags[0]?.toLowerCase().replace(/[^a-z0-9]+/g, "-");
       if (relatedCategorySlugs.has(ruleCategorySlug)) {
         score += 10;
       }
@@ -142,9 +131,7 @@ export default async function UseCasePage({ params }: { params: Params }) {
     .filter(([, uc]) => {
       // Find use cases with overlapping categories
       const overlap = uc.relatedCategories.some((c) =>
-        useCase.relatedCategories.some(
-          (rc) => rc.toLowerCase() === c.toLowerCase()
-        )
+        useCase.relatedCategories.some((rc) => rc.toLowerCase() === c.toLowerCase()),
       );
       return overlap;
     })
@@ -175,25 +162,16 @@ export default async function UseCasePage({ params }: { params: Params }) {
               </div>
               <span className="text-sm text-muted-foreground">Use Case</span>
             </div>
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">
-              {useCase.title}
-            </h1>
-            <p className="text-lg text-muted-foreground max-w-3xl">
-              {useCase.description}
-            </p>
+            <h1 className="text-3xl md:text-4xl font-bold mb-4">{useCase.title}</h1>
+            <p className="text-lg text-muted-foreground max-w-3xl">{useCase.description}</p>
           </header>
 
           {/* Keywords */}
           <section className="mb-8">
-            <h2 className="text-sm font-medium text-muted-foreground mb-3">
-              Related Technologies
-            </h2>
+            <h2 className="text-sm font-medium text-muted-foreground mb-3">Related Technologies</h2>
             <div className="flex flex-wrap gap-2">
               {useCase.keywords.map((keyword) => (
-                <span
-                  key={keyword}
-                  className="px-3 py-1 text-sm bg-accent/50 rounded-full"
-                >
+                <span key={keyword} className="px-3 py-1 text-sm bg-accent/50 rounded-full">
                   {keyword}
                 </span>
               ))}

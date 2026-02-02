@@ -7,18 +7,8 @@
 import type { MetadataRoute } from "next";
 import slugify from "slugify";
 
-import {
-  rules,
-  getCategories,
-  getTools,
-  getComparisons,
-} from "@/data/rules";
-import {
-  BASE_URL,
-  USE_CASES,
-  SITEMAP_PRIORITIES,
-  CHANGE_FREQUENCIES,
-} from "@/lib/seo/constants";
+import { rules, getCategories, getTools, getComparisons } from "@/data/rules";
+import { BASE_URL, USE_CASES, SITEMAP_PRIORITIES, CHANGE_FREQUENCIES } from "@/lib/seo/constants";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
@@ -74,7 +64,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: now,
       changeFrequency: "weekly",
       priority: 0.7,
-    }
+    },
   );
 
   // ============================================================================
@@ -92,7 +82,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: now,
       changeFrequency: CHANGE_FREQUENCIES["use-case"],
       priority: 0.8,
-    }
+    },
   );
 
   // ============================================================================
