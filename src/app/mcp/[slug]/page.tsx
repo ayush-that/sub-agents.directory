@@ -1,3 +1,9 @@
+/**
+ * MCP Server Page
+ * Enhanced with new SEO infrastructure
+ * /mcp/[slug]
+ */
+
 import { HowTo } from "@/components/how-to";
 import mcpData from "@/data/mcp";
 import type { Metadata } from "next";
@@ -5,6 +11,18 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import slugify from "slugify";
+import { ArrowRight } from "lucide-react";
+
+import { createMcpMetadata } from "@/lib/seo/metadata-factory";
+import { createSoftwareAppSchema } from "@/lib/seo/schema-factory";
+import { REVALIDATION_TIMES } from "@/lib/seo/constants";
+import {
+  JsonLdScript,
+  DynamicBreadcrumbs,
+  getMcpBreadcrumbs,
+  FAQSection,
+  generateMcpFAQs,
+} from "@/components/seo";
 
 export async function generateMetadata({
   params,
@@ -21,32 +39,11 @@ export async function generateMetadata({
     };
   }
 
-  const title = `${mcp.name} MCP Server`;
-  const description =
-    mcp.description || `Install and configure ${mcp.name} MCP server for Claude Code.`;
-
-  return {
-    title,
-    description,
-    alternates: {
-      canonical: `/mcp/${slug}`,
-    },
-    openGraph: {
-      title,
-      description,
-      url: `/mcp/${slug}`,
-      type: "website",
-      images: mcp.logo
-        ? [{ url: mcp.logo, alt: `${mcp.name} logo` }]
-        : [{ url: "/cover-image.png", width: 1200, height: 630 }],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: mcp.logo ? [mcp.logo] : ["/cover-image.png"],
-    },
-  };
+  return createMcpMetadata({
+    name: mcp.name,
+    slug,
+    description: mcp.description,
+  });
 }
 
 export async function generateStaticParams() {
@@ -55,7 +52,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+export default async function McpPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const mcp = mcpData.find((item) => slugify(item.name, { lower: true }) === slug);
 
@@ -63,41 +60,103 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     notFound();
   }
 
+  // Generate breadcrumbs
+  const breadcrumbs = getMcpBreadcrumbs({ name: mcp.name, slug });
+
+  // Generate schema
+  const softwareSchema = createSoftwareAppSchema({
+    name: mcp.name,
+    description: mcp.description,
+    url: `/mcp/${slug}`,
+    logo: mcp.logo,
+  });
+
+  // Generate FAQs
+  const faqs = generateMcpFAQs({
+    name: mcp.name,
+    description: mcp.description,
+  });
+
+  // Other MCP servers
+  const otherMcps = mcpData
+    .filter((m) => slugify(m.name, { lower: true }) !== slug)
+    .slice(0, 4);
+
   return (
-    <div className="min-h-screen mt-24 px-4">
-      <div className="container px-4 py-8 max-w-2xl">
-        <div className="flex items-center gap-4 mb-6">
-          {mcp.logo && (
-            <Image src={mcp.logo} alt={`${mcp.name} logo`} width={48} height={48} priority />
-          )}
-          <h1 className="text-2xl">{mcp.name}</h1>
-        </div>
-        <p className="text-[#878787] mb-4">{mcp.description}</p>
+    <>
+      <JsonLdScript data={softwareSchema} />
 
-        <Link
-          href={mcp.url}
-          className="text-sm text-[#878787] flex items-center gap-1"
-          target="_blank"
-        >
-          <span>Installation Instructions</span>
-          <svg
-            width="12"
-            height="13"
-            viewBox="0 0 12 13"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+      <div className="min-h-screen mt-16 px-4">
+        <div className="container px-4 py-8 max-w-2xl">
+          {/* Breadcrumbs */}
+          <DynamicBreadcrumbs items={breadcrumbs} className="mb-6" />
+
+          {/* Header */}
+          <div className="flex items-center gap-4 mb-6">
+            {mcp.logo && (
+              <Image
+                src={mcp.logo}
+                alt={`${mcp.name} logo`}
+                width={48}
+                height={48}
+                priority
+                className="rounded-lg"
+              />
+            )}
+            <h1 className="text-2xl font-semibold">{mcp.name} MCP Server</h1>
+          </div>
+
+          <p className="text-muted-foreground mb-6">{mcp.description}</p>
+
+          <Link
+            href={mcp.url}
+            className="inline-flex items-center gap-2 text-sm text-primary hover:underline mb-8"
+            target="_blank"
           >
-            <mask id="mask0_106_981" maskUnits="userSpaceOnUse" x="0" y="0" width="12" height="13">
-              <rect y="0.5" width="12" height="12" fill="#D9D9D9" />
-            </mask>
-            <g mask="url(#mask0_106_981)">
-              <path d="M3.2 9.5L2.5 8.8L7.3 4H3V3H9V9H8V4.7L3.2 9.5Z" fill="#878787" />
-            </g>
-          </svg>
-        </Link>
-      </div>
+            <span>Installation Instructions</span>
+            <ArrowRight className="h-4 w-4" />
+          </Link>
 
-      <HowTo />
-    </div>
+          {/* FAQ Section */}
+          <FAQSection faqs={faqs} className="my-8" />
+
+          {/* Other MCP Servers */}
+          <section className="mt-12 pt-8 border-t">
+            <h2 className="text-lg font-semibold mb-4">Other MCP Servers</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {otherMcps.map((m) => (
+                <Link
+                  key={m.name}
+                  href={`/mcp/${slugify(m.name, { lower: true })}`}
+                  className="flex items-center gap-3 p-3 rounded-lg border border-border/40 hover:border-border hover:bg-accent/30 transition-all"
+                >
+                  {m.logo && (
+                    <Image
+                      src={m.logo}
+                      alt={m.name}
+                      width={24}
+                      height={24}
+                      className="rounded"
+                    />
+                  )}
+                  <span className="text-sm">{m.name}</span>
+                </Link>
+              ))}
+            </div>
+            <Link
+              href="/mcp"
+              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mt-4 transition-colors"
+            >
+              <ArrowRight className="h-4 w-4 rotate-180" />
+              All MCP Servers
+            </Link>
+          </section>
+        </div>
+
+        <HowTo />
+      </div>
+    </>
   );
 }
+
+export const revalidate = REVALIDATION_TIMES.mcp;

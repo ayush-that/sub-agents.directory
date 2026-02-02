@@ -1,27 +1,58 @@
+/**
+ * Home Page
+ * Enhanced with new SEO infrastructure
+ */
+
 import { GlobalSearch } from "@/components/global-search";
-import { OrganizationJsonLd, WebSiteJsonLd } from "@/components/json-ld";
-import { getSections } from "@/data/rules";
+import { getSections, getCounts } from "@/data/rules";
+import { createMetadata } from "@/lib/seo/metadata-factory";
+import {
+  createWebSiteSchema,
+  createOrganizationSchema,
+  createSchemaGraph,
+} from "@/lib/seo/schema-factory";
+import { REVALIDATION_TIMES } from "@/lib/seo/constants";
+import { JsonLdScript } from "@/components/seo";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Sub-Agents Directory - Claude Code Sub-Agents & MCP Servers",
+export const metadata: Metadata = createMetadata({
+  type: "home",
+  title: "Sub-Agents Directory",
   description:
     "Browse 200+ Claude Code sub-agent prompts and MCP servers. Copy-paste ready prompts for React, Python, TypeScript, Go, and more frameworks.",
-  alternates: {
-    canonical: "/",
-  },
-};
+  path: "/",
+  keywords: [
+    "Claude Code",
+    "sub-agents",
+    "MCP servers",
+    "AI prompts",
+    "React",
+    "Python",
+    "TypeScript",
+  ],
+});
 
-export default function Page() {
+export default function HomePage() {
   const sections = getSections();
+  const counts = getCounts();
+
+  // Combined schema graph for home page
+  const schemaGraph = createSchemaGraph(
+    createWebSiteSchema({
+      description: `Browse ${counts.rules}+ Claude Code sub-agent prompts and MCP servers. Copy-paste ready prompts for React, Python, TypeScript, and more.`,
+    }),
+    createOrganizationSchema()
+  );
 
   return (
     <>
-      <WebSiteJsonLd />
-      <OrganizationJsonLd />
+      <JsonLdScript data={schemaGraph} />
+
       <div className="min-h-screen w-full px-4 pt-[10%]">
         <div className="w-full max-w-6xl mx-auto">
-          <h1 className="sr-only">Sub-Agents Directory - Find Claude Code Sub-Agent Prompts</h1>
+          <h1 className="sr-only">
+            Sub-Agents Directory - Find Claude Code Sub-Agent Prompts
+          </h1>
           <div className="flex justify-center mb-6">
             <a
               href="https://peerlist.io/shydev69/project/subagentsdirectory"
@@ -42,3 +73,5 @@ export default function Page() {
     </>
   );
 }
+
+export const revalidate = REVALIDATION_TIMES.home;
