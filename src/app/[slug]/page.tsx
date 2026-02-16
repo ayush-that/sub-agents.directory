@@ -79,7 +79,7 @@ export default async function Page({ params }: { params: Params }) {
           <Menu sections={sections} />
         </div>
 
-        <main className="flex-1 p-6 pt-16 max-w-4xl">
+        <main className="flex-1 min-w-0 px-4 py-6 pt-16 sm:px-6 lg:px-8 max-w-5xl mx-auto w-full overflow-x-hidden">
           <h1 className="sr-only">{rule.title} - Claude Code Sub-Agent</h1>
           <RuleCard rule={rule} isPage={true} />
           <RelatedRules rules={relatedRules} />

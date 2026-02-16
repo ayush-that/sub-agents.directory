@@ -13,10 +13,10 @@ import { ShareButton } from "./share-button";
 
 export const RuleCard = memo(function RuleCard({ rule, isPage }: { rule: Rule; isPage?: boolean }) {
   return (
-    <Card className="bg-background p-4 max-h-[calc(100vh-8rem)] aspect-square flex flex-col">
+    <Card className="bg-background p-3 sm:p-4 flex flex-col w-full max-w-full overflow-hidden">
       <CardContent
         className={cn(
-          "bg-card h-full mb-2 font-mono p-4 pr-1 text-sm opacity-50 hover:opacity-100 transition-opacity group relative flex-grow",
+          "bg-card h-full mb-2 font-mono p-3 sm:p-4 pr-1 text-xs sm:text-sm opacity-50 hover:opacity-100 transition-opacity group relative flex-grow overflow-hidden",
           isPage && "opacity-100",
         )}
       >
@@ -29,8 +29,8 @@ export const RuleCard = memo(function RuleCard({ rule, isPage }: { rule: Rule; i
         </div>
 
         <Link href={`/${rule.slug}`}>
-          <div className="h-full overflow-y-auto">
-            <code className="text-sm block pr-3">{rule.content}</code>
+          <div className="h-full overflow-y-auto overflow-x-hidden custom-scrollbar">
+            <code className="text-xs sm:text-sm block pr-3 whitespace-pre-wrap break-words">{rule.content}</code>
           </div>
         </Link>
       </CardContent>
