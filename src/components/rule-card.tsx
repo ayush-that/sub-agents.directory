@@ -30,7 +30,9 @@ export const RuleCard = memo(function RuleCard({ rule, isPage }: { rule: Rule; i
 
         <Link href={`/${rule.slug}`}>
           <div className="h-full overflow-y-auto overflow-x-hidden custom-scrollbar">
-            <code className="text-xs sm:text-sm block pr-3 whitespace-pre-wrap break-words">{rule.content}</code>
+            <code className="text-xs sm:text-sm block pr-3 whitespace-pre-wrap break-words">
+              {rule.content}
+            </code>
           </div>
         </Link>
       </CardContent>
