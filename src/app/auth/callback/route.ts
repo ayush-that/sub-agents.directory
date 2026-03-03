@@ -33,9 +33,7 @@ export async function GET(request: Request) {
     }
 
     const msg = error?.message || "unknown_exchange_error";
-    return NextResponse.redirect(
-      `${origin}/auth/auth-code-error?error=${encodeURIComponent(msg)}`,
-    );
+    return NextResponse.redirect(`${origin}/auth/auth-code-error?error=${encodeURIComponent(msg)}`);
   }
 
   return NextResponse.redirect(
