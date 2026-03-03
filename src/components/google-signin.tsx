@@ -2,6 +2,7 @@
 
 import { createClient } from "@/utils/supabase/client";
 import { useSearchParams } from "next/navigation";
+import { FcGoogle } from "react-icons/fc";
 import { Button } from "./ui/button";
 
 export function GoogleSignin() {
@@ -22,7 +23,10 @@ export function GoogleSignin() {
         });
       }}
     >
-      <span className="flex items-center gap-2">Sign in with Google</span>
+      <span className="flex items-center gap-2">
+        <FcGoogle className="w-4 h-4" />
+        Sign in with Google
+      </span>
     </Button>
   );
 }
