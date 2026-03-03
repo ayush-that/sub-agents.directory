@@ -12,7 +12,11 @@ export async function GET(request: Request) {
     const { error, data } = await supabase.auth.exchangeCodeForSession(code);
 
     if (!error && data?.user) {
-      await ensureUserExists();
+      try {
+        await ensureUserExists();
+      } catch (e) {
+        console.error("ensureUserExists failed:", e);
+      }
 
       const forwardedHost = request.headers.get("x-forwarded-host");
       const isLocalEnv = process.env.NODE_ENV === "development";
@@ -27,7 +31,14 @@ export async function GET(request: Request) {
 
       return NextResponse.redirect(`${origin}${next}`);
     }
+
+    const msg = error?.message || "unknown_exchange_error";
+    return NextResponse.redirect(
+      `${origin}/auth/auth-code-error?error=${encodeURIComponent(msg)}`,
+    );
   }
 
-  return NextResponse.redirect(`${origin}/auth/auth-code-error`);
+  return NextResponse.redirect(
+    `${origin}/auth/auth-code-error?error=${encodeURIComponent("no_code_in_url")}`,
+  );
 }
