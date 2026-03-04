@@ -1,4 +1,9 @@
-const nextConfig = {
+import type { NextConfig } from "next";
+import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
+
+initOpenNextCloudflareForDev();
+
+const nextConfig: NextConfig = {
   skipTrailingSlashRedirect: true,
   images: {
     remotePatterns: [
@@ -12,6 +17,7 @@ const nextConfig = {
       { protocol: "https", hostname: "console.settlemint.com" },
     ],
   },
+  serverExternalPackages: ["@prisma/client", ".prisma/client"],
 };
 
 export default nextConfig;

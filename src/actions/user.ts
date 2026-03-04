@@ -1,6 +1,6 @@
 "use server";
 
-import { prisma } from "@/lib/prisma";
+import { getPrisma } from "@/lib/prisma";
 import { createClient } from "@/utils/supabase/server";
 
 function generateUsername(email: string | undefined, name: string | undefined): string {
@@ -31,7 +31,7 @@ export async function ensureUserExists() {
     return null;
   }
 
-  const existingUser = await prisma.user.findUnique({
+  const existingUser = await getPrisma().user.findUnique({
     where: { id: user.id },
   });
 
@@ -44,7 +44,7 @@ export async function ensureUserExists() {
   const name = metadata.full_name || metadata.name || user.email?.split("@")[0];
   let username = githubUsername || generateUsername(user.email ?? undefined, name);
 
-  const existingUsername = await prisma.user.findUnique({
+  const existingUsername = await getPrisma().user.findUnique({
     where: { username },
   });
 
@@ -52,7 +52,7 @@ export async function ensureUserExists() {
     username = `${username}-${Date.now().toString(36).slice(-4)}`;
   }
 
-  const newUser = await prisma.user.create({
+  const newUser = await getPrisma().user.create({
     data: {
       id: user.id,
       email: user.email,
@@ -66,7 +66,7 @@ export async function ensureUserExists() {
 }
 
 export async function getUserByUsername(username: string) {
-  return prisma.user.findUnique({
+  return getPrisma().user.findUnique({
     where: { username },
     include: {
       _count: {
@@ -80,7 +80,7 @@ export async function getMembers(page = 1, limit = 24) {
   const skip = (page - 1) * limit;
 
   const [members, total] = await Promise.all([
-    prisma.user.findMany({
+    getPrisma().user.findMany({
       include: {
         _count: {
           select: { generations: true },
@@ -90,7 +90,7 @@ export async function getMembers(page = 1, limit = 24) {
       skip,
       take: limit,
     }),
-    prisma.user.count(),
+    getPrisma().user.count(),
   ]);
 
   return {
@@ -104,13 +104,13 @@ export async function getUserGenerations(userId: string, page = 1, limit = 12) {
   const skip = (page - 1) * limit;
 
   const [generations, total] = await Promise.all([
-    prisma.generation.findMany({
+    getPrisma().generation.findMany({
       where: { userId },
       orderBy: { createdAt: "desc" },
       skip,
       take: limit,
     }),
-    prisma.generation.count({
+    getPrisma().generation.count({
       where: { userId },
     }),
   ]);

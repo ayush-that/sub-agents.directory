@@ -31,7 +31,6 @@ export async function GET(_: Request, segmentData: { params: Params }) {
       "Content-Type": "application/json",
       "Cache-Control": "public, s-maxage=86400",
       "CDN-Cache-Control": "public, s-maxage=86400",
-      "Vercel-CDN-Cache-Control": "public, s-maxage=86400",
     },
   });
 }

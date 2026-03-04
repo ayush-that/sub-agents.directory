@@ -1,4 +1,4 @@
-import { prisma } from "@/lib/prisma";
+import { getPrisma } from "@/lib/prisma";
 
 const RATE_LIMIT_WINDOW_MS = 60 * 1000;
 const MAX_REQUESTS_PER_WINDOW = 5;
@@ -23,7 +23,7 @@ export async function checkRateLimit(userId: string): Promise<RateLimitResult> {
   const now = Date.now();
   const windowStart = new Date(now - RATE_LIMIT_WINDOW_MS);
 
-  const requests = await prisma.generateRateLimit.findMany({
+  const requests = await getPrisma().generateRateLimit.findMany({
     where: {
       userId,
       createdAt: { gte: windowStart },
@@ -43,7 +43,7 @@ export async function checkRateLimit(userId: string): Promise<RateLimitResult> {
     return { success: false, reset: resetTime, remaining: 0 };
   }
 
-  await prisma.generateRateLimit.create({
+  await getPrisma().generateRateLimit.create({
     data: {
       userId,
       createdAt: new Date(now),

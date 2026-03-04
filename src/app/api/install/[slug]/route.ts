@@ -75,7 +75,6 @@ fi
       "Content-Type": "text/x-shellscript; charset=utf-8",
       "Cache-Control": "public, s-maxage=86400",
       "CDN-Cache-Control": "public, s-maxage=86400",
-      "Vercel-CDN-Cache-Control": "public, s-maxage=86400",
     },
   });
 }

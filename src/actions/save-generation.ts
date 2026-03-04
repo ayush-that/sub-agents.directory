@@ -1,7 +1,7 @@
 "use server";
 
 import { ensureUserExists } from "@/actions/user";
-import { prisma } from "@/lib/prisma";
+import { getPrisma } from "@/lib/prisma";
 import { createClient } from "@/utils/supabase/server";
 import { customAlphabet } from "nanoid";
 
@@ -21,7 +21,7 @@ export async function saveGeneration(input: string, content: string) {
 
   const slug = nanoid();
 
-  const generation = await prisma.generation.create({
+  const generation = await getPrisma().generation.create({
     data: {
       slug,
       userId: user.id,
@@ -37,7 +37,7 @@ export async function saveGeneration(input: string, content: string) {
 }
 
 export async function getGenerationBySlug(slug: string) {
-  return prisma.generation.findUnique({
+  return getPrisma().generation.findUnique({
     where: { slug },
     include: {
       user: {

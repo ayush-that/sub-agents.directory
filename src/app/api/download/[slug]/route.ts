@@ -61,7 +61,6 @@ export async function GET(_: Request, segmentData: { params: Params }) {
       "Content-Disposition": `attachment; filename="${slug}.md"`,
       "Cache-Control": "public, s-maxage=86400",
       "CDN-Cache-Control": "public, s-maxage=86400",
-      "Vercel-CDN-Cache-Control": "public, s-maxage=86400",
     },
   });
 }

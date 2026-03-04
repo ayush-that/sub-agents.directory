@@ -1,5 +1,5 @@
 import { createClient } from "@/utils/supabase/server";
-import { prisma } from "@/lib/prisma";
+import { getPrisma } from "@/lib/prisma";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ export default async function DebugPage() {
 
   let dbUser = null;
   if (user) {
-    dbUser = await prisma.user.findUnique({
+    dbUser = await getPrisma().user.findUnique({
       where: { id: user.id },
       include: { _count: { select: { generations: true, rateLimits: true } } },
     });

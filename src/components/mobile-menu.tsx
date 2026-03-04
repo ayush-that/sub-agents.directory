@@ -9,6 +9,14 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 
+interface Session {
+  user?: {
+    name?: string;
+    email?: string;
+    image?: string;
+  };
+}
+
 const navigationLinks = [
   { href: "/agents", label: "Agents" },
   { href: "/mcp", label: "MCPs" },
@@ -21,7 +29,7 @@ const navigationLinks = [
 export function MobileMenu() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-  const [session, setSession] = useState<unknown>(null);
+  const [session, setSession] = useState<Session | null>(null);
   const supabase = createClient();
 
   useEffect(() => {

@@ -147,3 +147,5 @@ subagents
 .upstream-commit
 /src/generated/prisma
 .vercel
+.open-next
+.dev.vars
