@@ -1,6 +1,5 @@
 import { GlobalSearch } from "@/components/global-search";
 import { OrganizationJsonLd, WebSiteJsonLd } from "@/components/json-ld";
-import { getSections } from "@/data/rules";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -13,8 +12,6 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  const sections = getSections();
-
   return (
     <>
       <WebSiteJsonLd />
@@ -36,7 +33,7 @@ export default function Page() {
               />
             </a>
           </div>
-          <GlobalSearch sections={sections} />
+          <GlobalSearch />
         </div>
       </div>
     </>

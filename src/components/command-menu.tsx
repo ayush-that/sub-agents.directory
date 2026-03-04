@@ -1,5 +1,6 @@
 "use client";
 
+import { rules as staticRules } from "@/data/rules/client";
 import type { Rule } from "@/data/rules/types";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
@@ -9,11 +10,11 @@ import { CommandDialog, CommandItem, CommandList } from "./ui/command";
 export function CommandMenu({
   open,
   setOpen,
-  rules,
+  rules = staticRules,
 }: {
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  rules: Rule[];
+  rules?: Rule[];
 }) {
   const router = useRouter();
 

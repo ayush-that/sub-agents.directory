@@ -149,3 +149,4 @@ subagents
 .vercel
 .open-next
 .dev.vars
+src/data/rules/generated.json

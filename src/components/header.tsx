@@ -1,6 +1,5 @@
 "use client";
 
-import type { Rule } from "@/data/rules/types";
 import { cn } from "@/lib/utils";
 import { ChevronDown, Github, SearchIcon } from "lucide-react";
 import Link from "next/link";
@@ -29,7 +28,7 @@ const moreLinks = [
   { href: "/advertise", label: "Advertise" },
 ] as const;
 
-export function Header({ rules }: { rules: Rule[] }) {
+export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
@@ -110,7 +109,7 @@ export function Header({ rules }: { rules: Rule[] }) {
         </div>
       </div>
       <MobileMenu />
-      <CommandMenu open={open} setOpen={setOpen} rules={rules} />
+      <CommandMenu open={open} setOpen={setOpen} />
     </div>
   );
 }

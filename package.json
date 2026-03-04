@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "prisma generate && next build",
-    "build:worker": "prisma generate && next build && opennextjs-cloudflare build",
+    "dev": "bun run generate:rules && next dev",
+    "generate:rules": "bun run scripts/generate-rules-json.ts",
+    "build": "prisma generate && bun run generate:rules && next build",
+    "build:worker": "prisma generate && bun run generate:rules && next build && opennextjs-cloudflare build",
     "preview": "bun run build:worker && opennextjs-cloudflare preview",
     "deploy": "bun run build:worker && opennextjs-cloudflare deploy",
     "start": "next start",
