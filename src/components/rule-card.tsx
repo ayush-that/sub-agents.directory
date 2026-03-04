@@ -37,7 +37,12 @@ export const RuleCard = memo(function RuleCard({ rule, isPage }: { rule: Rule; i
           isPage && "opacity-100",
         )}
       >
-        <div className="group-hover:flex hidden right-4 bottom-4 absolute z-10 space-x-2">
+        <div
+          className={cn(
+            "right-4 bottom-4 absolute z-10 space-x-2",
+            isPage ? "flex" : "group-hover:flex hidden",
+          )}
+        >
           <InstallButton slug={rule.slug} />
           <OpenInDropdown content={fullContent} slug={rule.slug} />
           <ShareButton slug={rule.slug} />
@@ -45,9 +50,9 @@ export const RuleCard = memo(function RuleCard({ rule, isPage }: { rule: Rule; i
           <DownloadButton content={fullContent} slug={rule.slug} filename={rule.slug} />
         </div>
 
-        <Link href={`/${rule.slug}`}>
+        <Link href={isPage ? "#" : `/${rule.slug}`} onClick={isPage ? (e) => e.preventDefault() : undefined}>
           <div className="h-full overflow-y-auto overflow-x-hidden custom-scrollbar">
-            <code className="text-xs sm:text-sm block pr-3 whitespace-pre-wrap break-words">
+            <code className="text-xs sm:text-sm block pr-3 pb-12 whitespace-pre-wrap break-words">
               {displayContent}
             </code>
           </div>
