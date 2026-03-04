@@ -51,7 +51,7 @@ for (const folder of categoryFolders) {
   for (const file of files) {
     const filePath = path.join(folderPath, file);
     const fileContent = fs.readFileSync(filePath, "utf-8");
-    const { data, content } = matter(fileContent);
+    const { data } = matter(fileContent);
 
     let libs: string[] = [];
     if (typeof data.tools === "string") {

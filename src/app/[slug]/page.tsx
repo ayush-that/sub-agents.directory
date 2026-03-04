@@ -89,4 +89,3 @@ export default async function Page({ params }: { params: Params }) {
   );
 }
 
-export const revalidate = 86400;

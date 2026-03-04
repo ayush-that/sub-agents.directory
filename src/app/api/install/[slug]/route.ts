@@ -1,7 +1,6 @@
 import { rules } from "@/data/rules";
 
 export const dynamic = "force-static";
-export const revalidate = 86400;
 
 const BASE_URL = process.env.NEXT_PUBLIC_APP_URL || "https://sub-agents.directory";
 const VALID_SLUG_PATTERN = /^[a-z0-9-]+$/;

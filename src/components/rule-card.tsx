@@ -1,10 +1,12 @@
+"use client";
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
 import type { Rule } from "@/data/rules/types";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
-import { memo } from "react";
+import { memo, useEffect, useState } from "react";
 import { CopyButton } from "./copy-button";
 import { DownloadButton } from "./download-button";
 import { InstallButton } from "./install-button";
@@ -12,7 +14,20 @@ import { OpenInDropdown } from "./open-in-dropdown";
 import { ShareButton } from "./share-button";
 
 export const RuleCard = memo(function RuleCard({ rule, isPage }: { rule: Rule; isPage?: boolean }) {
-  const displayContent = rule.content || rule.description;
+  const [fullContent, setFullContent] = useState<string | undefined>(rule.content);
+
+  useEffect(() => {
+    if (isPage && !rule.content) {
+      fetch(`/api/${rule.slug}`)
+        .then((res) => res.json())
+        .then((json) => {
+          if (json.data?.content) setFullContent(json.data.content);
+        })
+        .catch(() => {});
+    }
+  }, [isPage, rule.slug, rule.content]);
+
+  const displayContent = fullContent || rule.description;
 
   return (
     <Card className="bg-background p-3 sm:p-4 flex flex-col w-full max-w-full overflow-hidden">
@@ -24,10 +39,10 @@ export const RuleCard = memo(function RuleCard({ rule, isPage }: { rule: Rule; i
       >
         <div className="group-hover:flex hidden right-4 bottom-4 absolute z-10 space-x-2">
           <InstallButton slug={rule.slug} />
-          <OpenInDropdown content={rule.content} slug={rule.slug} />
+          <OpenInDropdown content={fullContent} slug={rule.slug} />
           <ShareButton slug={rule.slug} />
-          <CopyButton content={rule.content} slug={rule.slug} />
-          <DownloadButton content={rule.content} slug={rule.slug} filename={rule.slug} />
+          <CopyButton content={fullContent} slug={rule.slug} />
+          <DownloadButton content={fullContent} slug={rule.slug} filename={rule.slug} />
         </div>
 
         <Link href={`/${rule.slug}`}>

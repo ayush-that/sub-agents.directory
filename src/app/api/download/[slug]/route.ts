@@ -3,7 +3,6 @@ import path from "path";
 import { rules } from "@/data/rules";
 
 export const dynamic = "force-static";
-export const revalidate = 86400;
 
 const VALID_SLUG_PATTERN = /^[a-z0-9-]+$/;
 
