@@ -6,14 +6,16 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Members | Sub-Agents Directory",
-  description: "Browse members who have generated and shared Claude Code sub-agent prompts.",
+  description:
+    "Browse members who have generated and shared Claude Code sub-agent prompts.",
   openGraph: {
     title: "Members | Sub-Agents Directory",
-    description: "Browse members who have generated and shared Claude Code sub-agent prompts.",
+    description:
+      "Browse members who have generated and shared Claude Code sub-agent prompts.",
   },
 };
 
-export const revalidate = 300;
+export const dynamic = "force-dynamic";
 
 export default async function MembersPage() {
   const { members, total } = await getMembers(1, 90);
@@ -24,7 +26,8 @@ export default async function MembersPage() {
         <div>
           <h1 className="text-xl mb-2">Browse Members</h1>
           <p className="text-sm text-[#878787] mb-8">
-            Join the community with {total} {total === 1 ? "member" : "members"}.
+            Join the community with {total} {total === 1 ? "member" : "members"}
+            .
           </p>
         </div>
 
