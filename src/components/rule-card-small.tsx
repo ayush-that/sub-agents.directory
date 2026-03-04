@@ -18,6 +18,8 @@ export const RuleCardSmall = memo(function RuleCardSmall({
   isPage?: boolean;
   small?: boolean;
 }) {
+  const displayContent = rule.description || rule.content;
+
   return (
     <Card
       className={cn(
@@ -39,14 +41,21 @@ export const RuleCardSmall = memo(function RuleCardSmall({
           )}
         >
           {!small && <ShareButton slug={rule.slug} small={small} />}
-          <CopyButton content={rule.content} small={small} />
-          {!small && <DownloadButton content={rule.content} filename={rule.slug} small={small} />}
+          <CopyButton content={rule.content} slug={rule.slug} small={small} />
+          {!small && (
+            <DownloadButton
+              content={rule.content}
+              slug={rule.slug}
+              filename={rule.slug}
+              small={small}
+            />
+          )}
         </div>
 
         <Link href={`/${rule.slug}`}>
           <div className="h-full overflow-y-auto">
             <code className={cn("block pr-3", small ? "text-xs line-clamp-3" : "text-sm")}>
-              {small ? rule.description || rule.content : rule.content}
+              {small ? displayContent : rule.content || rule.description}
             </code>
           </div>
         </Link>

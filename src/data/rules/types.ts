@@ -4,7 +4,7 @@ export interface Rule {
   description: string;
   tags: string[];
   libs: string[];
-  content: string;
+  content?: string;
 }
 
 export type Section = {

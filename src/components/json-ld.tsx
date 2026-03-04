@@ -95,7 +95,7 @@ export function RuleJsonLd({ rule, datePublished, dateModified }: RuleJsonLdProp
     "@context": "https://schema.org",
     "@type": "Article",
     headline: rule.title,
-    description: rule.description || cleanDescription(rule.content, 160),
+    description: rule.description || cleanDescription(rule.content || "", 160),
     url: `${BASE_URL}/${rule.slug}`,
     image: `${BASE_URL}/cover-image.png`,
     datePublished: datePublished || "2024-01-01T00:00:00Z",

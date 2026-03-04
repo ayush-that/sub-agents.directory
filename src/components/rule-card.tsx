@@ -12,6 +12,8 @@ import { OpenInDropdown } from "./open-in-dropdown";
 import { ShareButton } from "./share-button";
 
 export const RuleCard = memo(function RuleCard({ rule, isPage }: { rule: Rule; isPage?: boolean }) {
+  const displayContent = rule.content || rule.description;
+
   return (
     <Card className="bg-background p-3 sm:p-4 flex flex-col w-full max-w-full overflow-hidden">
       <CardContent
@@ -22,16 +24,16 @@ export const RuleCard = memo(function RuleCard({ rule, isPage }: { rule: Rule; i
       >
         <div className="group-hover:flex hidden right-4 bottom-4 absolute z-10 space-x-2">
           <InstallButton slug={rule.slug} />
-          <OpenInDropdown content={rule.content} />
+          <OpenInDropdown content={rule.content} slug={rule.slug} />
           <ShareButton slug={rule.slug} />
-          <CopyButton content={rule.content} />
-          <DownloadButton content={rule.content} filename={rule.slug} />
+          <CopyButton content={rule.content} slug={rule.slug} />
+          <DownloadButton content={rule.content} slug={rule.slug} filename={rule.slug} />
         </div>
 
         <Link href={`/${rule.slug}`}>
           <div className="h-full overflow-y-auto overflow-x-hidden custom-scrollbar">
             <code className="text-xs sm:text-sm block pr-3 whitespace-pre-wrap break-words">
-              {rule.content}
+              {displayContent}
             </code>
           </div>
         </Link>

@@ -7,18 +7,28 @@ import { toast } from "sonner";
 
 export function DownloadButton({
   content,
+  slug,
   filename,
   small,
 }: {
-  content: string;
+  content?: string;
+  slug?: string;
   filename: string;
   small?: boolean;
 }) {
   const [downloaded, setDownloaded] = useState(false);
 
-  const handleDownload = () => {
+  const handleDownload = async () => {
     try {
-      const blob = new Blob([content], { type: "text/markdown" });
+      let text = content;
+      if (!text && slug) {
+        const res = await fetch(`/api/${slug}`);
+        const json = await res.json();
+        text = json.data?.content;
+      }
+      if (!text) return;
+
+      const blob = new Blob([text], { type: "text/markdown" });
       const url = URL.createObjectURL(blob);
 
       const a = document.createElement("a");

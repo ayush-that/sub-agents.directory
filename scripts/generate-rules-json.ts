@@ -29,7 +29,6 @@ interface Rule {
   description: string;
   tags: string[];
   libs: string[];
-  content: string;
 }
 
 interface Section {
@@ -69,7 +68,6 @@ for (const folder of categoryFolders) {
       description: data.description || "",
       tags: [categoryName],
       libs,
-      content: content.trim(),
     });
   }
 }

@@ -5,12 +5,30 @@ import { cn } from "@/lib/utils";
 import { ExternalLink } from "lucide-react";
 import { useRef, useState } from "react";
 
-export function OpenInDropdown({ content, small }: { content: string; small?: boolean }) {
+async function resolveContent(content?: string, slug?: string): Promise<string | undefined> {
+  if (content) return content;
+  if (!slug) return undefined;
+  const res = await fetch(`/api/${slug}`);
+  const json = await res.json();
+  return json.data?.content;
+}
+
+export function OpenInDropdown({
+  content,
+  slug,
+  small,
+}: {
+  content?: string;
+  slug?: string;
+  small?: boolean;
+}) {
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const handleOpenIn = (platform: "claude" | "chatgpt") => {
-    const encoded = encodeURIComponent(content);
+  const handleOpenIn = async (platform: "claude" | "chatgpt") => {
+    const text = await resolveContent(content, slug);
+    if (!text) return;
+    const encoded = encodeURIComponent(text);
     const url =
       platform === "claude"
         ? `https://claude.ai/new?q=${encoded}`
@@ -19,8 +37,10 @@ export function OpenInDropdown({ content, small }: { content: string; small?: bo
     setIsOpen(false);
   };
 
-  const handleViewMarkdown = () => {
-    const blob = new Blob([content], { type: "text/markdown" });
+  const handleViewMarkdown = async () => {
+    const text = await resolveContent(content, slug);
+    if (!text) return;
+    const blob = new Blob([text], { type: "text/markdown" });
     const url = URL.createObjectURL(blob);
     window.open(url, "_blank");
     setIsOpen(false);

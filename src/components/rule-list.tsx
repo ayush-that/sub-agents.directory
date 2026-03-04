@@ -59,7 +59,7 @@ export function RuleList({
           (rule) =>
             !search ||
             rule.title.toLowerCase().includes(searchLower) ||
-            rule.content.toLowerCase().includes(searchLower),
+            rule.description.toLowerCase().includes(searchLower),
         ),
       }))
       .filter((section) => section.rules.length > 0);
