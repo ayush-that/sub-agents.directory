@@ -1,4 +1,5 @@
 import { rules } from "@/data/rules";
+import contentMap from "@/data/rules/generated-content.json";
 
 export const dynamic = "force-static";
 
@@ -8,29 +9,6 @@ export async function generateStaticParams() {
   return rules.map((rule) => ({
     slug: rule.slug,
   }));
-}
-
-async function findMarkdownContent(slug: string): Promise<string | null> {
-  const fs = await import("fs");
-  const path = await import("path");
-
-  const categoriesDir = path.join(process.cwd(), "content");
-
-  if (!fs.existsSync(categoriesDir)) return null;
-
-  const categoryFolders = fs.readdirSync(categoriesDir);
-
-  for (const folder of categoryFolders) {
-    const folderPath = path.join(categoriesDir, folder);
-    if (!fs.statSync(folderPath).isDirectory()) continue;
-
-    const filePath = path.join(folderPath, `${slug}.md`);
-    if (fs.existsSync(filePath)) {
-      return fs.readFileSync(filePath, "utf-8");
-    }
-  }
-
-  return null;
 }
 
 type Params = Promise<{ slug: string }>;
@@ -46,7 +24,7 @@ export async function GET(_: Request, segmentData: { params: Params }) {
     return new Response("Invalid slug format", { status: 400 });
   }
 
-  const markdown = await findMarkdownContent(slug);
+  const markdown = (contentMap as Record<string, string>)[slug];
 
   if (!markdown) {
     return new Response("Rule not found", { status: 404 });

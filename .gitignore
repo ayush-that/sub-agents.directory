@@ -150,4 +150,5 @@ subagents
 .open-next
 .dev.vars
 src/data/rules/generated.json
+src/data/rules/generated-content.json
 .wrangler-test

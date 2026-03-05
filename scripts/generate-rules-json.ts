@@ -84,3 +84,23 @@ const sections: Section[] = categories
 const outPath = path.join(process.cwd(), "src", "data", "rules", "generated.json");
 fs.writeFileSync(outPath, JSON.stringify({ rules, sections }));
 console.log(`Generated ${rules.length} rules, ${sections.length} sections → ${outPath}`);
+
+// Generate full-content map for API routes (slug -> content)
+const contentMap: Record<string, string> = {};
+for (const folder of categoryFolders) {
+  const folderPath = path.join(contentDir, folder);
+  if (!fs.statSync(folderPath).isDirectory()) continue;
+
+  const files = fs.readdirSync(folderPath).filter((f) => f.endsWith(".md") && f !== "README.md");
+  for (const file of files) {
+    const filePath = path.join(folderPath, file);
+    const fileContent = fs.readFileSync(filePath, "utf-8");
+    const { data, content } = matter(fileContent);
+    const slug = data.name || file.replace(".md", "");
+    contentMap[slug] = content.trim();
+  }
+}
+
+const contentOutPath = path.join(process.cwd(), "src", "data", "rules", "generated-content.json");
+fs.writeFileSync(contentOutPath, JSON.stringify(contentMap));
+console.log(`Generated content map (${Object.keys(contentMap).length} entries) → ${contentOutPath}`);
