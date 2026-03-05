@@ -1,5 +1,3 @@
-import fs from "fs";
-import path from "path";
 import { rules } from "@/data/rules";
 
 export const dynamic = "force-static";
@@ -12,7 +10,10 @@ export async function generateStaticParams() {
   }));
 }
 
-function findMarkdownFile(slug: string): string | null {
+async function findMarkdownContent(slug: string): Promise<string | null> {
+  const fs = await import("fs");
+  const path = await import("path");
+
   const categoriesDir = path.join(process.cwd(), "content");
 
   if (!fs.existsSync(categoriesDir)) return null;
@@ -25,7 +26,7 @@ function findMarkdownFile(slug: string): string | null {
 
     const filePath = path.join(folderPath, `${slug}.md`);
     if (fs.existsSync(filePath)) {
-      return filePath;
+      return fs.readFileSync(filePath, "utf-8");
     }
   }
 
@@ -45,13 +46,11 @@ export async function GET(_: Request, segmentData: { params: Params }) {
     return new Response("Invalid slug format", { status: 400 });
   }
 
-  const filePath = findMarkdownFile(slug);
+  const markdown = await findMarkdownContent(slug);
 
-  if (!filePath) {
+  if (!markdown) {
     return new Response("Rule not found", { status: 404 });
   }
-
-  const markdown = fs.readFileSync(filePath, "utf-8");
 
   return new Response(markdown, {
     status: 200,

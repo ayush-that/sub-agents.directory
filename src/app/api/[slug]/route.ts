@@ -1,8 +1,4 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
 import { rules } from "@/data/rules";
-import { NextResponse } from "next/server";
 
 export const dynamic = "force-static";
 
@@ -12,7 +8,11 @@ export async function generateStaticParams() {
   }));
 }
 
-function loadFullRule(slug: string) {
+async function loadFullRule(slug: string) {
+  const fs = await import("fs");
+  const path = await import("path");
+  const matter = (await import("gray-matter")).default;
+
   const contentDir = path.join(process.cwd(), "content");
   if (!fs.existsSync(contentDir)) return null;
 
@@ -37,16 +37,16 @@ export async function GET(_: Request, segmentData: { params: Params }) {
   const { slug } = await segmentData.params;
 
   if (!slug) {
-    return NextResponse.json({ error: "No slug provided" }, { status: 400 });
+    return new Response(JSON.stringify({ error: "No slug provided" }), { status: 400, headers: { "Content-Type": "application/json" } });
   }
 
   const rule = rules.find((r) => r.slug === slug);
 
   if (!rule) {
-    return NextResponse.json({ error: "Rule not found" }, { status: 404 });
+    return new Response(JSON.stringify({ error: "Rule not found" }), { status: 404, headers: { "Content-Type": "application/json" } });
   }
 
-  const content = loadFullRule(slug) || rule.content;
+  const content = (await loadFullRule(slug)) || rule.content;
 
   return new Response(JSON.stringify({ data: { ...rule, content } }), {
     status: 200,

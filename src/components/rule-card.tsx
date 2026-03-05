@@ -50,7 +50,10 @@ export const RuleCard = memo(function RuleCard({ rule, isPage }: { rule: Rule; i
           <DownloadButton content={fullContent} slug={rule.slug} filename={rule.slug} />
         </div>
 
-        <Link href={isPage ? "#" : `/${rule.slug}`} onClick={isPage ? (e) => e.preventDefault() : undefined}>
+        <Link
+          href={isPage ? "#" : `/${rule.slug}`}
+          onClick={isPage ? (e) => e.preventDefault() : undefined}
+        >
           <div className="h-full overflow-y-auto overflow-x-hidden custom-scrollbar">
             <code className="text-xs sm:text-sm block pr-3 pb-12 whitespace-pre-wrap break-words">
               {displayContent}

@@ -26,7 +26,9 @@ export function RelatedRules({ rules }: RelatedRulesProps) {
                 <p className="text-sm text-muted-foreground truncate mt-0.5">{rule.description}</p>
               )}
             </div>
-            <span className="text-xs text-muted-foreground ml-4 shrink-0 hidden sm:inline">{rule.tags[0]}</span>
+            <span className="text-xs text-muted-foreground ml-4 shrink-0 hidden sm:inline">
+              {rule.tags[0]}
+            </span>
           </Link>
         ))}
       </div>
