@@ -37,13 +37,19 @@ export async function GET(_: Request, segmentData: { params: Params }) {
   const { slug } = await segmentData.params;
 
   if (!slug) {
-    return new Response(JSON.stringify({ error: "No slug provided" }), { status: 400, headers: { "Content-Type": "application/json" } });
+    return new Response(JSON.stringify({ error: "No slug provided" }), {
+      status: 400,
+      headers: { "Content-Type": "application/json" },
+    });
   }
 
   const rule = rules.find((r) => r.slug === slug);
 
   if (!rule) {
-    return new Response(JSON.stringify({ error: "Rule not found" }), { status: 404, headers: { "Content-Type": "application/json" } });
+    return new Response(JSON.stringify({ error: "Rule not found" }), {
+      status: 404,
+      headers: { "Content-Type": "application/json" },
+    });
   }
 
   const content = (await loadFullRule(slug)) || rule.content;
