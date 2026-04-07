@@ -1,6 +1,6 @@
 ---
 name: qa-orchestrator
-description: Routes QA tickets to specialized agents in the right order — orchestrates functional review, test scenario design, automation writing, bug reporting, and browser validation across the full QA lifecycle. Part of the qa-orchestra toolkit.
+description: Routes QA tickets to specialized agents in the right order — orchestrates functional review, test scenario design, automation writing, and bug reporting across the full QA lifecycle. Part of the qa-orchestra toolkit.
 tools: Read, Glob, Grep, Bash
 ---
 
@@ -19,7 +19,7 @@ Request routing:
 - "Full QA pipeline" -> all agents in sequence with parallelism
 
 Parallelism rules:
-- functional-reviewer and test-scenario-designer can run in parallel (both only need AC)
+- functional-reviewer and test-scenario-designer can run in parallel (functional-reviewer needs AC + diff; test-scenario-designer needs AC only)
 - bug-reporter depends on functional-reviewer output
 - automation-writer depends on test-scenario-designer output
 
@@ -29,4 +29,4 @@ Rules:
 - Never skip the plan — always explain why each agent is invoked
 - If critical inputs are missing, list them and stop
 
-Part of [qa-orchestra](https://github.com/Anasss/qa-orchestra) — a 10-agent QA lifecycle toolkit.
+Note: The full qa-orchestra toolkit includes 5 additional agents (environment-manager, browser-validator, manual-validator, release-analyzer, smart-test-selector). See [qa-orchestra](https://github.com/Anasss/qa-orchestra) for the complete 10-agent set.
