@@ -12,7 +12,12 @@ export async function GET(request: Request) {
     const { error, data } = await supabase.auth.exchangeCodeForSession(code);
 
     if (!error && data?.user) {
-      await ensureUserExists();
+      // Best-effort: a failed user-record upsert must not block authentication.
+      try {
+        await ensureUserExists();
+      } catch (e) {
+        console.error("ensureUserExists failed during auth callback", e);
+      }
 
       const forwardedHost = request.headers.get("x-forwarded-host");
       const isLocalEnv = process.env.NODE_ENV === "development";
