@@ -23,6 +23,37 @@ function slugToTitle(slug: string): string {
     .join(" ");
 }
 
+// Upstream-synced frontmatter sometimes contains unquoted colons in the
+// description (e.g. "description: ... Triggers on: '...'"), which is invalid
+// YAML and makes gray-matter throw. Fall back to a lenient line parser
+// (split on the first colon) so one bad file can't break the whole build.
+function parseFrontmatter(raw: string): { data: Record<string, string>; content: string } {
+  try {
+    const parsed = matter(raw);
+    return { data: parsed.data as Record<string, string>, content: parsed.content };
+  } catch {
+    const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);
+    if (!match) {
+      return { data: {}, content: raw };
+    }
+    const data: Record<string, string> = {};
+    for (const line of match[1].split("\n")) {
+      const idx = line.indexOf(":");
+      if (idx === -1) continue;
+      const key = line.slice(0, idx).trim();
+      let value = line.slice(idx + 1).trim();
+      if (
+        (value.startsWith('"') && value.endsWith('"')) ||
+        (value.startsWith("'") && value.endsWith("'"))
+      ) {
+        value = value.slice(1, -1);
+      }
+      if (key) data[key] = value;
+    }
+    return { data, content: match[2] };
+  }
+}
+
 interface Rule {
   title: string;
   slug: string;
@@ -51,7 +82,7 @@ for (const folder of categoryFolders) {
   for (const file of files) {
     const filePath = path.join(folderPath, file);
     const fileContent = fs.readFileSync(filePath, "utf-8");
-    const { data } = matter(fileContent);
+    const { data } = parseFrontmatter(fileContent);
 
     let libs: string[] = [];
     if (typeof data.tools === "string") {
@@ -95,7 +126,7 @@ for (const folder of categoryFolders) {
   for (const file of files) {
     const filePath = path.join(folderPath, file);
     const fileContent = fs.readFileSync(filePath, "utf-8");
-    const { data, content } = matter(fileContent);
+    const { data, content } = parseFrontmatter(fileContent);
     const slug = data.name || file.replace(".md", "");
     contentMap[slug] = content.trim();
   }
