@@ -1,5 +1,5 @@
 import { createClient } from "@/utils/supabase/server";
-import { getPrisma } from "@/lib/prisma";
+import { supabaseAdmin } from "@/lib/supabase-rest";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -22,10 +22,12 @@ export default async function DebugPage() {
 
   let dbUser = null;
   if (user) {
-    dbUser = await getPrisma().user.findUnique({
-      where: { id: user.id },
-      include: { _count: { select: { generations: true, rateLimits: true } } },
-    });
+    const { data } = await supabaseAdmin()
+      .from("users")
+      .select("*, generations(count), generate_rate_limits(count)")
+      .eq("id", user.id)
+      .maybeSingle();
+    dbUser = data;
   }
 
   return (
