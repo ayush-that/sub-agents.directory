@@ -101,7 +101,7 @@ export default async function DebugPage() {
       </section>
 
       <section className="mb-8">
-        <h2 className="text-lg font-semibold mb-2">Database User (Prisma)</h2>
+        <h2 className="text-lg font-semibold mb-2">Database User (Supabase)</h2>
         {dbUser ? (
           <pre className="bg-muted p-4 rounded text-xs overflow-auto">
             {JSON.stringify(dbUser, null, 2)}
