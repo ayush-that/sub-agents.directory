@@ -112,4 +112,10 @@ export default [
       "This server provides integration with Github's issue tracking system through MCP, allowing LLMs to interact with Github issues.",
     logo: "https://cdn.brandfetch.io/idZAyF9rlg/theme/light/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B",
   },
+  {
+    name: "AgentServices",
+    url: "https://agentservices.to",
+    description:
+      "Paid data APIs for AI agents with x402 payments. 54 services, 97 endpoints, 41 x402-paid endpoints, and 37 MCP tools for market data, financial intelligence, and onchain analytics.",
+  },
 ];
