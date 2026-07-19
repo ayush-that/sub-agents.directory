@@ -82,6 +82,12 @@ export default [
     logo: "https://cdn.brandfetch.io/idJ_HhtG0Z/theme/dark/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B",
   },
   {
+    name: "Xquik",
+    url: "https://github.com/Xquik-dev/x-twitter-scraper",
+    description:
+      "X data platform with REST endpoints, MCP tools, webhooks, SDKs, and confirmed writes.",
+  },
+  {
     name: "Cloudflare",
     url: "https://github.com/cloudflare/mcp-server-cloudflare",
     description: "Deploy and manage resources on the Cloudflare developer platform",
