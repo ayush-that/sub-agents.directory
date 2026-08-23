@@ -112,4 +112,10 @@ export default [
       "This server provides integration with Github's issue tracking system through MCP, allowing LLMs to interact with Github issues.",
     logo: "https://cdn.brandfetch.io/idZAyF9rlg/theme/light/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B",
   },
+  {
+    name: "Parallel Search",
+    url: "https://docs.parallel.ai/integrations/mcp/search-mcp",
+    description:
+      "An optional hosted search MCP at https://search.parallel.ai/mcp. Users must explicitly opt in before using it; user-provided search objectives, search queries, and requested URLs are sent to Parallel.",
+  },
 ];
