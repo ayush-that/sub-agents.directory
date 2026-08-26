@@ -134,4 +134,6 @@ for (const folder of categoryFolders) {
 
 const contentOutPath = path.join(process.cwd(), "src", "data", "rules", "generated-content.json");
 fs.writeFileSync(contentOutPath, JSON.stringify(contentMap));
-console.log(`Generated content map (${Object.keys(contentMap).length} entries) → ${contentOutPath}`);
+console.log(
+  `Generated content map (${Object.keys(contentMap).length} entries) → ${contentOutPath}`,
+);

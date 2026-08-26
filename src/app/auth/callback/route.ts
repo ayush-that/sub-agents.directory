@@ -16,8 +16,9 @@ export async function GET(request: Request) {
       // Best-effort: a failed user-record upsert must not block authentication.
       try {
         await ensureUserExists();
-      } catch {
-        // best-effort upsert; failure must not block authentication
+      } catch (e) {
+        // oxlint-disable-next-line no-console
+        console.error("ensureUserExists failed during auth callback", e);
       }
 
       const forwardedHost = request.headers.get("x-forwarded-host");
