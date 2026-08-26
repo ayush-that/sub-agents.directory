@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@ai-sdk/xai": "^1.1.9",
-    "@opennextjs/cloudflare": "^1.17.1",
+    "@opennextjs/cloudflare": "^1.20.3",
     "@openrouter/ai-sdk-provider": "^1.5.4",
     "@polar-sh/nextjs": "^0.9.3",
     "@polar-sh/sdk": "^0.42.1",
