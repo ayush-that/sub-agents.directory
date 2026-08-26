@@ -2,20 +2,32 @@ import "server-only";
 import slugify from "slugify";
 import data from "./generated.json";
 
-export interface Rule {
-  title: string;
-  slug: string;
-  description: string;
-  tags: string[];
-  libs: string[];
-  content: string;
-}
+// Re-export types
+export type {
+  Rule,
+  Section,
+  RuleIndex,
+  Category,
+  Tool,
+  ComparisonPair,
+  AggregatedData,
+} from "./types";
+export { CATEGORY_FOLDER_MAPPINGS, CATEGORY_NAME_TO_FOLDER } from "./types";
 
-export type Section = {
-  tag: string;
-  rules: Rule[];
-  slug: string;
-};
+// Re-export aggregation functions
+export {
+  generateCategories,
+  generateTools,
+  generateComparisons,
+  generateAggregatedData,
+  getCategoryBySlug,
+  getToolBySlug,
+  getComparisonBySlug,
+  createRuleIndex,
+} from "./aggregations";
+
+import type { Rule, Section, Category, Tool, ComparisonPair } from "./types";
+import { generateCategories, generateTools, generateComparisons } from "./aggregations";
 
 export const rules: Rule[] = data.rules.map((r) => ({ ...r, content: r.description })) as Rule[];
 
@@ -59,4 +71,105 @@ export function getRelatedRules(slug: string, limit = 4): Rule[] {
     .sort((a, b) => b.score - a.score)
     .slice(0, limit)
     .map(({ rule }) => rule);
+}
+
+// ============================================================================
+// Programmatic Page Helpers
+// Functions for generating category, tool, and comparison pages at scale
+// ============================================================================
+
+// Lazy-loaded cache for aggregated data
+let _categories: Category[] | null = null;
+let _tools: Tool[] | null = null;
+let _comparisons: ComparisonPair[] | null = null;
+
+/**
+ * Get all categories (lazy-loaded and cached)
+ */
+export function getCategories(): Category[] {
+  if (!_categories) {
+    _categories = generateCategories(rules);
+  }
+  return _categories;
+}
+
+/**
+ * Get all tools with 2+ rules (lazy-loaded and cached)
+ */
+export function getTools(): Tool[] {
+  if (!_tools) {
+    _tools = generateTools(rules);
+  }
+  return _tools;
+}
+
+/**
+ * Get all comparison pairs (lazy-loaded and cached)
+ */
+export function getComparisons(): ComparisonPair[] {
+  if (!_comparisons) {
+    _comparisons = generateComparisons(rules);
+  }
+  return _comparisons;
+}
+
+/**
+ * Get a category by slug
+ */
+export function getCategory(slug: string): Category | undefined {
+  return getCategories().find((c) => c.slug === slug);
+}
+
+/**
+ * Get a tool by slug
+ */
+export function getTool(slug: string): Tool | undefined {
+  return getTools().find((t) => t.slug === slug);
+}
+
+/**
+ * Get a comparison by slug
+ */
+export function getComparison(slug: string): ComparisonPair | undefined {
+  return getComparisons().find((c) => c.slug === slug);
+}
+
+/**
+ * Get rules for a specific category
+ */
+export function getRulesForCategory(categorySlug: string): Rule[] {
+  const category = getCategory(categorySlug);
+  if (!category) return [];
+
+  return rules.filter((rule) => {
+    const ruleCategory = rule.tags[0];
+    return ruleCategory && slugify(ruleCategory, { lower: true }) === categorySlug;
+  });
+}
+
+/**
+ * Get rules for a specific tool
+ */
+export function getRulesForTool(toolSlug: string): Rule[] {
+  const tool = getTool(toolSlug);
+  if (!tool) return [];
+
+  return rules.filter((rule) => rule.libs.some((lib) => lib.toLowerCase() === tool.normalizedName));
+}
+
+/**
+ * Get total counts for sitemap and stats
+ */
+export function getCounts(): {
+  rules: number;
+  categories: number;
+  tools: number;
+  comparisons: number;
+} {
+  return {
+    rules: rules.length,
+    categories: getCategories().length,
+    tools: getTools().length,
+    comparisons: getComparisons().length,
+  };
 }

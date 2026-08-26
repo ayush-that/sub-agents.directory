@@ -36,6 +36,8 @@
     "build",
     "*.config.js",
     "*.config.mjs",
-    "scripts"
+    "scripts",
+    ".agents",
+    ".claude"
   ]
 }
