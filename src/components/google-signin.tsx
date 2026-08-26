@@ -1,5 +1,6 @@
 "use client";
 
+import { createAuthCallbackUrl } from "@/lib/auth-redirect";
 import { createClient } from "@/utils/supabase/client";
 import { useSearchParams } from "next/navigation";
 import { FcGoogle } from "react-icons/fc";
@@ -18,7 +19,7 @@ export function GoogleSignin() {
         supabase.auth.signInWithOAuth({
           provider: "google",
           options: {
-            redirectTo: `${window.location.origin}/auth/callback?next=${next}`,
+            redirectTo: createAuthCallbackUrl(window.location.origin, next),
           },
         });
       }}
