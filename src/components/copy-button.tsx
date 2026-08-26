@@ -5,12 +5,28 @@ import { Check, Copy } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 
-export function CopyButton({ content, small }: { content: string; small?: boolean }) {
+export function CopyButton({
+  content,
+  slug,
+  small,
+}: {
+  content?: string;
+  slug?: string;
+  small?: boolean;
+}) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(content);
+      let text = content;
+      if (!text && slug) {
+        const res = await fetch(`/api/${slug}`);
+        const json = await res.json();
+        text = json.data?.content;
+      }
+      if (!text) return;
+
+      await navigator.clipboard.writeText(text);
       setCopied(true);
       toast("Copied to clipboard. Add to your CLAUDE.md file or sub-agent configuration.");
 

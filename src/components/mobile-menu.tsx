@@ -1,12 +1,21 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { createClient } from "@/utils/supabase/client";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
+
+interface Session {
+  user?: {
+    name?: string;
+    email?: string;
+    image?: string;
+  };
+}
 
 const navigationLinks = [
   { href: "/agents", label: "Agents" },
@@ -20,6 +29,14 @@ const navigationLinks = [
 export function MobileMenu() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const [session, setSession] = useState<Session | null>(null);
+  const supabase = createClient();
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data }) => {
+      setSession(data.session);
+    });
+  }, [supabase.auth]);
 
   useEffect(() => {
     if (isOpen) {
@@ -82,11 +99,28 @@ export function MobileMenu() {
                   duration: 0.1,
                 }}
               >
-                <Link href="/login" onClick={() => setIsOpen(false)}>
-                  <Button variant="outline" className="bg-white text-black h-8 rounded-full w-full">
-                    Sign In
+                {session ? (
+                  <Button
+                    variant="outline"
+                    className="bg-white text-black h-8 rounded-full w-full"
+                    onClick={() => {
+                      supabase.auth.signOut();
+                      setSession(null);
+                      setIsOpen(false);
+                    }}
+                  >
+                    Sign Out
                   </Button>
-                </Link>
+                ) : (
+                  <Link href={`/login?next=${pathname}`} onClick={() => setIsOpen(false)}>
+                    <Button
+                      variant="outline"
+                      className="bg-white text-black h-8 rounded-full w-full"
+                    >
+                      Sign In
+                    </Button>
+                  </Link>
+                )}
               </motion.div>
             </div>
           </motion.div>

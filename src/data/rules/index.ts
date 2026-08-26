@@ -1,8 +1,6 @@
 import "server-only";
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
 import slugify from "slugify";
+import data from "./generated.json";
 
 // Re-export types
 export type {
@@ -29,80 +27,22 @@ export {
 } from "./aggregations";
 
 import type { Rule, Section, Category, Tool, ComparisonPair } from "./types";
-import { CATEGORY_FOLDER_MAPPINGS } from "./types";
 import { generateCategories, generateTools, generateComparisons } from "./aggregations";
 
-// Use the types from types.ts
-const categoryMappings = CATEGORY_FOLDER_MAPPINGS;
+export const rules: Rule[] = data.rules.map((r) => ({ ...r, content: r.description })) as Rule[];
 
-function slugToTitle(slug: string): string {
-  return slug
-    .split("-")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" ");
-}
-
-function loadRules(): Rule[] {
-  const contentDir = path.join(process.cwd(), "content");
-
-  if (!fs.existsSync(contentDir)) {
-    return [];
-  }
-
-  const rules: Rule[] = [];
-  const categoryFolders = fs.readdirSync(contentDir);
-
-  for (const folder of categoryFolders) {
-    const folderPath = path.join(contentDir, folder);
-    if (!fs.statSync(folderPath).isDirectory()) continue;
-
-    const categoryName = categoryMappings[folder] || folder;
-    const files = fs.readdirSync(folderPath).filter((f) => f.endsWith(".md") && f !== "README.md");
-
-    for (const file of files) {
-      const filePath = path.join(folderPath, file);
-      const fileContent = fs.readFileSync(filePath, "utf-8");
-      const { data, content } = matter(fileContent);
-
-      let libs: string[] = [];
-      if (typeof data.tools === "string") {
-        libs = data.tools.split(",").map((t: string) => t.trim());
-      } else if (Array.isArray(data.tools)) {
-        libs = data.tools;
-      }
-
-      const slug = data.name || file.replace(".md", "");
-
-      rules.push({
-        title: slugToTitle(slug),
-        slug,
-        description: data.description || "",
-        tags: [categoryName],
-        libs,
-        content: content.trim(),
-      });
-    }
-  }
-
-  return rules;
-}
-
-export const rules: Rule[] = loadRules();
+const sections: Section[] = data.sections.map((s) => ({
+  ...s,
+  rules: s.rules.map((r) => ({ ...r, content: r.description })),
+  slug: s.slug || slugify(s.tag, { lower: true }),
+})) as Section[];
 
 export function getSections(): Section[] {
-  const categories = Array.from(new Set(rules.flatMap((rule) => rule.tags)));
-
-  return categories
-    .map((tag) => ({
-      tag,
-      rules: rules.filter((rule) => rule.tags.includes(tag)),
-      slug: slugify(tag, { lower: true }),
-    }))
-    .sort((a, b) => b.rules.length - a.rules.length);
+  return sections;
 }
 
 export function getSectionBySlug(slug: string) {
-  return getSections().find((section) => section.slug === slug);
+  return sections.find((section) => section.slug === slug);
 }
 
 export function getRuleBySlug(slug: string) {

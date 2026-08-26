@@ -1,9 +1,7 @@
-import fs from "fs";
-import path from "path";
 import { rules } from "@/data/rules";
+import contentMap from "@/data/rules/generated-content.json";
 
 export const dynamic = "force-static";
-export const revalidate = 86400;
 
 const VALID_SLUG_PATTERN = /^[a-z0-9-]+$/;
 
@@ -11,26 +9,6 @@ export async function generateStaticParams() {
   return rules.map((rule) => ({
     slug: rule.slug,
   }));
-}
-
-function findMarkdownFile(slug: string): string | null {
-  const categoriesDir = path.join(process.cwd(), "content");
-
-  if (!fs.existsSync(categoriesDir)) return null;
-
-  const categoryFolders = fs.readdirSync(categoriesDir);
-
-  for (const folder of categoryFolders) {
-    const folderPath = path.join(categoriesDir, folder);
-    if (!fs.statSync(folderPath).isDirectory()) continue;
-
-    const filePath = path.join(folderPath, `${slug}.md`);
-    if (fs.existsSync(filePath)) {
-      return filePath;
-    }
-  }
-
-  return null;
 }
 
 type Params = Promise<{ slug: string }>;
@@ -46,13 +24,11 @@ export async function GET(_: Request, segmentData: { params: Params }) {
     return new Response("Invalid slug format", { status: 400 });
   }
 
-  const filePath = findMarkdownFile(slug);
+  const markdown = (contentMap as Record<string, string>)[slug];
 
-  if (!filePath) {
+  if (!markdown) {
     return new Response("Rule not found", { status: 404 });
   }
-
-  const markdown = fs.readFileSync(filePath, "utf-8");
 
   return new Response(markdown, {
     status: 200,
@@ -61,7 +37,6 @@ export async function GET(_: Request, segmentData: { params: Params }) {
       "Content-Disposition": `attachment; filename="${slug}.md"`,
       "Cache-Control": "public, s-maxage=86400",
       "CDN-Cache-Control": "public, s-maxage=86400",
-      "Vercel-CDN-Cache-Control": "public, s-maxage=86400",
     },
   });
 }

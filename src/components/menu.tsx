@@ -3,11 +3,12 @@
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
+import { sections as staticSections } from "@/data/rules/client";
 import type { Section } from "@/data/rules/types";
 import { PlusIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 
-export function Menu({ sections }: { sections: Section[] }) {
+export function Menu({ sections = staticSections }: { sections?: Section[] }) {
   const router = useRouter();
 
   const handleClick = (section: Section) => {

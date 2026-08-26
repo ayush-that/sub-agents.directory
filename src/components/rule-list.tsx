@@ -6,6 +6,7 @@ import { RuleCard } from "@/components/rule-card";
 import { RuleCardSmall } from "@/components/rule-card-small";
 import { Button } from "@/components/ui/button";
 import { ads } from "@/data/ads";
+import { sections as staticSections } from "@/data/rules/client";
 import type { Section } from "@/data/rules/types";
 import { useQueryState } from "nuqs";
 import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from "react";
@@ -13,7 +14,13 @@ import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from "rea
 const ITEMS_PER_PAGE = 6;
 const SCROLL_DEBOUNCE_MS = 150;
 
-export function RuleList({ sections, small }: { sections: Section[]; small?: boolean }) {
+export function RuleList({
+  sections = staticSections,
+  small,
+}: {
+  sections?: Section[];
+  small?: boolean;
+}) {
   const [search] = useQueryState("q");
   const [visibleItems, setVisibleItems] = useState(ITEMS_PER_PAGE);
   const [isMounted, setIsMounted] = useState(false);
@@ -52,7 +59,7 @@ export function RuleList({ sections, small }: { sections: Section[]; small?: boo
           (rule) =>
             !search ||
             rule.title.toLowerCase().includes(searchLower) ||
-            rule.content.toLowerCase().includes(searchLower),
+            rule.description.toLowerCase().includes(searchLower),
         ),
       }))
       .filter((section) => section.rules.length > 0);

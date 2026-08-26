@@ -2,7 +2,6 @@ import "./globals.css";
 import { Header } from "@/components/header";
 import { Banner } from "@/components/banner";
 import { Button } from "@/components/ui/button";
-import { rules } from "@/data/rules";
 import { Toaster } from "@/components/ui/sonner";
 import { cn } from "@/lib/utils";
 import { GeistMono } from "geist/font/mono";
@@ -120,7 +119,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Header rules={rules} />
+          <Header />
 
           <NuqsAdapter>{children}</NuqsAdapter>
 

@@ -1,10 +1,12 @@
+"use client";
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
 import type { Rule } from "@/data/rules/types";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
-import { memo } from "react";
+import { memo, useEffect, useState } from "react";
 import { CopyButton } from "./copy-button";
 import { DownloadButton } from "./download-button";
 import { InstallButton } from "./install-button";
@@ -12,25 +14,50 @@ import { OpenInDropdown } from "./open-in-dropdown";
 import { ShareButton } from "./share-button";
 
 export const RuleCard = memo(function RuleCard({ rule, isPage }: { rule: Rule; isPage?: boolean }) {
+  const [fullContent, setFullContent] = useState<string | undefined>(rule.content);
+
+  useEffect(() => {
+    if (isPage && !rule.content) {
+      fetch(`/api/${rule.slug}`)
+        .then((res) => res.json())
+        .then((json) => {
+          if (json.data?.content) setFullContent(json.data.content);
+        })
+        .catch(() => {});
+    }
+  }, [isPage, rule.slug, rule.content]);
+
+  const displayContent = fullContent || rule.description;
+
   return (
-    <Card className="bg-background p-4 max-h-[calc(100vh-8rem)] aspect-square flex flex-col">
+    <Card className="bg-background p-3 sm:p-4 flex flex-col w-full max-w-full overflow-hidden">
       <CardContent
         className={cn(
-          "bg-card h-full mb-2 font-mono p-4 pr-1 text-sm opacity-50 hover:opacity-100 transition-opacity group relative flex-grow",
+          "bg-card h-full mb-2 font-mono p-3 sm:p-4 pr-1 text-xs sm:text-sm opacity-50 hover:opacity-100 transition-opacity group relative flex-grow overflow-hidden",
           isPage && "opacity-100",
         )}
       >
-        <div className="group-hover:flex hidden right-4 bottom-4 absolute z-10 space-x-2">
+        <div
+          className={cn(
+            "right-4 bottom-4 absolute z-10 space-x-2",
+            isPage ? "flex" : "group-hover:flex hidden",
+          )}
+        >
           <InstallButton slug={rule.slug} />
-          <OpenInDropdown content={rule.content} />
+          <OpenInDropdown content={fullContent} slug={rule.slug} />
           <ShareButton slug={rule.slug} />
-          <CopyButton content={rule.content} />
-          <DownloadButton content={rule.content} filename={rule.slug} />
+          <CopyButton content={fullContent} slug={rule.slug} />
+          <DownloadButton content={fullContent} slug={rule.slug} filename={rule.slug} />
         </div>
 
-        <Link href={`/${rule.slug}`}>
-          <div className="h-full overflow-y-auto">
-            <code className="text-sm block pr-3">{rule.content}</code>
+        <Link
+          href={isPage ? "#" : `/${rule.slug}`}
+          onClick={isPage ? (e) => e.preventDefault() : undefined}
+        >
+          <div className="h-full overflow-y-auto overflow-x-hidden custom-scrollbar">
+            <code className="text-xs sm:text-sm block pr-3 pb-12 whitespace-pre-wrap break-words">
+              {displayContent}
+            </code>
           </div>
         </Link>
       </CardContent>

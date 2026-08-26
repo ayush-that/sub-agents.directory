@@ -58,7 +58,7 @@ export default async function RulePage({ params }: { params: Params }) {
   // Generate Article schema
   const articleSchema = createArticleSchema({
     headline: rule.title,
-    description: rule.description || rule.content.slice(0, 160),
+    description: rule.description || rule.content?.slice(0, 160) || "",
     url: `/${rule.slug}`,
     keywords: [...rule.tags, ...rule.libs].join(", "),
     articleSection: rule.tags[0] || "Claude Code",
@@ -82,7 +82,7 @@ export default async function RulePage({ params }: { params: Params }) {
           <Menu sections={sections} />
         </div>
 
-        <main className="flex-1 p-6 pt-8 max-w-4xl">
+        <main className="flex-1 min-w-0 px-4 py-6 pt-16 sm:px-6 lg:px-8 max-w-5xl mx-auto w-full overflow-x-hidden">
           {/* Breadcrumbs */}
           <DynamicBreadcrumbs items={breadcrumbs} className="mb-4" />
 

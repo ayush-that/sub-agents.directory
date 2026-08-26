@@ -1,8 +1,9 @@
 "use client";
 
+import { createAuthCallbackUrl } from "@/lib/auth-redirect";
 import { createClient } from "@/utils/supabase/client";
-import { GithubIcon } from "lucide-react";
 import { useSearchParams } from "next/navigation";
+import { FaGithub } from "react-icons/fa";
 import { Button } from "./ui/button";
 
 export function GithubSignin() {
@@ -18,13 +19,13 @@ export function GithubSignin() {
         supabase.auth.signInWithOAuth({
           provider: "github",
           options: {
-            redirectTo: `${window.location.origin}/auth/callback?next=${next}`,
+            redirectTo: createAuthCallbackUrl(window.location.origin, next),
           },
         });
       }}
     >
       <span className="flex items-center gap-2">
-        <GithubIcon className="w-4 h-4" />
+        <FaGithub className="w-4 h-4" />
         Sign in with Github
       </span>
     </Button>

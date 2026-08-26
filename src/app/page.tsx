@@ -4,7 +4,7 @@
  */
 
 import { GlobalSearch } from "@/components/global-search";
-import { getSections, getCounts } from "@/data/rules";
+import { getCounts } from "@/data/rules";
 import { createMetadata } from "@/lib/seo/metadata-factory";
 import {
   createWebSiteSchema,
@@ -32,7 +32,6 @@ export const metadata: Metadata = createMetadata({
 });
 
 export default function HomePage() {
-  const sections = getSections();
   const counts = getCounts();
 
   // Combined schema graph for home page
@@ -64,7 +63,7 @@ export default function HomePage() {
               />
             </a>
           </div>
-          <GlobalSearch sections={sections} />
+          <GlobalSearch />
         </div>
       </main>
     </>

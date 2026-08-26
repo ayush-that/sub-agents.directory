@@ -1,4 +1,4 @@
-import { ImageResponse } from "@vercel/og";
+import { ImageResponse } from "next/og";
 
 export const alt = "Browse All Claude Code Sub-Agents";
 export const size = {

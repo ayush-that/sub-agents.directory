@@ -1,13 +1,16 @@
 "use client";
 
-import type { Section } from "@/data/rules/types";
+import { getSections } from "@/data/rules/client";
 import { motion } from "motion/react";
 import { Suspense } from "react";
 import { GlobalSearchInput } from "./global-search-input";
 import { HeroTitle } from "./hero-title";
 import MCPList from "./mcp-list";
 import { RuleList } from "./rule-list";
-export function GlobalSearch({ sections }: { sections: Section[] }) {
+
+const sections = getSections();
+
+export function GlobalSearch() {
   return (
     <div className="w-full">
       <div className="flex flex-col gap-4 w-full relative mx-auto">

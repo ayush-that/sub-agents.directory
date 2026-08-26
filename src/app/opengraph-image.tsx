@@ -1,4 +1,4 @@
-import { ImageResponse } from "@vercel/og";
+import { ImageResponse } from "next/og";
 
 export const alt = "Sub-Agents Directory - Claude Code Sub-Agents & MCP Servers";
 export const size = {
