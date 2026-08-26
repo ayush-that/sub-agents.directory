@@ -15,7 +15,6 @@ import { ArrowRight } from "lucide-react";
 
 import { createMcpMetadata } from "@/lib/seo/metadata-factory";
 import { createSoftwareAppSchema } from "@/lib/seo/schema-factory";
-import { REVALIDATION_TIMES } from "@/lib/seo/constants";
 import {
   JsonLdScript,
   DynamicBreadcrumbs,
@@ -151,4 +150,4 @@ export default async function McpPage({ params }: { params: Promise<{ slug: stri
   );
 }
 
-export const revalidate = REVALIDATION_TIMES.mcp;
+export const revalidate = 86400; // REVALIDATION_TIMES.mcp

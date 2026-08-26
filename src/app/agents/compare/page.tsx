@@ -1,49 +1,48 @@
 /**
- * Tools Index Page
- * Hub page listing all tools with sub-agents
- * /agents/tools
+ * Comparisons Index Page
+ * Hub page listing all agent comparisons
+ * /agents/compare
  */
 
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Wrench } from "lucide-react";
+import { ArrowRight, GitCompare } from "lucide-react";
 
 import { createMetadata } from "@/lib/seo/metadata-factory";
 import { createCollectionPageSchema } from "@/lib/seo/schema-factory";
 import { BASE_URL } from "@/lib/seo/constants";
 
-import { getTools, getCounts } from "@/data/rules";
+import { getComparisons } from "@/data/rules";
 import { JsonLdScript, DynamicBreadcrumbs } from "@/components/seo";
 
 export const metadata: Metadata = createMetadata({
   type: "generic",
-  title: "Browse Claude Code Agents by Tool",
+  title: "Compare Claude Code Agents",
   description:
-    "Explore Claude Code sub-agents organized by the tools they use. Find agents for Read, Write, Edit, Bash, and more.",
-  path: "/agents/tools",
-  keywords: ["Claude Code tools", "sub-agent tools", "development tools"],
+    "Compare Claude Code sub-agents side by side. See tool overlap and differences to pick the right prompt for your project.",
+  path: "/agents/compare",
+  keywords: ["Claude Code comparison", "sub-agent comparison", "AI coding agents"],
 });
 
-export default function ToolsIndexPage() {
-  const tools = getTools();
-  const counts = getCounts();
+export default function ComparisonsIndexPage() {
+  const comparisons = getComparisons();
 
   const breadcrumbs = [
     { name: "Home", url: BASE_URL },
     { name: "Agents", url: `${BASE_URL}/agents` },
-    { name: "Tools", url: `${BASE_URL}/agents/tools` },
+    { name: "Compare", url: `${BASE_URL}/agents/compare` },
   ];
 
   const collectionSchema = createCollectionPageSchema({
-    name: "Claude Code Agent Tools",
+    name: "Claude Code Agent Comparisons",
     description:
-      "Browse Claude Code sub-agents by the tools they use. Find the right prompt for your development workflow.",
-    url: "/agents/tools",
-    numberOfItems: tools.length,
-    items: tools.slice(0, 20).map((tool) => ({
-      name: tool.name,
-      url: `/agents/tools/${tool.slug}`,
-      description: `${tool.count} sub-agents use ${tool.name}`,
+      "Compare Claude Code sub-agents side by side to find the best fit for your project.",
+    url: "/agents/compare",
+    numberOfItems: comparisons.length,
+    items: comparisons.slice(0, 20).map((c) => ({
+      name: `${c.rule1.title} vs ${c.rule2.title}`,
+      url: `/agents/compare/${c.slug}`,
+      description: `Compare ${c.rule1.title} and ${c.rule2.title} in the ${c.category} category.`,
     })),
   });
 
@@ -60,34 +59,32 @@ export default function ToolsIndexPage() {
           <header className="mb-8">
             <div className="flex items-center gap-3 mb-4">
               <div className="p-2 bg-accent rounded-lg">
-                <Wrench className="h-6 w-6" />
+                <GitCompare className="h-6 w-6" />
               </div>
-              <h1 className="text-3xl md:text-4xl font-bold">Browse Agents by Tool</h1>
+              <h1 className="text-3xl md:text-4xl font-bold">Compare Sub-Agents</h1>
             </div>
             <p className="text-lg text-muted-foreground max-w-3xl">
-              Explore {tools.length} tools used across {counts.rules} Claude Code sub-agents. Find
-              agents that use your preferred tools.
+              See {comparisons.length} side-by-side comparisons of Claude Code sub-agents to find
+              the best fit for your project.
             </p>
           </header>
 
-          {/* Tools Grid */}
+          {/* Comparisons Grid */}
           <section className="mb-12">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {tools.map((tool) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {comparisons.map((c) => (
                 <Link
-                  key={tool.slug}
-                  href={`/agents/tools/${tool.slug}`}
+                  key={c.slug}
+                  href={`/agents/compare/${c.slug}`}
                   className="group p-4 border border-border/40 rounded-lg hover:border-border hover:bg-accent/30 transition-all"
                 >
                   <div className="flex items-center justify-between mb-2">
                     <h2 className="font-medium group-hover:text-primary transition-colors">
-                      {tool.name}
+                      {c.rule1.title} vs {c.rule2.title}
                     </h2>
-                    <ArrowRight className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <ArrowRight className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0 ml-2" />
                   </div>
-                  <p className="text-sm text-muted-foreground">
-                    {tool.count} agent{tool.count !== 1 ? "s" : ""}
-                  </p>
+                  <p className="text-sm text-muted-foreground">{c.category}</p>
                 </Link>
               ))}
             </div>
@@ -109,4 +106,4 @@ export default function ToolsIndexPage() {
   );
 }
 
-export const revalidate = 86400; // REVALIDATION_TIMES.tool
+export const revalidate = 604800; // REVALIDATION_TIMES.comparison

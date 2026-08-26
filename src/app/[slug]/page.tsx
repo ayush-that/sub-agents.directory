@@ -14,7 +14,6 @@ import { getRelatedRules, getRuleBySlug, getSections, rules } from "@/data/rules
 
 import { createRuleMetadata } from "@/lib/seo/metadata-factory";
 import { createArticleSchema } from "@/lib/seo/schema-factory";
-import { REVALIDATION_TIMES } from "@/lib/seo/constants";
 import { createLinkEngine } from "@/lib/seo/internal-links";
 import {
   JsonLdScript,
@@ -110,4 +109,4 @@ export default async function RulePage({ params }: { params: Params }) {
   );
 }
 
-export const revalidate = REVALIDATION_TIMES.rule;
+export const revalidate = 604800; // REVALIDATION_TIMES.rule

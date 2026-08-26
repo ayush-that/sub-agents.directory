@@ -11,7 +11,6 @@ import { ArrowRight, Wrench } from "lucide-react";
 
 import { createToolMetadata } from "@/lib/seo/metadata-factory";
 import { createCollectionPageSchema } from "@/lib/seo/schema-factory";
-import { REVALIDATION_TIMES } from "@/lib/seo/constants";
 
 import { getTools, getTool, getRulesForTool, getCategories } from "@/data/rules";
 
@@ -212,4 +211,4 @@ export default async function ToolPage({ params }: { params: Params }) {
   );
 }
 
-export const revalidate = REVALIDATION_TIMES.tool;
+export const revalidate = 86400; // REVALIDATION_TIMES.tool

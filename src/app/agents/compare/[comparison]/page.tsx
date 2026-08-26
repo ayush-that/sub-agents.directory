@@ -11,7 +11,6 @@ import { ArrowRight, Check, GitCompare } from "lucide-react";
 
 import { createComparisonMetadata } from "@/lib/seo/metadata-factory";
 import { createComparisonSchema } from "@/lib/seo/schema-factory";
-import { REVALIDATION_TIMES } from "@/lib/seo/constants";
 
 import { getComparisons, getComparison, getRuleBySlug, getCategories } from "@/data/rules";
 
@@ -296,4 +295,4 @@ export default async function ComparisonPage({ params }: { params: Params }) {
   );
 }
 
-export const revalidate = REVALIDATION_TIMES.comparison;
+export const revalidate = 604800; // REVALIDATION_TIMES.comparison

@@ -2,7 +2,14 @@ import { Menu } from "@/components/menu";
 import { RuleList } from "@/components/rule-list";
 import { getSections } from "@/data/rules";
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Suspense } from "react";
+
+const AGENT_HUBS = [
+  { href: "/agents/tools", label: "By Tool" },
+  { href: "/agents/for", label: "By Use Case" },
+  { href: "/agents/compare", label: "Compare Agents" },
+];
 
 export const metadata: Metadata = {
   title: "Browse All Sub-Agents",
@@ -37,6 +44,17 @@ export default function Page() {
 
       <main className="flex-1 p-6 pt-4 md:pt-16 space-y-8">
         <h1 className="sr-only">Browse All Claude Code Sub-Agents</h1>
+        <nav aria-label="Browse agents by" className="flex flex-wrap gap-2">
+          {AGENT_HUBS.map((hub) => (
+            <Link
+              key={hub.href}
+              href={hub.href}
+              className="text-xs px-3 py-1.5 rounded-full border border-border/40 hover:border-border hover:bg-accent/30 transition-all"
+            >
+              {hub.label}
+            </Link>
+          ))}
+        </nav>
         <Suspense fallback={null}>
           <RuleList sections={sections} />
         </Suspense>

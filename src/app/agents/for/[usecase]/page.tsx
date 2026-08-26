@@ -11,7 +11,7 @@ import { ArrowRight, Target } from "lucide-react";
 
 import { createUseCaseMetadata } from "@/lib/seo/metadata-factory";
 import { createCollectionPageSchema } from "@/lib/seo/schema-factory";
-import { REVALIDATION_TIMES, USE_CASES } from "@/lib/seo/constants";
+import { USE_CASES } from "@/lib/seo/constants";
 
 import { rules, getCategories } from "@/data/rules";
 
@@ -233,4 +233,4 @@ export default async function UseCasePage({ params }: { params: Params }) {
   );
 }
 
-export const revalidate = REVALIDATION_TIMES["use-case"];
+export const revalidate = 86400; // REVALIDATION_TIMES["use-case"]

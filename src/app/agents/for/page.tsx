@@ -10,7 +10,7 @@ import { ArrowRight, Target } from "lucide-react";
 
 import { createMetadata } from "@/lib/seo/metadata-factory";
 import { createCollectionPageSchema } from "@/lib/seo/schema-factory";
-import { REVALIDATION_TIMES, USE_CASES, BASE_URL } from "@/lib/seo/constants";
+import { USE_CASES, BASE_URL } from "@/lib/seo/constants";
 
 import { JsonLdScript, DynamicBreadcrumbs } from "@/components/seo";
 
@@ -117,4 +117,4 @@ export default function UseCasesIndexPage() {
   );
 }
 
-export const revalidate = REVALIDATION_TIMES["use-case"];
+export const revalidate = 86400; // REVALIDATION_TIMES["use-case"]

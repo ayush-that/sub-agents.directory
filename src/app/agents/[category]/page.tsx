@@ -11,7 +11,6 @@ import { ArrowRight } from "lucide-react";
 
 import { createCategoryMetadata } from "@/lib/seo/metadata-factory";
 import { createCollectionPageSchema } from "@/lib/seo/schema-factory";
-import { REVALIDATION_TIMES } from "@/lib/seo/constants";
 
 import { getCategories, getCategory, getRulesForCategory } from "@/data/rules";
 
@@ -176,4 +175,4 @@ export default async function CategoryPage({ params }: { params: Params }) {
   );
 }
 
-export const revalidate = REVALIDATION_TIMES.category;
+export const revalidate = 86400; // REVALIDATION_TIMES.category

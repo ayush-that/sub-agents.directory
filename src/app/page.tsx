@@ -11,7 +11,6 @@ import {
   createOrganizationSchema,
   createSchemaGraph,
 } from "@/lib/seo/schema-factory";
-import { REVALIDATION_TIMES } from "@/lib/seo/constants";
 import { JsonLdScript } from "@/components/seo";
 import type { Metadata } from "next";
 
@@ -48,7 +47,7 @@ export default function HomePage() {
     <>
       <JsonLdScript data={schemaGraph} />
 
-      <div className="min-h-screen w-full px-4 pt-[10%]">
+      <main className="min-h-screen w-full px-4 pt-[10%]">
         <div className="w-full max-w-6xl mx-auto">
           <h1 className="sr-only">Sub-Agents Directory - Find Claude Code Sub-Agent Prompts</h1>
           <div className="flex justify-center mb-6">
@@ -67,9 +66,9 @@ export default function HomePage() {
           </div>
           <GlobalSearch sections={sections} />
         </div>
-      </div>
+      </main>
     </>
   );
 }
 
-export const revalidate = REVALIDATION_TIMES.home;
+export const revalidate = 3600; // REVALIDATION_TIMES.home
