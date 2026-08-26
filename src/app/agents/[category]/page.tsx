@@ -12,7 +12,7 @@ import { ArrowRight } from "lucide-react";
 import { createCategoryMetadata } from "@/lib/seo/metadata-factory";
 import { createCollectionPageSchema } from "@/lib/seo/schema-factory";
 
-import { getCategories, getCategory, getRulesForCategory } from "@/data/rules";
+import { getCategories, getCategory, getRulesForCategory, getTools } from "@/data/rules";
 
 import {
   JsonLdScript,
@@ -55,23 +55,26 @@ export default async function CategoryPage({ params }: { params: Params }) {
   const allCategories = getCategories();
   const breadcrumbs = getCategoryBreadcrumbs(category);
 
-  // Get top tools for this category
+  // Get top tools for this category that also have their own tool page
   const toolCounts = new Map<string, number>();
   for (const rule of rules) {
     for (const lib of rule.libs) {
-      toolCounts.set(lib, (toolCounts.get(lib) || 0) + 1);
+      const normalized = lib.toLowerCase();
+      toolCounts.set(normalized, (toolCounts.get(normalized) || 0) + 1);
     }
   }
+  const toolsByName = new Map(getTools().map((tool) => [tool.normalizedName, tool]));
   const topTools = Array.from(toolCounts.entries())
     .sort((a, b) => b[1] - a[1])
-    .slice(0, 5)
-    .map(([tool]) => tool);
+    .map(([tool]) => toolsByName.get(tool))
+    .filter((tool) => tool !== undefined)
+    .slice(0, 5);
 
   // Generate FAQs
   const faqs = generateCategoryFAQs({
     name: category.name,
     count: category.count,
-    topTools,
+    topTools: topTools.map((tool) => tool.name),
   });
 
   // Generate schemas
@@ -132,11 +135,11 @@ export default async function CategoryPage({ params }: { params: Params }) {
               <div className="flex flex-wrap gap-2">
                 {topTools.map((tool) => (
                   <Link
-                    key={tool}
-                    href={`/agents/tools/${tool.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
+                    key={tool.slug}
+                    href={`/agents/tools/${tool.slug}`}
                     className="px-3 py-1 text-sm bg-accent/50 hover:bg-accent rounded-full transition-colors"
                   >
-                    {tool}
+                    {tool.name}
                   </Link>
                 ))}
               </div>
