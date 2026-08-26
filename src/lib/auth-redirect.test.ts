@@ -1,11 +1,9 @@
-import assert from "node:assert/strict";
-import { describe, test } from "node:test";
+import { describe, expect, test } from "bun:test";
 import { createAuthCallbackUrl, getSafeRedirectPath } from "./auth-redirect";
 
 describe("getSafeRedirectPath", () => {
   test("preserves a local path with query and fragment", () => {
-    assert.equal(
-      getSafeRedirectPath("/g/example?tab=one&view=full#result"),
+    expect(getSafeRedirectPath("/g/example?tab=one&view=full#result")).toBe(
       "/g/example?tab=one&view=full#result",
     );
   });
@@ -17,12 +15,12 @@ describe("getSafeRedirectPath", () => {
     ".attacker.example",
   ]) {
     test(`rejects external redirect value ${value}`, () => {
-      assert.equal(getSafeRedirectPath(value), "/");
+      expect(getSafeRedirectPath(value)).toBe("/");
     });
   }
 
   test("rejects a backslash authority redirect", () => {
-    assert.equal(getSafeRedirectPath("/\\attacker.example"), "/");
+    expect(getSafeRedirectPath("/\\attacker.example")).toBe("/");
   });
 });
 
@@ -32,8 +30,8 @@ describe("createAuthCallbackUrl", () => {
       createAuthCallbackUrl("https://sub-agents.directory", "/g/example?tab=one&view=full#result"),
     );
 
-    assert.equal(callbackUrl.origin, "https://sub-agents.directory");
-    assert.equal(callbackUrl.pathname, "/auth/callback");
-    assert.equal(callbackUrl.searchParams.get("next"), "/g/example?tab=one&view=full#result");
+    expect(callbackUrl.origin).toBe("https://sub-agents.directory");
+    expect(callbackUrl.pathname).toBe("/auth/callback");
+    expect(callbackUrl.searchParams.get("next")).toBe("/g/example?tab=one&view=full#result");
   });
 });
