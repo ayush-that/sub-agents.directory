@@ -152,3 +152,6 @@ subagents
 src/data/rules/generated.json
 src/data/rules/generated-content.json
 .wrangler-test
+.DS_Store
+.agents
+.claude
