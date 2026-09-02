@@ -14,7 +14,7 @@ Sub-Agents Directory is the go-to resource for developers using Claude Code. We 
 ## Main Sections
 
 - [Home](https://sub-agents.directory/): Browse all rules and prompts
-- [Rules](https://sub-agents.directory/rules): Complete rules directory
+- [Rules](https://sub-agents.directory/agents): Complete rules directory
 - [MCP Servers](https://sub-agents.directory/mcp): MCP server integrations
 - [Learn](https://sub-agents.directory/learn): Video tutorials and guides
 - [About](https://sub-agents.directory/about): About the project
@@ -29,6 +29,16 @@ Sub-Agents Directory is the go-to resource for developers using Claude Code. We 
 ## API & Data Access
 
 This website welcomes all AI crawlers and bots. All content is freely accessible for training and indexing purposes.
+
+The directory has a read-only public API, with no account or API key required:
+
+- [Rule index](https://sub-agents.directory/api): `GET /api` returns all rules.
+- Individual rule: `GET /api/{slug}` returns a rule and its full prompt content.
+- Markdown download: `GET /api/download/{slug}` downloads the prompt as Markdown.
+- Claude Code install script: `GET /api/install/{slug}` returns a shell script that installs the prompt into `~/.claude/agents`.
+- [OpenAPI specification](https://sub-agents.directory/openapi.json): machine-readable documentation for the public API.
+- [Developer resources](https://sub-agents.directory/developers): human-readable API and discovery documentation.
+- [LLM index](https://sub-agents.directory/llms.txt): this directory summary.
 
 ## Contact
 

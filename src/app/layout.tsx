@@ -106,6 +106,8 @@ export default function RootLayout({
       )}
     >
       <head>
+        <link rel="alternate" type="text/plain" title="LLM-friendly index" href="/llms.txt" />
+        <link rel="alternate" type="application/json" title="OpenAPI specification" href="/openapi.json" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.youtube.com" />

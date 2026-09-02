@@ -5,6 +5,12 @@ initOpenNextCloudflareForDev();
 
 const nextConfig: NextConfig = {
   skipTrailingSlashRedirect: true,
+  redirects: async () => [
+    // The directory formerly used /rules URLs. Keep their externally published
+    // links working while consolidating indexing on the current routes.
+    { source: "/rules", destination: "/agents", permanent: true },
+    { source: "/rules/:slug", destination: "/:slug", permanent: true },
+  ],
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "avatars.githubusercontent.com" },
