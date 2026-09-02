@@ -58,7 +58,10 @@ export function openApiSpec() {
               description: "Markdown prompt attachment",
               content: { "text/markdown": { schema: { type: "string" } } },
             },
-            "400": { description: "The supplied slug has an invalid format" },
+            "400": {
+              description: "The supplied slug has an invalid format",
+              content: { "text/plain": { schema: { type: "string" } } },
+            },
             "404": { description: "No rule exists for the supplied slug" },
           },
         },
@@ -79,7 +82,10 @@ export function openApiSpec() {
               description: "Shell script that installs the Markdown prompt into ~/.claude/agents",
               content: { "text/x-shellscript": { schema: { type: "string" } } },
             },
-            "400": { description: "The supplied slug has an invalid format" },
+            "400": {
+              description: "The supplied slug has an invalid format",
+              content: { "text/plain": { schema: { type: "string" } } },
+            },
             "404": { description: "No rule exists for the supplied slug" },
           },
         },
