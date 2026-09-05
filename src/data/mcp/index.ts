@@ -118,4 +118,10 @@ export default [
     description:
       "An optional hosted search MCP at https://search.parallel.ai/mcp. Users must explicitly opt in before using it; user-provided search objectives, search queries, and requested URLs are sent to Parallel.",
   },
+  {
+    name: "Agent QA",
+    url: "https://vostride.com/docs/agent-qa/mcp",
+    description:
+      "MCP tools for authoring and running natural-language web, Android, and iOS tests, inspecting artifacts, and triaging failures. Start stdio with agent-qa mcp; authoring and run tools require a running dashboard and dashboardUrl. Source-available (FSL-1.1-ALv2); model and infrastructure costs are separate.",
+  },
 ];
