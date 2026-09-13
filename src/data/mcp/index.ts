@@ -118,4 +118,10 @@ export default [
     description:
       "An optional hosted search MCP at https://search.parallel.ai/mcp. Users must explicitly opt in before using it; user-provided search objectives, search queries, and requested URLs are sent to Parallel.",
   },
+  {
+    name: "OrcaReplay",
+    url: "https://github.com/Continuum-AI-Corp/OrcaReplay",
+    description:
+      "Exposes a recorded agent run so the model can answer questions about what an earlier session actually did: the requests it sent, every tool call with its arguments, shell exit codes, files changed, and which event caused which. Can also replay that run offline. Runs locally over stdio and reads recordings from the working directory; it needs a run captured with `orca record` first.",
+  },
 ];
