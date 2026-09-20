@@ -118,4 +118,11 @@ export default [
     description:
       "An optional hosted search MCP at https://search.parallel.ai/mcp. Users must explicitly opt in before using it; user-provided search objectives, search queries, and requested URLs are sent to Parallel.",
   },
+  {
+    name: "You.com Search",
+    url: "https://github.com/youdotcom-oss/agent-skills",
+    description:
+      "A hosted web search MCP at https://api.you.com/mcp that provides you-search and you-contents tools for current web results, URL reading, and cited research. Opt-in: add the endpoint to your MCP config (a keyless basic-search profile is available at https://api.you.com/mcp?profile=free, or use an API key for full access). Skills and platform installers for Claude Code, Codex, Cursor, Copilot CLI, and more are in the agent-skills repo.",
+    logo: "https://avatars.githubusercontent.com/youdotcom-oss?s=200&v=4",
+  },
 ];
