@@ -118,4 +118,11 @@ export default [
     description:
       "An optional hosted search MCP at https://search.parallel.ai/mcp. Users must explicitly opt in before using it; user-provided search objectives, search queries, and requested URLs are sent to Parallel.",
   },
+  {
+    name: "Delimit",
+    url: "https://github.com/delimit-ai/delimit-mcp-server",
+    description:
+      "The merge gate for AI-written code. Its MCP server gives Claude Code tools for OpenAPI linting, diffing and semver classification, a memory and task ledger that persist across sessions and models, security scanning, and multi-model deliberation. Some tools require a paid Pro license.",
+    logo: "https://avatars.githubusercontent.com/u/266560012?v=4",
+  },
 ];
