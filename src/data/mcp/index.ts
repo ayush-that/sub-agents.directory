@@ -118,4 +118,10 @@ export default [
     description:
       "An optional hosted search MCP at https://search.parallel.ai/mcp. Users must explicitly opt in before using it; user-provided search objectives, search queries, and requested URLs are sent to Parallel.",
   },
+  {
+    name: "Hyperconsciousness",
+    url: "https://github.com/louis030195/hyperconsciousness",
+    description:
+      "Store and retrieve knowledge in an encrypted, append-only store through scoped, expiring MCP grants. Developer alpha; requires a Rust source build and local store setup.",
+  },
 ];
