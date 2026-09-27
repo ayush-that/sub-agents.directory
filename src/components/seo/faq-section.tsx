@@ -163,7 +163,13 @@ export function generateUseCaseFAQs(useCase: {
 /**
  * Generate FAQs for MCP server pages
  */
-export function generateMcpFAQs(mcp: { name: string; description: string }): FAQItem[] {
+export function generateMcpFAQs(mcp: {
+  name: string;
+  description: string;
+  faqs?: FAQItem[];
+}): FAQItem[] {
+  if (mcp.faqs) return mcp.faqs;
+
   return [
     {
       question: `What is the ${mcp.name} MCP server?`,
