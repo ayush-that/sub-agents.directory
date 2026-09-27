@@ -71,10 +71,7 @@ export default async function McpPage({ params }: { params: Promise<{ slug: stri
   });
 
   // Generate FAQs
-  const faqs = generateMcpFAQs({
-    name: mcp.name,
-    description: mcp.description,
-  });
+  const faqs = generateMcpFAQs(mcp);
 
   // Other MCP servers
   const otherMcps = mcpData.filter((m) => slugify(m.name, { lower: true }) !== slug).slice(0, 4);

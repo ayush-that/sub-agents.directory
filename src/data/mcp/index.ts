@@ -1,11 +1,14 @@
+import type { FAQItem } from "@/lib/seo/schema-factory";
+
 export type MCP = {
   name: string;
   url: string;
   description: string;
   logo?: string;
+  faqs?: FAQItem[];
 };
 
-export default [
+const mcps: MCP[] = [
   {
     name: "Upstash",
     url: "https://github.com/upstash/mcp-server",
@@ -122,6 +125,25 @@ export default [
     name: "Hyperconsciousness",
     url: "https://github.com/louis030195/hyperconsciousness",
     description:
-      "Store and retrieve knowledge in an encrypted, append-only store through scoped, expiring MCP grants. Developer alpha; requires a Rust source build and local store setup.",
+      "Developer alpha requiring a Rust source build and local store setup. Encrypted, append-only knowledge with scoped, expiring MCP grants.",
+    faqs: [
+      {
+        question: "What is the Hyperconsciousness MCP server?",
+        answer:
+          "Hyperconsciousness is a developer-alpha knowledge store with encrypted, append-only records. Its MCP server gives agents scoped, expiring access to those records.",
+      },
+      {
+        question: "How do I install the Hyperconsciousness MCP server?",
+        answer:
+          "Follow the repository README to build hc from source with Rust, initialize a local store, and create an access grant. Configure your MCP client with the absolute hc executable path and the arguments mcp --as <grant-id> --dir <absolute-store-path>. The npm registry package is not the source for this alpha.",
+      },
+      {
+        question: "What can I do with the Hyperconsciousness MCP server?",
+        answer:
+          "Agents can search and retrieve records permitted by their grant. Capturing new records requires write access. Grants limit MCP responses, not OS process access; hosted models can see returned plaintext. No independent security audit is claimed.",
+      },
+    ],
   },
 ];
+
+export default mcps;
