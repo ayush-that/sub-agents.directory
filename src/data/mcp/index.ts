@@ -118,4 +118,11 @@ export default [
     description:
       "An optional hosted search MCP at https://search.parallel.ai/mcp. Users must explicitly opt in before using it; user-provided search objectives, search queries, and requested URLs are sent to Parallel.",
   },
+  {
+    name: "Voidpay",
+    url: "https://github.com/voidly-ai/pay-mcp",
+    description:
+      "MCP server for Voidpay, an agent services marketplace. Agents find services and storefronts and prepare owner-approved checkout links; it never signs or pays.",
+    logo: "https://avatars.githubusercontent.com/u/239477989?s=200&v=4",
+  },
 ];
