@@ -1,0 +1,195 @@
+# Sub-Agents Directory - Full Access for All Bots and AI Crawlers
+# https://sub-agents.directory
+
+# Content Signals Policy - Explicitly allowing all AI usage
+# As a condition of accessing this website, you agree to abide by the
+# following content signals:
+#
+# (a) If a content-signal = yes, you may collect content for the corresponding use.
+# (b) If a content-signal = no, you may not collect content for the corresponding use.
+# (c) If no content signal is specified, no restriction is implied.
+#
+# Content signals and their meanings:
+# - search: building a search index and providing search results
+# - ai-input: inputting content into AI models (RAG, grounding, real-time AI answers)
+# - ai-train: training or fine-tuning AI models
+
+# Allow everything to everyone with full AI permissions
+User-agent: *
+Content-signal: search=yes, ai-input=yes, ai-train=yes
+Allow: /
+
+# OpenAI Crawlers
+User-agent: GPTBot
+Content-signal: search=yes, ai-input=yes, ai-train=yes
+Allow: /
+
+User-agent: ChatGPT-User
+Content-signal: search=yes, ai-input=yes, ai-train=yes
+Allow: /
+
+User-agent: OAI-SearchBot
+Content-signal: search=yes, ai-input=yes, ai-train=yes
+Allow: /
+
+# Anthropic Crawlers
+User-agent: ClaudeBot
+Content-signal: search=yes, ai-input=yes, ai-train=yes
+Allow: /
+
+User-agent: Claude-Web
+Content-signal: search=yes, ai-input=yes, ai-train=yes
+Allow: /
+
+User-agent: anthropic-ai
+Content-signal: search=yes, ai-input=yes, ai-train=yes
+Allow: /
+
+# Google AI & Search
+User-agent: Googlebot
+Content-signal: search=yes, ai-input=yes, ai-train=yes
+Allow: /
+
+User-agent: Google-Extended
+Content-signal: search=yes, ai-input=yes, ai-train=yes
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Storebot-Google
+Allow: /
+
+# Microsoft/Bing
+User-agent: Bingbot
+Content-signal: search=yes, ai-input=yes, ai-train=yes
+Allow: /
+
+User-agent: msnbot
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Content-signal: search=yes, ai-input=yes, ai-train=yes
+Allow: /
+
+# Common Crawl
+User-agent: CCBot
+Content-signal: search=yes, ai-input=yes, ai-train=yes
+Allow: /
+
+# Cohere
+User-agent: cohere-ai
+Content-signal: search=yes, ai-input=yes, ai-train=yes
+Allow: /
+
+# Meta/Facebook
+User-agent: Meta-ExternalAgent
+Content-signal: search=yes, ai-input=yes, ai-train=yes
+Allow: /
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+# Apple
+User-agent: Applebot
+Content-signal: search=yes, ai-input=yes, ai-train=yes
+Allow: /
+
+User-agent: Applebot-Extended
+Content-signal: search=yes, ai-input=yes, ai-train=yes
+Allow: /
+
+# ByteDance/TikTok
+User-agent: Bytespider
+Content-signal: search=yes, ai-input=yes, ai-train=yes
+Allow: /
+
+# You.com
+User-agent: YouBot
+Content-signal: search=yes, ai-input=yes, ai-train=yes
+Allow: /
+
+# Amazon
+User-agent: Amazonbot
+Content-signal: search=yes, ai-input=yes, ai-train=yes
+Allow: /
+
+# Other AI Crawlers
+User-agent: Diffbot
+Allow: /
+
+User-agent: ImagesiftBot
+Allow: /
+
+User-agent: Omgilibot
+Allow: /
+
+User-agent: PetalBot
+Allow: /
+
+User-agent: Timpibot
+Allow: /
+
+User-agent: Webzio-Extended
+Allow: /
+
+User-agent: img2dataset
+Allow: /
+
+User-agent: omgili
+Allow: /
+
+User-agent: Scrapy
+Allow: /
+
+User-agent: Seekr
+Allow: /
+
+User-agent: AI2Bot
+Allow: /
+
+User-agent: Ai2Bot-Dolma
+Allow: /
+
+User-agent: Kangaroo Bot
+Allow: /
+
+User-agent: DataForSeoBot
+Allow: /
+
+User-agent: SemrushBot
+Allow: /
+
+User-agent: AhrefsBot
+Allow: /
+
+User-agent: DotBot
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Sogou
+Allow: /
+
+# Sitemap
+Sitemap: https://sub-agents.directory/sitemap.xml
+
+# LLMs.txt for AI context
+# See: https://sub-agents.directory/llms.txt

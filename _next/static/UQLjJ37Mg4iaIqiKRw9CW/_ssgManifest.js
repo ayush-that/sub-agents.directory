@@ -1,0 +1,1 @@
+self.__SSG_MANIFEST=new Set(["\u002F[slug]","\u002Fagents\u002F[category]","\u002Fagents\u002Fcompare\u002F[comparison]","\u002Fagents\u002Ffor\u002F[usecase]","\u002Fagents\u002Ftools\u002F[tool]","\u002Fmcp\u002F[slug]"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()
