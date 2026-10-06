@@ -118,4 +118,10 @@ export default [
     description:
       "An optional hosted search MCP at https://search.parallel.ai/mcp. Users must explicitly opt in before using it; user-provided search objectives, search queries, and requested URLs are sent to Parallel.",
   },
+  {
+    name: "FXMacroData",
+    url: "https://fxmacrodata.com/documentation/mcp-server",
+    description:
+      "A hosted MCP server at https://mcp.fxmacrodata.com for official macroeconomic releases, release calendars, central bank policy rates and FX data across 22 currencies. USD releases, the USD calendar and the USD catalogue work without a key; other currencies and FX rates need an API key. Requested currencies, indicators and date ranges are sent to FXMacroData.",
+  },
 ];
