@@ -21,6 +21,7 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "cdn.brandfetch.io" },
       { protocol: "https", hostname: "pbs.twimg.com" },
       { protocol: "https", hostname: "console.settlemint.com" },
+      { protocol: "https", hostname: "raw.githubusercontent.com" },
     ],
   },
   serverExternalPackages: ["@prisma/client", ".prisma/client"],
