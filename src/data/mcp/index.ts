@@ -118,4 +118,11 @@ export default [
     description:
       "An optional hosted search MCP at https://search.parallel.ai/mcp. Users must explicitly opt in before using it; user-provided search objectives, search queries, and requested URLs are sent to Parallel.",
   },
+  {
+    name: "Datacircle",
+    url: "https://docs.datacircle.dev/mcp-server",
+    description:
+      "Datacircle is a data co-op. Query your favorite B2B data APIs through us. Same request, same price, no markup. Right now we have 3 live LinkedIn profile APIs that we trust: Up2Data, HarvestAPI and Fetchin. Add api.datacircle.dev/mcp as an MCP server. The first time, your client signs you in with your Datacircle email (OAuth). Or send your API key as a Bearer token.",
+    logo: "https://raw.githubusercontent.com/waynehamadi/datacircle-plugin/main/assets/logo.png",
+  },
 ];
