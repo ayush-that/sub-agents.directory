@@ -118,4 +118,10 @@ export default [
     description:
       "An optional hosted search MCP at https://search.parallel.ai/mcp. Users must explicitly opt in before using it; user-provided search objectives, search queries, and requested URLs are sent to Parallel.",
   },
+  {
+    name: "Chord",
+    url: "https://getchord.xyz/docs/agents/mcp/",
+    description:
+      "Hosted MCP server at https://api.getchord.xyz/v1/mcp, no key needed for data: DEX swap quotes and unsigned swap transactions on 7 EVM chains, token boards, candles, wallet PnL and smart money.",
+  },
 ];
