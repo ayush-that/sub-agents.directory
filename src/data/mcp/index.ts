@@ -118,4 +118,10 @@ export default [
     description:
       "An optional hosted search MCP at https://search.parallel.ai/mcp. Users must explicitly opt in before using it; user-provided search objectives, search queries, and requested URLs are sent to Parallel.",
   },
+  {
+    name: "CurlShot",
+    url: "https://github.com/SergiuPogor/curlshot-mcp",
+    description:
+      "Hosted screenshot MCP at https://curlshot.com/api/mcp. Renders a public URL and returns it as an image the model can see, a PDF or a scrolling video, with full-page capture, device presets, dark mode and single-element capture. Needs a CurlShot API key (free plan: 100 screenshots a month).",
+  },
 ];
