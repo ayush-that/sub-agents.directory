@@ -118,4 +118,11 @@ export default [
     description:
       "An optional hosted search MCP at https://search.parallel.ai/mcp. Users must explicitly opt in before using it; user-provided search objectives, search queries, and requested URLs are sent to Parallel.",
   },
+  {
+    name: "Scrapewise",
+    url: "https://github.com/BEBOTECH-OU/scrapewise-mcp",
+    description:
+      "Remote MCP server that scrapes, cleans and matches product and price data from any website.",
+    logo: "https://scrapewise.ai/logo.png",
+  },
 ];
