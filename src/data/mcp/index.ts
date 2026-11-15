@@ -118,4 +118,10 @@ export default [
     description:
       "An optional hosted search MCP at https://search.parallel.ai/mcp. Users must explicitly opt in before using it; user-provided search objectives, search queries, and requested URLs are sent to Parallel.",
   },
+  {
+    name: "No Stairs Please",
+    url: "https://nostairsplease.com/mcp",
+    description:
+      "A remote MCP server for searching 26,000+ US live-music venues by capacity, genre, state, tour route, and booking contacts.",
+  },
 ];
