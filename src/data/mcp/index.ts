@@ -118,4 +118,10 @@ export default [
     description:
       "An optional hosted search MCP at https://search.parallel.ai/mcp. Users must explicitly opt in before using it; user-provided search objectives, search queries, and requested URLs are sent to Parallel.",
   },
+  {
+    name: "Kite",
+    url: "https://kite.new/docs/mcp",
+    description:
+      "Hosted remote MCP server at https://kite.new/api/mcp (OAuth). Claude, ChatGPT, Cursor or Codex draw real, editable design layers (frames, text, components, auto layout) in a Kite file the team edits live.",
+  },
 ];
